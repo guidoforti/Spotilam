@@ -1,10 +1,71 @@
 * {
     box-sizing: border-box;
- 
+  
+  
 }
 
 
+:root {
+    --colorPrincipal :  #1B0044;
+    --colorSecundario : #5727A3;
+    --colorTerciario : #9153F4;
+    --colorCuaternario : #D6C5F0;
+    --roboto: 'Roboto', sans-serif; /*  nos manejamos con 400 y 500 de weight*/
+    --robotoSlab: 'Roboto Slab', serif ; /*  nos manejamos con 400 y 500 de weight*/
+     
+   }
 
+/* 
+
+
+
+
+    */ 
+
+
+    /*  PAGINA DE ICONOS A AGREGAR :  https://fonts.google.com/icons?selected=Material+Symbols+Outlined:play_arrow:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=music 
+         SE TIENE QUE  AGREGAR AL HTML --- LUEGO INGRESAR EL ESTILO EN EL CSS Y POR ULTIMO AGREGASR EL ICONO 
+
+         
+         
+
+        -- guido : principal
+
+        
+        
+        -- nacho : buscar 
+        
+        
+        -- magali : albunes
+
+       
+
+        -- ivone : mis favoritos
+
+
+         --JULIANA : VISTA PAGAR , PERFIL Y PREMIUM 
+
+
+         -- marcos : va a ahcer el nav bar y el footer  y MUSICA SONANDO
+
+         */
+    
+     
+
+
+
+   
+
+
+   
+   .material-symbols-outlined {
+     font-variation-settings:
+     'FILL' 0,
+     'wght' 400,
+     'GRAD' 0,
+     'opsz' 24
+   }
+ 
 
 .footer {
     display: flex;
@@ -12,7 +73,7 @@
     flex-direction:column;
     justify-content: center;
     align-items: center;
-
+    
     margin: 20px 40px;
     padding: 40px;
     border: 1px solid black;
@@ -20,6 +81,42 @@
     width: 90%;
     height: 100px;
     
+   
     
 }
 
+label {
+    font-family: var(--roboto);
+    font-weight: 500;
+}
+
+
+/* ESTILO BASICO DE BOTONES*/ 
+.button {
+    padding: 5px;
+    margin: 5px 5px;
+    border: 2px solid ;
+    border-color: var(--colorPrincipal);
+    border-radius: 7px;
+    font-family: var(--robotoSlab);
+    font-weight: 500;
+    text-decoration: none;
+    background-color: var(--colorCuaternario);
+    
+    
+}
+
+.button:hover {
+    padding: 5px;
+    margin: 5px 5px;
+    border: 2px solid ;
+    border-color: var(--colorPrincipal);
+    border-radius: 5px;
+    font-family: var(--robotoSlab);
+    font-weight: 500;
+    text-decoration: none;
+    background-color: var(--colorTerciario);
+    color: var(--colorCuaternario);
+    transition: 0.7s;
+    
+}
