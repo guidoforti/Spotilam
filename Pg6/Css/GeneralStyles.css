@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+ 
+}
+
+
+
+
+.footer {
+    display: flex;
+    
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 20px 40px;
+    padding: 40px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 90%;
+    height: 100px;
+    
+    
+}
+
