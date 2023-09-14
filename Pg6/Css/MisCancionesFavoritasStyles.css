@@ -1,0 +1,161 @@
+
+:root {
+    --colorPrincipal :  #1B0044;
+    --colorSecundario : #5727A3;
+    --colorTerciario : #9153F4;
+    --colorCuaternario : #D6C5F0;
+    --roboto: 'Roboto', sans-serif; /*  nos manejamos con 400 y 500 de weight*/
+    --robotoSlab: 'Roboto Slab', serif ; /*  nos manejamos con 400 y 500 de weight*/
+     
+   }
+
+body {
+    font-family: var(--roboto);
+}
+
+.tabla {
+    display: grid;
+    grid-template-columns: 10% repeat(4, 20%);
+    width: auto;
+    height: auto;
+}
+
+.tabla * {
+    border: 1px solid black;
+    margin: 0;
+    padding: 10%;
+}
+
+.encabezado {
+    background-color: grey;
+    text-align: center;
+}
+
+.espacio {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.cancion {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.album {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.duracion {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.reproducciones {
+    grid-column: 5;
+    grid-row: 1;
+}
+
+
+.c01 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.c02 {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.c03 {
+    grid-column: 2;
+    grid-row: 4;
+}
+
+.c04 {
+    grid-column: 2;
+    grid-row: 5;
+}
+
+.a01 {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.a02 {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.a03 {
+    grid-column: 3;
+    grid-row: 4;
+}
+
+.a04 {
+    grid-column: 3;
+    grid-row: 5;
+}
+
+.d01 {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+.d02 {
+    grid-column: 4;
+    grid-row: 3;
+}
+
+.d03 {
+    grid-column: 4;
+    grid-row: 4;
+}
+
+.d04 {
+    grid-column: 4;
+    grid-row: 5;
+}
+
+.r01 {
+    grid-column: 5;
+    grid-row: 2;
+}
+
+.r02 {
+    grid-column: 5;
+    grid-row: 3;
+}
+
+.r03 {
+    grid-column: 5;
+    grid-row: 4;
+}
+
+.r04 {
+    grid-column: 5;
+    grid-row: 5;
+}
+
+.e01 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.e02 {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.e03 {
+    grid-column: 1;
+    grid-row: 4;
+}
+
+.e04 {
+    grid-column: 1;
+    grid-row: 5;
+}
+
+
+
