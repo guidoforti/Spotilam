@@ -20,12 +20,14 @@
 body {
     background-color: var(--colorPrincipal);
     color: var(--colorCuaternario);
+    height: 100vh;
+    
 }
 
 .contenedorVistaPrincipal {
-
-    width: 98%;
     
+    width: 98%;
+    height: 100%;
     margin-left: auto;
     margin-right: auto;
     display: grid;
@@ -84,11 +86,12 @@ body {
 }
 
 
-/* cont1 de seccion albums*/
+/* cont1 de seccion albums nombre y usuario*/
 .contenedorUsuarioTitulo {
     border: 2px solid wheat;
     grid-row: 1;
     display: grid;
+    height: 100px;
     
 }
 
@@ -104,6 +107,10 @@ body {
 .contenedorAlbums {
     border: 2px solid wheat;
     grid-row: 2/7;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
     display: grid;
     grid-template-columns: 33% 33% 33%;
     
@@ -115,8 +122,13 @@ body {
   
     border: 1px solid wheat;
     padding: 30px;
-    width: 60%;
-    margin: 20px 20px;
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 150px;
+    
     
     
 }
@@ -124,7 +136,10 @@ body {
 /* cont3 de seccion albums*/
 .reproductor {
 
+    border: 1px solid wheat;
     grid-row:7;
+
+    height: 150px;
 }
 
 
@@ -137,6 +152,6 @@ body {
 
 
 footer {
-    grid-column: 1/5;
+    grid-column: 1/7;
     grid-row: 2;
 }
