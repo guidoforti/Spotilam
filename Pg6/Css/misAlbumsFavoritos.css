@@ -11,12 +11,24 @@
     --robotoSlab: 'Roboto Slab', serif ; /*  nos manejamos con 400 y 500 de weight*/
     
 }
+main{
+    background-color: var(--colorCuaternario);
+}
 h1{
     text-align: center;
     justify-content: center;
     display: flexbox;
     font-family: var(--robotoSlab);
     font-size: 1.5rem;
+}
+.container {
+    width: 65%;
+    display: flex;
+   justify-content: space-between;
+   margin-left: 35%;
+}
+.usuario {
+    
 }
 .navbar {
     list-style: none;
@@ -30,6 +42,9 @@ h1{
     border-color: rgb(31, 30, 30);
     font-family: var(--roboto);
     font-weight: bold ;
+}
+.item:hover {
+    color:var(--colorSecundario);
 }
 
 .link {
