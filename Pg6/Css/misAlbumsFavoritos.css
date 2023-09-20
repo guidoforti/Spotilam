@@ -30,6 +30,8 @@ h1{
 .usuario {
     
 }
+
+/* COMENTO LOS ESTILOS YA QUE LOS MODIFICADOS LOS PASE A LOS ESTILOS GENERALES
 .navbar {
     list-style: none;
     width: 22%;
@@ -50,8 +52,9 @@ h1{
 .link {
     text-decoration: none;
     color: black;
+    
 }
 .seleccionado {
     text-decoration: none;
     color: rgb(105, 102, 102);
-}
+} */
