@@ -66,12 +66,26 @@ los estilos de la nav bar estan en el principal */
 .cancionReproduciendo {
     
     grid-row: 2;
-    border: 2px solid wheat;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 }
 
+.albumDescripcion {
+height: 80%;
+width: 100%;
+padding: 0px;
+}
 
-
-
+.imgAlbumDescripcion {
+    height: 50%;
+    width: 100%;
+    margin: 0px auto;
+    padding: 0px;
+}
 
 
 
@@ -127,16 +141,15 @@ los estilos de la nav bar estan en el principal */
   
     
     position: relative;
-    
     width: 80%;
+    border-radius: 40px;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
     height: 200px;
-    
-    
-    
+    transition: 1s;
+  
     
 }
 
@@ -154,14 +167,15 @@ los estilos de la nav bar estan en el principal */
 
     width: 100%;
     height: 100%;
+    border-radius: 40px;
 }
 
 
 
 .fav {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 15px;
 }
 
 
