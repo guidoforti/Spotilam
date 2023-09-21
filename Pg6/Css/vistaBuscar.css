@@ -1,0 +1,82 @@
+:root {
+    --colorPrincipal :  #1B0044;
+    --colorSecundario : #5727A3;
+    --colorTerciario : #9153F4;
+    --colorCuaternario : #D6C5F0;
+    --roboto: 'Roboto', sans-serif; /*  nos manejamos con 400 y 500 de weight*/
+    --robotoSlab: 'Roboto Slab', serif ; /*  nos manejamos con 400 y 500 de weight*/ 
+    }
+
+    body {
+        background-color: var(--colorPrincipal);
+        color: var(--colorCuaternario);
+        height: 100vh;  
+    }
+
+    header{
+        display: flex;
+    }
+
+    .sectionBuscar{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        margin-left: 650px;
+    }
+
+    .contenedorBoton input{
+        width: 350px;
+        padding: 10px;
+        padding-right: 35px;
+        border-radius: 5px;
+        border: none;
+        font-size: 1rem;
+    }
+
+    .contenedorIcono{
+    background-color: var(--colorCuaternario);
+    padding: auto;
+    position: absolute;
+    border: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 0 5px 5px 0;
+
+    }
+
+    .sectionUsuario{
+        position: relative;
+        display: flex;
+       justify-content:right; 
+       margin-left: auto;   
+    }
+
+
+
+    .containerPrincipal {
+        width: 98%;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: 15% 20% 20% 20% 20%;
+        grid-column-gap : 5px;
+        grid-template-rows: 80% 20%;
+        
+         
+        background-color : var(--colorPrincipal);
+    }
+
+    .sectionNav {
+        border: 2px solid white;
+        grid-column: 1;
+        display: grid;
+        
+    }
+
+
+
+ 
