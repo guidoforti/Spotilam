@@ -138,11 +138,7 @@ label {
     font-family: var(--roboto);
     font-weight: bold ;
 }
-.link:hover {
-    color:var(--colorSecundario);
-    background-color: var(--colorCuaternario);
-    transition: 0.7s;
-}
+
 
 .link {
     text-decoration: none;
@@ -152,7 +148,14 @@ label {
     border-style: solid;
     border-width: 2px;
     border-color: rgb(31, 30, 30);
+    transition: 1s;
     
+}
+
+.link:hover {
+    color:var(--colorSecundario);
+    background-color: var(--colorCuaternario);
+    transition: 1s;
 }
 .seleccionado {
     text-decoration: none;

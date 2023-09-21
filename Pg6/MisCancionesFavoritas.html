@@ -1,67 +1,119 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Css/GeneralStyles.css">
     <link rel="stylesheet" href="Css/MisCancionesFavoritasStyles.css">
-    <title>Canciones Favoritas</title>
+    <title>Spotilam</title>
 
-            <!-- FUENTES -->
+    <!-- FUENTES -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+     <!-- ICONOS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
+
 <body>
-    <header>
-        <h1>Mis canciones favoritas</h1>
-    </header>
-    <nav>
+    <div class="vistaCancionesFavoritas">
+        <section class="sectionNav">
 
-    </nav>
-    <main>
-        <section class="tabla">
-                <h2 class="espacio encabezado" > </h2>
-                <h2 class="cancion encabezado">Canción</h2>
-                <h2 class="album encabezado">Álbum</h2>
-                <h2 class="duracion encabezado">Duración</h2>
-                <h2 class="reproducciones encabezado">Reproducciones</h2>
-                <p class="e01"> </p>
-                <p class="c01">Canción 1</p>
-                <p class="c02">Canción 2</p>
-                <p class="c03">Canción 3</p>
-                <p class="c04">Canción 4</p>
-                <p class="e02"> </p>
-                <p class="a01">Álbum 1</p>
-                <p class="a02">Álbum 2</p>
-                <p class="a03">Álbum 3</p>
-                <p class="a04">Álbum 4</p>
-                <p class="e03"> </p>
-                <p class="d01">4:00</p>
-                <p class="d02">3:00</p>
-                <p class="d03">3:50</p>
-                <p class="d04">2:454</p>
-                <p class="e04"> </p>
-                <p class="r01">2000</p>
-                <p class="r02">1500</p>
-                <p class="r03">3400</p>
-                <p class="r04">1200</p>
+            <nav>
+                <ul class="navbar">
+                    <a class="link seleccionado" href="/Pg6/VistaPrincipal.html">
+                        <li class="item">Home</li>
+                    </a>
+                    <a class="link" href="/Pg6/">
+                        <li class="item">Buscar</li>
+                    </a>
+                    <a class="link" href="/Pg6/misAlbumsFavoritos.html">
+                        <li class="item">Mis albums</li>
+                    </a>
+                    <a class="link" href="/Pg6/MisCancionesFavoritas.html">
+                        <li class="item">Mis favoritas</li>
+                    </a>
+                </ul>
+            </nav>
+
+            <div class="cancionReproduciendo">
+
+                <img src="" alt="imagen de cancion que esta sonando">
+
+                <p>Descripción del disco/canción que está sonando</p>
+
+
+            </div>
+
+
         </section>
-    </main>
-    <aside>
+        <section class="seccionPrincipal">
+            <div class="contenedorUsuarioTitulo">
 
-    </aside>
-    <footer>
-        <div class="footer">
 
-    
-            <p>  Ivone Corleto : 43.863.355 ,   Marcos Armoa : 44.362.234 ,    Magali Galeano : 39.927.593</p>
-        
-            <p> Juliana Duran : 40.290.932  , Guido Forti : 39.346.350 , Ignacio Alonso : 40.540.317  </p>
-        
-        </div>
-    </footer>
 
-    
+                <header>
+                    <h1>Mis canciones favoritas</h1>
+                </header>
+
+                <div class="usuario">
+                    <p class="nombre-usuario">NOMBRE USUARIO </p>
+                    <a href="/Pg6/index.html" class="cerrar-sesion"> cerrar sesion</a>
+                    <img src="img/usuario.jpg" class="imagen-usuario">
+                </div>
+
+
+
+            </div>
+            <main class="contenedorCanciones">
+                <section class="tabla">
+                    <h2 class="espacio encabezado"> </h2>
+                    <h2 class="cancion encabezado">Canción</h2>
+                    <h2 class="album encabezado">Álbum</h2>
+                    <h2 class="duracion encabezado">Duración</h2>
+                    <h2 class="reproducciones encabezado">Reproducciones</h2>
+                    <div class="e01 posicion"> <span class="material-symbols-outlined fav"></span></div>
+                    <div class="c01 posicion">Canción 1 <span class="material-symbols-outlined fav">favorite</span></div> 
+                    <div class="c02 posicion">Canción 2 <span class="material-symbols-outlined fav">favorite</span></div>
+                    <div class="c03 posicion">Canción 3 <span class="material-symbols-outlined fav">favorite</span></div>
+                    <div class="c04 posicion">Canción 4 <span class="material-symbols-outlined fav">favorite</span></div>
+                    <div class="e02 posicion"> <span class="material-symbols-outlined fav"></span></div>
+                    <div class="a01 posicion">Álbum 1 <span class="material-symbols-outlined fav">favorite</span></div>
+                    <div class="a02 posicion">Álbum 2 <span class="material-symbols-outlined fav">favorite</span></div>
+                    <div class="a03 posicion">Álbum 3 <span class="material-symbols-outlined fav">favorite</span></div>
+                    <div class="a04 posicion">Álbum 4 <span class="material-symbols-outlined fav">favorite</span></div>
+                    <div class="e03 posicion"> <span class="material-symbols-outlined fav"></span></div>
+                    <div class="d01 posicion">4:00 <span class="material-symbols-outlined fav">favorite</span></div>
+                    <div class="d02 posicion">3:00 <span class="material-symbols-outlined fav">favorite</span></div>
+                    <div class="d03 posicion">2:25 <span class="material-symbols-outlined fav">favorite</span></div>
+                    <div class="d04 posicion">4:30 <span class="material-symbols-outlined fav">favorite</span></div>
+                    <div class="e04 posicion"> <span class="material-symbols-outlined fav"></span></div>
+                    <div class="r01 posicion">1000 <span class="material-symbols-outlined fav">favorite</span></div>
+                    <div class="r02 posicion">2000 <span class="material-symbols-outlined fav">favorite</span></div>
+                    <div class="r03 posicion">2500 <span class="material-symbols-outlined fav">favorite</span></div>
+                    <div class="r04 posicion">800 <span class="material-symbols-outlined fav">favorite</span></div>
+                </section>
+            </main>
+            <div class="reproductor">
+                <input type="range" class="barraReproductora">
+                <!-- <img src="img/reproductor.PNG" class="imagenReproductor"> -->
+            </div>
+        </section>
+        <footer class="contenedorFooter">
+            <div class="footer">
+
+
+                <p> Ivone Corleto : 43.863.355 , Marcos Armoa : 44.362.234 , Magali Galeano : 39.927.593</p>
+
+                <p> Juliana Duran : 40.290.932 , Guido Forti : 39.346.350 , Ignacio Alonso : 40.540.317 </p>
+
+            </div>
+        </footer>
+    </div>
+
 </body>
+
 </html>
