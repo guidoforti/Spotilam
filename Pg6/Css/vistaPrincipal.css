@@ -21,7 +21,7 @@
 
 
 body {
-    background-image: linear-gradient(black, var(--colorPrincipal));
+    background-image: linear-gradient( rgb(0, 0, 0), var(--colorPrincipal));
     color: var(--colorCuaternario);
 
 
@@ -75,18 +75,27 @@ los estilos de la nav bar estan en el principal */
 }
 
 .albumDescripcion {
-    height: 80%;
+    height: 70%;
     width: 100%;
     padding: 0px;
+    position: relative;
+    display: grid;
 }
 
 .imgAlbumDescripcion {
-    height: 50%;
+    height: 60%;
     width: 100%;
     margin: 0px auto;
     padding: 0px;
+    border-radius: 15px;
+    align-self: center;
+    
 }
 
+
+.descripcionCancion {
+    height: 30%;
+}
 
 
 /* SECCION DE ALBUMS PRINCIPAL */
@@ -151,8 +160,9 @@ h1 {
     margin-right: auto;
     display: grid;
     grid-template-columns: 33% 33% 33% ;
-    column-gap: 20px;
-    overflow-y :auto;
+    column-gap: 5px;
+    overflow-y: scroll;
+
     padding-left: 10px;
 
 
@@ -164,7 +174,7 @@ h1 {
     position: relative;
     border-radius: 15px;
     margin-top: 10px;
-    transition: 2s;
+    transition: 1.5s;
     height: 85%;
     width: 85%;
 
@@ -176,8 +186,9 @@ h1 {
 
 .album:hover {
     
-    box-shadow: var(--colorCuaternario) 5px 5px 30px;
-    transition: 2s;
+    box-shadow: var(--colorTerciario) 10px 10px 30px;
+    transition: 1.5s;
+    cursor: pointer;
 }
 
 .imgAlbum {
