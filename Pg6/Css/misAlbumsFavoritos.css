@@ -14,7 +14,24 @@
     font-size: 1.8rem;
     margin-left: 30px;
 }
+.favDescripcionAlbum {
+    position: absolute;
+    top : 5%;
+    right: 7%;
+    color: var(--colorPrincipal);
+}
+.logo-album {
+    margin-left: 2%;
+    padding: 15px;
+    height:auto;
+    width: 10%;
+}
 
+@media screen and (max-width: 30em) {
+    .logo-album {
+        
+    }
+}
 
 /* COMENTO LOS ESTILOS YA QUE LOS MODIFICADOS LOS PASE A LOS ESTILOS GENERALES
 .navbar {
