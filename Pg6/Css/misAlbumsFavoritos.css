@@ -38,6 +38,38 @@
         text-align: center;
 }
 }
+@media screen and (min-width: 30.1em) and (max-width: 40em){
+    .logo-album {
+        padding: 10px;
+        width: 22%;
+        height: 60%;
+    }
+    .titulo {
+        font-size: 1.2rem;
+        margin: 15px 0 5px 5px;
+        text-align: center;  
+}
+    .usuarioContainer {
+    padding-bottom: 20px;
+    
+}
+
+}
+@media screen and (min-width: 40.1em) and (max-width: 60em){
+    .logo-album {
+        padding: 10px;
+        margin: 2% 0 0 2%;
+        width: 15%;
+        height: 75%;
+    }
+    .titulo {
+        font-size: 1.5rem;
+        margin: 10px 0 5px 5px;
+        text-align: center;
+        align-self: center;    
+}
+}
+
 
 /* COMENTO LOS ESTILOS YA QUE LOS MODIFICADOS LOS PASE A LOS ESTILOS GENERALES
 .navbar {
