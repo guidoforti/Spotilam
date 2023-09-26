@@ -113,8 +113,18 @@ los estilos de la nav bar estan en el principal */
 }
 .favDescripcion {
     position: absolute;
+<<<<<<< Updated upstream
     top : 25%;
     right: 15%;
+=======
+<<<<<<< HEAD
+    top : 10px;
+    right: 22px;
+=======
+    top : 25%;
+    right: 15%;
+>>>>>>> 4f193fe624317b8b34d8a2a46c28f09faf51c853
+>>>>>>> Stashed changes
     color: var(--colorPrincipal);
 }
 .albumDescripcion {
@@ -210,9 +220,21 @@ los estilos de la nav bar estan en el principal */
 .logo {
     
     margin-left: 2%;
+<<<<<<< Updated upstream
     padding: 10px;
     height: auto;
     max-width: 10%;
+=======
+<<<<<<< HEAD
+    padding: 15px;
+    height: 90%;
+    width: 10%;
+=======
+    padding: 10px;
+    height: auto;
+    max-width: 10%;
+>>>>>>> 4f193fe624317b8b34d8a2a46c28f09faf51c853
+>>>>>>> Stashed changes
 
 }
 
@@ -255,7 +277,7 @@ los estilos de la nav bar estan en el principal */
     column-gap: 5px;
     overflow-y: scroll;
 
-    padding-left: 10px;
+    padding: 10px 0 0 10px;
 
 
 }

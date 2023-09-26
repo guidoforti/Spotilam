@@ -1,6 +1,4 @@
-*{
-    margin: 0;
-}
+
 
 :root {
     --colorPrincipal :  #1B0044;
@@ -11,25 +9,12 @@
     --robotoSlab: 'Roboto Slab', serif ; /*  nos manejamos con 400 y 500 de weight*/
     
 }
-main{
-    background-color: var(--colorCuaternario);
+
+.titulo {
+    font-size: 1.8rem;
+    margin-left: 30px;
 }
-h1{
-    text-align: center;
-    justify-content: center;
-    display: flexbox;
-    font-family: var(--robotoSlab);
-    font-size: 1.5rem;
-}
-.container {
-    width: 65%;
-    display: flex;
-   justify-content: space-between;
-   margin-left: 35%;
-}
-.usuario {
-    
-}
+
 
 /* COMENTO LOS ESTILOS YA QUE LOS MODIFICADOS LOS PASE A LOS ESTILOS GENERALES
 .navbar {
