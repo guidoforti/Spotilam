@@ -29,8 +29,14 @@
 
 @media screen and (max-width: 30em) {
     .logo-album {
-        
+      padding: 10px;
+      width: 20%;
     }
+    .titulo {
+        font-size: 1.6rem;
+        margin: 10px 0 5px 5px;
+        text-align: center;
+}
 }
 
 /* COMENTO LOS ESTILOS YA QUE LOS MODIFICADOS LOS PASE A LOS ESTILOS GENERALES
