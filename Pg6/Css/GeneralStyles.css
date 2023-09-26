@@ -86,12 +86,11 @@
     
     margin: 20px 40px;
     padding: 40px;
-    border: 1px solid black;
-    border-radius: 10px;
+    border-radius: 15px;
     width: 90%;
-    height: 100px;
+    height: auto;
+    background-image: linear-gradient(var(--colorPrincipal) , var(--colorSecundario) , var(--colorTerciario) ) ;
     
-   
     
 }
 
