@@ -24,7 +24,7 @@
 
             <nav>
                 <ul class="navbar">
-                    <a class="link seleccionado" href="/Pg6/VistaPrincipal.html">
+                    <a class="link" href="/Pg6/VistaPrincipal.html">
                         <li class="item">Home</li>
                     </a>
                     <a class="link" href="/Pg6/">
@@ -33,7 +33,7 @@
                     <a class="link" href="/Pg6/misAlbumsFavoritos.html">
                         <li class="item">Mis albums</li>
                     </a>
-                    <a class="link" href="/Pg6/MisCancionesFavoritas.html">
+                    <a class="link seleccionado" href="/Pg6/MisCancionesFavoritas.html">
                         <li class="item">Mis favoritas</li>
                     </a>
                 </ul>
@@ -41,7 +41,7 @@
 
             <div class="cancionReproduciendo">
 
-                <img src="" alt="imagen de cancion que esta sonando">
+                <img class="imgAlbumDescripcion" src="img/nora.jpg" />
 
                 <p>Descripción del disco/canción que está sonando</p>
 
@@ -56,7 +56,8 @@
 
 
                 <header>
-                    <h1>Mis canciones favoritas</h1>
+                    <img class="logo"  src="img/logo2.png" alt="logo principal" />
+                    <!-- <h1>Mis canciones favoritas</h1> -->
                 </header>
 
                 <div class="usuario">
@@ -71,30 +72,46 @@
             <main class="contenedorCanciones">
                 <section class="tabla">
                     <h2 class="espacio encabezado"> </h2>
-                    <h2 class="cancion encabezado">Canción</h2>
+                    <h2 class="cancion encabezado">Título</h2>
                     <h2 class="album encabezado">Álbum</h2>
                     <h2 class="duracion encabezado">Duración</h2>
                     <h2 class="reproducciones encabezado">Reproducciones</h2>
-                    <div class="e01 posicion"> <span class="material-symbols-outlined fav"></span></div>
-                    <div class="c01 posicion">Canción 1 <span class="material-symbols-outlined fav">favorite</span></div> 
-                    <div class="c02 posicion">Canción 2 <span class="material-symbols-outlined fav">favorite</span></div>
-                    <div class="c03 posicion">Canción 3 <span class="material-symbols-outlined fav">favorite</span></div>
-                    <div class="c04 posicion">Canción 4 <span class="material-symbols-outlined fav">favorite</span></div>
-                    <div class="e02 posicion"> <span class="material-symbols-outlined fav"></span></div>
-                    <div class="a01 posicion">Álbum 1 <span class="material-symbols-outlined fav">favorite</span></div>
-                    <div class="a02 posicion">Álbum 2 <span class="material-symbols-outlined fav">favorite</span></div>
-                    <div class="a03 posicion">Álbum 3 <span class="material-symbols-outlined fav">favorite</span></div>
-                    <div class="a04 posicion">Álbum 4 <span class="material-symbols-outlined fav">favorite</span></div>
-                    <div class="e03 posicion"> <span class="material-symbols-outlined fav"></span></div>
-                    <div class="d01 posicion">4:00 <span class="material-symbols-outlined fav">favorite</span></div>
-                    <div class="d02 posicion">3:00 <span class="material-symbols-outlined fav">favorite</span></div>
-                    <div class="d03 posicion">2:25 <span class="material-symbols-outlined fav">favorite</span></div>
-                    <div class="d04 posicion">4:30 <span class="material-symbols-outlined fav">favorite</span></div>
-                    <div class="e04 posicion"> <span class="material-symbols-outlined fav"></span></div>
-                    <div class="r01 posicion">1000 <span class="material-symbols-outlined fav">favorite</span></div>
-                    <div class="r02 posicion">2000 <span class="material-symbols-outlined fav">favorite</span></div>
-                    <div class="r03 posicion">2500 <span class="material-symbols-outlined fav">favorite</span></div>
-                    <div class="r04 posicion">800 <span class="material-symbols-outlined fav">favorite</span></div>
+                    <div class="e01 posicion imagen-cancion">
+                        <img src="img/badbunny-wsg.jpeg" alt="" class="portada">
+                        <div class="overlay"></div>
+                        <div class="icono-play"></div> 
+                    </div>
+                    <div class="c01 posicion"><p>SHE GOES - Bad Bunny</p> <span class="material-symbols-outlined fav">favorite</span></div> 
+                    <div class="c02 posicion"><p>8 AM - Nicki Nicole</p> <span class="material-symbols-outlined fav">favorite</span></div>
+                    <div class="c03 posicion"><p>COLUMBIA - Quevedo</p> <span class="material-symbols-outlined fav">favorite</span></div>
+                    <div class="c04 posicion"><p>TRANKY FUNKY - Trueno</p> <span class="material-symbols-outlined fav">favorite</span></div>
+                    <div class="e02 posicion imagen-cancion"> 
+                        <img src="img/nicki-8am.jpeg" alt="" class="portada">
+                        <div class="overlay"></div>
+                        <div class="icono-play"></div>
+                    </div>
+                    <div class="a01 posicion"><p>SHE GOES</p> <span class="material-symbols-outlined fav">favorite</span></div>
+                    <div class="a02 posicion"><p>ALMA</p> <span class="material-symbols-outlined fav">favorite</span></div>
+                    <div class="a03 posicion"><p>COLUMBIA</p> <span class="material-symbols-outlined fav">favorite</span></div>
+                    <div class="a04 posicion"><p>TRANKY FUNKY</p> <span class="material-symbols-outlined fav">favorite</span></div>
+                    <div class="e03 posicion imagen-cancion">
+                        <img src="img/quevedo-columbia.png" class="portada">
+                        <div class="overlay"></div>
+                        <div class="icono-play"></div>
+                    </div>
+                    <div class="d01 posicion"><p>3:50</p></div>
+                    <div class="d02 posicion"><p>2:27</p></div>
+                    <div class="d03 posicion"><p>3:05</p></div>
+                    <div class="d04 posicion"><p>2:38</p></div>
+                    <div class="e04 posicion imagen-cancion"> 
+                        <img src="img/trueno-tranky-funky.jpg" alt="" class="portada">
+                        <div class="overlay"></div>
+                        <div class="icono-play"></div>
+                    </div>
+                    <div class="r01 posicion"><p>476.185.672</p></div>
+                    <div class="r02 posicion"><p>73.177.119</p></div>
+                    <div class="r03 posicion"><p>302.062.375</p></div>
+                    <div class="r04 posicion"><p>16.263.465</p></div>
                 </section>
             </main>
             <div class="reproductor">
