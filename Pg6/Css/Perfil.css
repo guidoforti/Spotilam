@@ -8,9 +8,7 @@
      
    }
 
-html {
-    height: 100vh;
-}
+
 
 
 .usuario {
@@ -72,6 +70,35 @@ h1{
    border-radius: 5px;
 }
 
+
+@media screen and (max-width: 30em) {
+    /* Estilos para smartphones */
+
+    .contenedorPerfil{
+        width: 400px;
+    }
+
+    body {
+        font-size: 70%;
+    }
+}
+
+/* MEDIA QUERYS DE SECCION PRINCIPAL TABLETS*/
+
+@media screen and (min-width: 30.1em) and (max-width: 60em) {
+
+    /* Estilos para tablets */
+
+    .contenedorPerfil{
+        width: 400px;
+       
+    }
+    body {
+        font-size: 80%;
+    }
+
+
+}
 
 
  
