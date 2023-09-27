@@ -79,6 +79,7 @@ html {
     position: absolute;
     right: 100%;
     margin: 15px;
+    top: 0;
 }
 
 .nombre-usuario {
@@ -100,6 +101,9 @@ header {
     position: relative;
 }
 
+.link {
+    padding: 15px;
+}
 .albumDescripcion {
     height: 70%;
     width: 90%;
@@ -125,7 +129,8 @@ header {
 
 
 .descripcionCancion {
-    height: 30%;
+    height: 40%;
+    overflow: auto;
     font-size: 0.9em;
 }
 
