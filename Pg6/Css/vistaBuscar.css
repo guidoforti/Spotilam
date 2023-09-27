@@ -1,81 +1,282 @@
+* {
+    box-sizing: border-box;
+
+}
+
+
 :root {
+
     --colorPrincipal :  #1B0044;
     --colorSecundario : #5727A3;
     --colorTerciario : #9153F4;
     --colorCuaternario : #D6C5F0;
-    --roboto: 'Roboto', sans-serif; /*  nos manejamos con 400 y 500 de weight*/
-    --robotoSlab: 'Roboto Slab', serif ; /*  nos manejamos con 400 y 500 de weight*/ 
+    --roboto: 'Roboto', sans-serif; 
+    /*  nos manejamos con 400 y 500 de weight*/
+    --robotoSlab: 'Roboto Slab', serif ; 
+    /*  nos manejamos con 400 y 500 de weight*/ 
+
     }
 
-    body {
-        background-color: var(--colorPrincipal);
+ body {
+   
         color: var(--colorCuaternario);
-        height: 100vh;  
-    }
+         /* background-color: rgb(0, 0, 0 , 0.95); */
+         background-image: linear-gradient( var(--colorPrincipal) ,rgb(10, 10, 10));
+         font-family: var(--robotoSlab);
+    
+ }
+    
+ .contenedorVistaPrincipal {
+    
+        height: 100vh;
+      
+        display: grid;
+        grid-template-columns: 15% 85%;
+        grid-column-gap: 10px;
+        grid-template-rows: 95%;
+    
+}
 
-    header{
-        display: flex;
-    }
+    /* SECCION DE NAV Y CANCION SONANDO */
 
-    .sectionBuscar{
-        position: relative;
-        display: flex;
-        justify-content: center;
-        margin: 0 auto;
-        margin-left: 650px;
-    }
+.sectionNav {
 
-    .contenedorBoton input{
-        width: 350px;
-        padding: 10px;
-        padding-right: 35px;
-        border-radius: 5px;
-        border: none;
-        font-size: 1rem;
-    }
+    background-color: rgb(0, 0, 0 , 0.4);
 
-    .contenedorIcono{
-    background-color: var(--colorCuaternario);
-    padding: auto;
+    /* background-image: linear-gradient( var(--colorPrincipal) ,rgb(0, 0, 0)); */ 
+    border-radius: 15px;
+    grid-column: 1;
+    display: grid;
+    height: 100%;
+
+}
+
+    /* cont1 de seccion navy canc sonando
+
+    los estilos de la nav bar estan en el principal */
+
+
+    /* cont2 de seccion navy canc sonando*/
+.cancionReproduciendo {
+
+    grid-row: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+ .favDescripcion {
+
     position: absolute;
-    border: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    border-radius: 0 5px 5px 0;
+    top : 65px;
+    right: 40px;
+    color: var(--colorPrincipal);
 
-    }
+}
 
-    .sectionUsuario{
-        position: relative;
-        display: flex;
-       justify-content:right; 
-       margin-left: auto;   
-    }
+.albumDescripcion {
+
+    height: 70%;
+    width: 90%;
+    padding: 5px;
+    position: relative;
+    display: grid;
+
+}
+
+.imgAlbumDescripcion {
+
+    height: 60%;
+    width: 90%;
+    margin: 0px auto;
+    padding: 0px;
+    border-radius: 15px;
+    align-self: center;
+    
+}
+
+
+ .descripcionCancion {
+
+    height: 30%;
+
+}
+
+/* SECCION DE ALBUMS PRINCIPAL */
+
+.sectionPrincipal {
+
+    /* background-image: linear-gradient( var(--colorPrincipal) ,rgb(0, 0, 0)); */
+
+     background-color: rgba(0, 0, 0, 0.4);
+     border-radius: 15px;
+     width: 98%;
+     grid-column: 2/6;
+     display: grid;
+     grid-template-columns: 100%;
+     grid-row-gap: 3px;
+     height: 100%;
+
+}
+
+.contenedorUsuarioTitulo {
+
+    display: inline-block;
+     
+}
+
+.contenedorBoton{
+    width: 26%;
+    display: inline-block;
+    margin-left: 5.5%;
+}
+
+.barraBusqueda{
+    width: 100%;
+    height: 40px;
+    float: left;
+    background-color: var(--colorCuaternario);
+    border-radius: 25px;
+}
+
+.barraBusqueda::placeholder {
+    padding-left: 10px;
+}
+
+.usuario{
+    display: inline-block;
+    
+}
+
+.usuarioContainer {
+
+ display: flex;
+ width: 25%;
+ float: right;
+   
+}
+
+.imagen-usuario{
+    display: inline-block;
+    width: 12%;
+}
+   
+.cerrar-sesion {
+
+       text-decoration: none;
+       font-family:var(--robotoSlab);
+       color: var(--colorCuaternario);
+}
+   
+.imagen-usuario > a > img {
+
+       height: 40px;
+       width: 40px;
+       border-radius: 80%;
+       margin-right: 0px;
+       margin-top: 0px;
+
+}
+   
+.nombre-usuario {
+
+       color: var(--colorCuaternario);
+       font-family:var(--robotoSlab);
+
+}
+
+/* cont2 de seccion albums*/
+.contenedorAlbums {
+
+    grid-row: 2/7;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 33% 33% 33% ;
+    column-gap: 5px;
+    overflow-y: scroll;
+
+    padding-left: 10px;
+
+}
+
+.album {
+
+    position: relative;
+    border-radius: 10px;
+    margin-top: 10px;
+    transition: 1.5s;
+    height: 90%;
+    width: 90%;
+
+}
+
+.album:hover {
+    
+    box-shadow: var(--colorTerciario) 15px 15px 40px;
+   
+    transition: 1.5s;
+    cursor: pointer;
+    opacity: 0.8;
+      
+}
+
+.imgAlbum {
+
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+
+}
+
+.fav {
+
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transition: 1s;;
+    color: var(--colorPrincipal); 
+}
+
+.fav:hover {
+
+    color: var(--colorTerciario); 
+    transition: 1s;
+    transform: scale(1.5);
+    
+}
+/* cont3 de seccion albums*/
+.reproductor {
+
+
+    grid-row: 7;
+    height: 150px;
+
+    text-align: center;
+    display: grid;
+    align-items: center;
+}
+
+.barraReproductora {
+    margin: 0% 20%
+}
+
+.imagenReproductor {
+    height: 100%;
+    width: 100%;
+}
+
+footer {
+    grid-column: 1/7;
+    grid-row: 2;
+}
 
 
 
-    .containerPrincipal {
-        width: 98%;
-        height: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        display: grid;
-        grid-template-columns: 15% 20% 20% 20% 20%;
-        grid-column-gap : 5px;
-        grid-template-rows: 80% 20%;
-        
-         
-        background-color : var(--colorPrincipal);
-    }
-
-    .sectionNav {
-        border: 2px solid white;
-        grid-column: 1;
-        display: grid;
-        
-    }
 
 
 

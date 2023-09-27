@@ -65,6 +65,16 @@
      'GRAD' 0,
      'opsz' 24
    }
+
+   
+.material-symbols-rounded {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
  
 
 .footer {
@@ -76,12 +86,11 @@
     
     margin: 20px 40px;
     padding: 40px;
-    border: 1px solid black;
-    border-radius: 10px;
+    border-radius: 15px;
     width: 90%;
-    height: 100px;
+    height: auto;
+    background-image: linear-gradient(var(--colorPrincipal) , var(--colorSecundario) , var(--colorTerciario) ) ;
     
-   
     
 }
 
@@ -148,18 +157,23 @@ label {
     color :var(--colorCuaternario);
     display: block;
     height: 25%;
-    
     transition: 1s;
+    font-size: 20px;
     
 }
 
 .link:hover {
-    color:var(--colorSecundario);
-    background-color: var(--colorCuaternario);
-    transition: 1s;
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
+    text-underline-offset: 5px;
 }
 .seleccionado {
-    text-decoration: none;
+    font-size: 20px;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-color: var(--colorPrincipal);
+    text-decoration-thickness: 5px;
     color: rgb(31, 30, 30);
     background-color: var(--colorTerciario);
+    text-underline-offset: 5px;
 }
