@@ -123,19 +123,40 @@
 
 .contenedorUsuarioTitulo {
 
-    display: flex;
+    display: inline-block;
      
 }
 
+.contenedorBoton{
+    width: 26%;
+    display: inline-block;
+    margin-left: 5.5%;
+}
 
+.barraBusqueda{
+    width: 100%;
+    height: 40px;
+    float: left;
+    background-color: var(--colorCuaternario);
+    border-radius: 25px;
+}
+
+.usuario{
+    display: inline-block;
+    
+}
 
 .usuarioContainer {
 
-    margin-left: auto;
-    display: flex;
-    flex-direction: row;
-    margin-right: 15px ;
+ display: flex;
+ width: 25%;
+ float: right;
    
+}
+
+.imagen-usuario{
+    display: inline-block;
+  
 }
    
 .cerrar-sesion {
@@ -147,11 +168,11 @@
    
 .imagen-usuario > a > img {
 
-       height: 60px;
-       width: 60px;
+       height: 40px;
+       width: 40px;
        border-radius: 80%;
-       margin-right: 15px;
-       margin-top: 15px;
+       margin-right: 0px;
+       margin-top: 0px;
 
 }
    

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./Css/GeneralStyles.css" rel="stylesheet" />
     <link href="./Css/vistaPrincipal.css" rel="stylesheet" />
+    <link href="./Css/vistaBuscar.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
     <!-- FUENTES -->
@@ -32,10 +33,10 @@ href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wgh
             <nav class>
 
                 <ul class="navbar">
-                    <a class="link seleccionado" href="VistaPrincipal.html">
+                    <a class="link" href="VistaPrincipal.html">
                         <li class="item">Home</li>
                     </a>
-                    <a class="link" href="vistaBuscar.html">
+                    <a class="link seleccionado" href="vistaBuscar.html">
                         <li class="item">Buscar</li>
                     </a>
                     <a class="link" href="misAlbumsFavoritos.html">
@@ -71,27 +72,17 @@ href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wgh
             <div class="contenedorUsuarioTitulo">
 
                 <div class="contenedorBoton">
-
-                    <article class="barraBusqueda">
-                        <input type="text" placeholder="Buscar...">
-                        <div class="contenedorIcono">
-                            <span class="material-symbols-outlined iconoBusqueda">
-                                search
-                                </span>
-                        </div>
-                    </article>
-
+                    <input type="text" class="barraBusqueda" placeholder="Buscar...">
                 </div>
 
 
                 <div class="usuarioContainer">
-
                     <div class="imagen-usuario">
                         <a href="vistaBuscar.html"> <img src="img/usuario.jpg" alt="avatar usuario" />
                     </div></a>
 
                     <div class="usuario">
-                        <h2>Nombre usuario</h2>
+                        <label style="display: block;">Nombre usuario</label>
                         <a class="cerrar-sesion" href="index.html">Cerrar sesion</a>
                     </div>
 
@@ -113,7 +104,7 @@ href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wgh
                     </span>
                 </article>
                 <article class="album">
-                    <a href="MisCancionesFavoritas.html"> <img class="imgAlbum" src="img/armin.jpeg" /> </a>
+                    <a href="MisCancionesFavoritas.html"> <img class="imgAlbum" src="img/yeat.jpg" /> </a>
                     <span class="material-symbols-outlined fav">
                         library_add
                     </span>
@@ -125,7 +116,7 @@ href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wgh
                     </span>
                 </article>
                 <article class="album">
-                    <a href="MisCancionesFavoritas.html"> <img class="imgAlbum" src="img/ntvg.jpeg" /> </a>
+                    <a href="MisCancionesFavoritas.html"> <img class="imgAlbum" src="img/kayneWest.jpg" /> </a>
                     <span class="material-symbols-outlined fav">
                         library_add
                     </span>
