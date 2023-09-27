@@ -177,3 +177,49 @@ label {
     background-color: var(--colorTerciario);
     text-underline-offset: 5px;
 }
+
+.reproductor {
+
+
+    grid-row: 7;
+    height: 150px;
+
+    text-align: center;
+    display: grid;
+    align-items: center;
+}
+
+.reproductor__botones{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
+
+.reproductor__boton{
+    cursor: pointer;
+}
+.botonesPrincipales{
+    grid-column: 3/4;
+    display: flex;
+    justify-content: space-around;
+}
+
+.reproductor__boton--volumen{
+    justify-self: end;
+    cursor: pointer;
+}
+.barraReproductora {
+    margin: 0% 20%
+}
+
+.barraReproductora::-webkit-slider-runnable-track{
+    background-color: var(--colorPrincipal);
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    cursor: pointer;
+}
+
+.imagenReproductor {
+    height: 100%;
+    width: 100%;
+}
