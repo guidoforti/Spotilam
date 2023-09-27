@@ -27,11 +27,8 @@ href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wgh
 <body>
 
     <main class="contenedorVistaPrincipal">
-
         <section class="sectionNav">
-
-            <nav class>
-
+            <nav>
                 <ul class="navbar">
                     <a class="link" href="VistaPrincipal.html">
                         <li class="item">Home</li>
@@ -46,16 +43,17 @@ href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wgh
                         <li class="item">Mis favoritas</li>
                     </a>
                 </ul>
-    
             </nav>
 
             <div class="cancionReproduciendo">
                 <article class="albumDescripcion">
-                    <a href="MisCancionesFavoritas.html"> <img class="imgAlbumDescripcion"
-                            src="./img/nora.jpg" /> </a>
-                    <span class="material-symbols-rounded favDescripcion">
-                        star
-                    </span>
+                    <a href="MisCancionesFavoritas.html"> <img class="imgAlbumDescripcion" src="img/nora.jpg" />
+
+                        <span class="material-symbols-rounded favDescripcion">
+                            star
+                        </span>
+                    </a>
+
                 </article>
 
                 <article class="descripcionCancion">
@@ -63,18 +61,13 @@ href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wgh
                         que cuando se seleccione uno de los albums se cambie la descripcion segun el album que se
                         selecciono</p>
                 </article>
+
             </div>
-
         </section>
-
         <section class="sectionPrincipal">
 
             <div class="contenedorUsuarioTitulo">
-
-                <div class="contenedorBoton">
-                    <input type="text" class="barraBusqueda" placeholder="Buscar...">
-                </div>
-
+                 <input type="text" class="barraBusqueda" placeholder="Buscar...">
 
                 <div class="usuarioContainer">
                     <div class="imagen-usuario">
@@ -178,7 +171,7 @@ href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wgh
                 </article>
                 <article class="album">
                     <a href="MisCancionesFavoritas.html"> <img class="imgAlbum" src="img/2feet.jpg" /> </a>
-                    
+
                     <span class="material-symbols-outlined fav">
                         library_add
                     </span>
@@ -186,10 +179,15 @@ href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wgh
             </div>
 
             <div class="reproductor">
-
-
-
-
+                <div class="reproductor__botones">
+                    <div class="botonesPrincipales">
+                        <img src="img/skip_previous_FILL0_wght400_GRAD0_opsz24.svg" alt="BotonPrevio" class="reproductor__boton">
+                        <img src="img/play_circle_FILL0_wght400_GRAD0_opsz24.svg" alt="BotonPlay" class="reproductor__boton">
+                        <img src="img/skip_next_FILL0_wght400_GRAD0_opsz24.svg" alt="BotonAdelante" class="reproductor__boton">
+                    </div>
+                    
+                    <img src="img/volume_up_FILL0_wght400_GRAD0_opsz24.svg" alt="BotonVolumen" class="reproductor__boton--volumen">
+                </div>
                 <input type="range" class="barraReproductora">
 
                 <!-- <img src="img/reproductor.PNG" class="imagenReproductor"> -->

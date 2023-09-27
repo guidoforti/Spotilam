@@ -1,16 +1,17 @@
-
 :root {
-    --colorPrincipal :  #1B0044;
-    --colorSecundario : #5727A3;
-    --colorTerciario : #9153F4;
-    --colorCuaternario : #D6C5F0;
-    --roboto: 'Roboto', sans-serif; /*  nos manejamos con 400 y 500 de weight*/
-    --robotoSlab: 'Roboto Slab', serif ; /*  nos manejamos con 400 y 500 de weight*/
-     
-   }
+    --colorPrincipal: #1B0044;
+    --colorSecundario: #5727A3;
+    --colorTerciario: #9153F4;
+    --colorCuaternario: #D6C5F0;
+    --roboto: 'Roboto', sans-serif;
+    /*  nos manejamos con 400 y 500 de weight*/
+    --robotoSlab: 'Roboto Slab', serif;
+    /*  nos manejamos con 400 y 500 de weight*/
+
+}
 
 * {
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 html {
@@ -18,16 +19,17 @@ html {
 }
 
 .vistaCancionesFavoritas {
-    width: 98%;
+    width: 100%;
     height: 100%;
     margin-left: auto;
     margin-right: auto;
     display: grid;
     /* grid-template-columns: 15% 20% 20% 20% 20%; */
     grid-template-columns: 15% 82%;
-    grid-column-gap : 5px;
+    grid-column-gap: 5px;
     grid-template-rows: 80% 20%;
     grid-column-gap: 10px;
+    overflow: auto;
 }
 
 .favDescripcion {
@@ -58,7 +60,9 @@ html {
     display: flex;
     align-items: flex-end;
     flex-direction: column;
-    position: relative;
+    position: absolute;
+    bottom: 35%;
+    right: 0%;
 }
 
 .cerrar-sesion {
@@ -75,11 +79,12 @@ html {
     position: absolute;
     right: 100%;
     margin: 15px;
+    top: 0;
 }
 
 .nombre-usuario {
     margin-right: 15px;
-    
+
 }
 
 .contenedorUsuarioTitulo {
@@ -87,14 +92,18 @@ html {
     display: grid;
     height: 100px;
     z-index: 1;
-    
-    
+
+
 }
 
 header {
     z-index: 1;
+    position: relative;
 }
 
+.link {
+    padding: 15px;
+}
 .albumDescripcion {
     height: 70%;
     width: 90%;
@@ -111,39 +120,39 @@ header {
 .imgAlbumDescripcion {
     height: auto;
     max-width: 90%;
-    margin: 20px;
+    margin: 10%;
     padding: 0px;
     border-radius: 15px;
     align-self: center;
-
+    
 }
 
 
 .descripcionCancion {
-    height: 30%;
+    height: 40%;
     overflow: auto;
     font-size: 0.9em;
 }
 
 
 .logo {
-    
+
     margin-left: 2%;
     padding: 15px;
-    height:auto;
+    height: auto;
     max-width: 10%;
     margin-top: 5px;
 
 }
 
 .contenedorCanciones {
-    overflow:auto;
+    overflow: auto;
     text-align: center;
     vertical-align: middle;
     grid-row: 2;
 }
 
-/* SECCION DE NAV Y CANCION SONANDO */ 
+/* SECCION DE NAV Y CANCION SONANDO */
 
 .sectionNav {
 
@@ -153,22 +162,20 @@ header {
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 15px;
 
-    
-    
+
+
 }
 
 .cancionReproduciendo {
-    
+
     grid-row: 2;
-    /* border: 2px solid wheat; */
 }
 
 body {
     font-family: var(--roboto);
-    /* background-color: var(--colorPrincipal); */
     color: var(--colorCuaternario);
     overflow: auto;
-    background-image: linear-gradient( var(--colorPrincipal) ,rgb(10, 10, 10));
+    background-image: linear-gradient(var(--colorPrincipal), rgb(10, 10, 10));
     background-repeat: no-repeat;
     height: 100%;
     margin: 0;
@@ -183,7 +190,7 @@ body {
 }
 
 .tabla * {
-    border: 1px solid rgb(100,100,100,0.4);
+    border: 1px solid rgb(100, 100, 100, 0.4);
     margin: 0;
     padding: 10%;
     border-left: none;
@@ -197,7 +204,7 @@ body {
 .fav {
     position: absolute;
     top: 40%;
-    right:10%;
+    right: 10%;
     border: none;
     padding: 0;
 }
@@ -208,7 +215,7 @@ body {
 }
 
 .encabezado {
-    background-image: linear-gradient( var(--colorSecundario) ,var(--colorPrincipal));
+    background-image: linear-gradient(var(--colorSecundario), var(--colorPrincipal));
     text-align: center;
 }
 
@@ -233,13 +240,13 @@ body {
     position: absolute;
     height: 50%;
     width: 50%;
-    top:25%;
+    top: 25%;
     left: 25%;
     background-image: url(../img/icono-play.png);
-    background-size: contain;
+    background-size: cover;
     padding: 0;
     opacity: 0;
-    border:none;
+    border: none;
 }
 
 .overlay {
@@ -249,9 +256,12 @@ body {
     width: 80%;
     height: 80%;
     border: none;
-    background-color: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente */
-    opacity: 0; /* La capa estará oculta inicialmente */
-    transition: opacity 0.3s ease; /* Transición suave para la opacidad */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Fondo semi-transparente */
+    opacity: 0;
+    /* La capa estará oculta inicialmente */
+    transition: opacity 0.3s ease;
+    /* Transición suave para la opacidad */
 }
 
 .imagen-cancion:hover .icono-play {
@@ -389,10 +399,8 @@ body {
 }
 
 .reproductor {
-
-    /* border: 1px solid wheat; */
-    grid-row:3;
-    height: 100%;
+    grid-row: 3;
+    height: 150px;
     text-align: center;
     display: grid;
     align-items: center;
@@ -407,31 +415,154 @@ body {
     width: 100%;
 }
 
-body::-webkit-scrollbar {
-    width: 10px;
-    background-color: black;
-}
-body::-webkit-scrollbar-thumb {
-    background-color: var(--colorSecundario);
-    border-radius: 50px;
-}
-
-.contenedorCanciones::-webkit-scrollbar {
+*::-webkit-scrollbar {
     width: 10px;
     background-color: black;
 }
 
-.contenedorCanciones::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background-color: var(--colorSecundario);
     border-radius: 50px;
 }
 
-footer {
+.contenedorFooter {
     grid-column: 1/7;
     grid-row: 2;
 }
 
+/* MEDIA QUERYS TABLET */
+
+@media screen and (min-width: 30.1em) and (max-width: 60em) {
+
+    /*  HEADER TABLET  */
+
+    body {
+        font-size: 80%;
+    }
+
+    .logo {
+        max-width: 25%;
+    }
+
+    .nombre-usuario {
+        margin-right: 16%;
+    }
 
 
+    /*CONTENEDOR DE CANCIONES TABLET */
+
+    .seccionPrincipal {
+        width: 86%;
+        margin-left: 10%;
+    }
+
+    .fav {
+        right: 1%;
+        top: 25%;
+    }
 
 
+    /*CONTENEDOR NAV TABLET  */
+
+    .sectionNav {
+        width: 150%;
+        margin-left: 10px;
+    }
+
+    .favDescripcion {
+        top: 28%
+    }
+
+
+    /*REPRODUCTOR TABLET  */
+
+    .reproductor {
+        height: 50%;
+    }
+
+}
+
+
+/* MEDIA QUERYS SMARTPHONE*/
+
+@media screen and (max-width: 30em) {
+
+    /* HEADER SMARTPHONE */
+
+    body {
+        font-size: 70%;
+        position: relative;
+    }
+    
+
+    .nombre-usuario {
+        margin-right: 20%;
+    }
+
+
+    .logo {
+
+        max-width: 30%;
+
+    }
+
+    .imagen-usuario {
+        margin-top: 5%;
+    }
+
+    /* SECCION PRINCIPAL SMARTPHONE */
+
+    .vistaCancionesFavoritas {
+        display: block;
+    }
+
+    .seccionPrincipal {
+        margin-top: 15%
+        
+    }
+
+    /* CONTENEDOR CANCIONES SMARTPHONE */
+
+    .tabla {
+        grid-template-columns: 20% repeat(4, 40.5%);
+    }
+
+    .fav {
+        right: 5%;
+        top: 25%;
+    }
+
+    /* CONTENEDOR NAV SMARTPHONE */
+
+    .sectionNav {
+
+
+        /* background-image: linear-gradient( var(--colorPrincipal) ,rgb(0, 0, 0)); */
+        grid-column: 1;
+        grid-row: 1;
+        display: grid;
+        height: 5%;
+        width: 100%;
+        position: absolute;
+        top: 5px;
+
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .cancionReproduciendo {
+        display: none;
+    }
+
+
+    /* REPRODUCTOR SMARTPHONE */
+
+    /* FOOTER SMARTPHONE */
+
+    .footer {
+        margin-left: 5%;
+    }
+
+}
