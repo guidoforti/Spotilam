@@ -1,16 +1,16 @@
 :root {
-    --colorPrincipal :  #1B0044;
-    --colorSecundario : #5727A3;
-    --colorTerciario : #9153F4;
-    --colorCuaternario : #D6C5F0;
-    --roboto: 'Roboto', sans-serif; /*  nos manejamos con 400 y 500 de weight*/
-    --robotoSlab: 'Roboto Slab', serif ; /*  nos manejamos con 400 y 500 de weight*/
-     
-   }
+    --colorPrincipal: #1B0044;
+    --colorSecundario: #5727A3;
+    --colorTerciario: #9153F4;
+    --colorCuaternario: #D6C5F0;
+    --roboto: 'Roboto', sans-serif;
+    /*  nos manejamos con 400 y 500 de weight*/
+    --robotoSlab: 'Roboto Slab', serif;
+    /*  nos manejamos con 400 y 500 de weight*/
 
-html {
-    height: 100vh;
 }
+
+
 
 
 .usuario {
@@ -18,16 +18,19 @@ html {
     display: flex;
     align-items: flex-end;
     flex-direction: column;
+    padding: 10px;
 }
 
 .cerrar-sesion {
     position: relative;
     top: 40%;
+    text-decoration: none;
 }
 
-h1{
+h1 {
     text-align: center;
 }
+
 
 .imagen-usuario {
     height: 60px;
@@ -43,44 +46,52 @@ h1{
     position: absolute;
 }
 
-.contenedorUsuarioTitulo{
-  
+.contenedorUsuarioTitulo {
+
     grid-row: 1;
     display: grid;
     height: 100px;
-    
+
 }
 
 
 
-.contenedorPerfil{
-    
+.contenedorPerfil {
+
     margin: 3% auto;
-    
-   width: 600px;
-   background-color: #9153F4;
-   padding: 60px;
-   
-   border-radius: 20px;
-   box-shadow: 8px 8px 0px -2px #1B0044;
-   align-items: center;
+
+    width: 600px;
+    background-color: #9153F4;
+    padding: 60px;
+
+    border-radius: 20px;
+    box-shadow: 8px 8px 0px -2px #1B0044;
+    align-items: center;
 }
 
-.recuadro{
-    border: solid 1px #D6C5F0;
-   width: 280px;
-   border-radius: 5px;
-}
-
-
-
- 
-
- .a-link{
+.campo {
     display: flex;
-    margin-top: 10px;
-    margin-bottom: 30px;
- }
+    justify-content: space-between;
+    margin: 20px;
+    align-items: center;
+}
+
+.recuadro {
+    border: solid 1px #D6C5F0;
+    width: 280px;
+    height: 40px;
+    border-radius: 5px;
+
+}
+
+
+
+
+
+.a-link {
+    display: flex;
+    margin: 10px 0 30px 15px;
+}
 
 
 
@@ -89,7 +100,7 @@ body {
     /* background-color: var(--colorPrincipal); */
     color: var(--colorCuaternario);
     overflow: auto;
-    background-image: linear-gradient(black,var(--colorPrincipal));
+    background-image: linear-gradient(black, var(--colorPrincipal));
     background-repeat: no-repeat;
     height: 100%;
     margin: 0;
@@ -98,5 +109,5 @@ body {
 footer {
     grid-column: 1/7;
     grid-row: 2;
-    
+
 }

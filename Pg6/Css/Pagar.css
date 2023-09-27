@@ -23,6 +23,7 @@
 .cerrar-sesion {
     position: relative;
     top: 40%;
+    text-decoration: none;
 }
 
 h1 {
