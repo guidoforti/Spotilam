@@ -330,25 +330,7 @@ los estilos de la nav bar estan en el principal */
 }
 
 /* cont3 de seccion albums*/
-.reproductor {
 
-
-    grid-row: 7;
-    height: 150px;
-
-    text-align: center;
-    display: grid;
-    align-items: center;
-}
-
-.barraReproductora {
-    margin: 0% 20%
-}
-
-.imagenReproductor {
-    height: 100%;
-    width: 100%;
-}
 
 
 /* MEDIA QUERYES PARA SECCION PRINCIPAL*/
