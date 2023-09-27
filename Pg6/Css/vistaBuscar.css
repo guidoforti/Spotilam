@@ -70,7 +70,7 @@
  .favDescripcion {
 
     position: absolute;
-    top : 10px;
+    top : 65px;
     right: 40px;
     color: var(--colorPrincipal);
 
@@ -156,7 +156,7 @@
 
 .imagen-usuario{
     display: inline-block;
-  
+    width: 12%;
 }
    
 .cerrar-sesion {
@@ -210,9 +210,6 @@
 
 }
 
-
-
-
 .album:hover {
     
     box-shadow: var(--colorTerciario) 15px 15px 40px;
@@ -230,8 +227,6 @@
     border-radius: 10px;
 
 }
-
-
 
 .fav {
 
@@ -270,55 +265,12 @@
     width: 100%;
 }
 
-
-
 footer {
     grid-column: 1/7;
     grid-row: 2;
 }
 
 
-
-
-/*
-
-
-    header{
-        display: flex;
-    }
-
-    .sectionBuscar{
-        position: relative;
-        display: flex;
-        justify-content: center;
-        margin: 0 auto;
-        margin-left: 650px;
-    }
-
-    .contenedorBoton input{
-        width: 350px;
-        padding: 10px;
-        padding-right: 35px;
-        border-radius: 5px;
-        border: none;
-        font-size: 1rem;
-    }
-
-    .contenedorIcono{
-    background-color: var(--colorCuaternario);
-    padding: auto;
-    position: absolute;
-    border: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    border-radius: 0 5px 5px 0;
-
-    }
-
-
-*/
 
 
 
