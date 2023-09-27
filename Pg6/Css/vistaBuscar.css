@@ -37,7 +37,8 @@
     
 }
 
-    /* SECCION DE NAV Y CANCION SONANDO */
+
+    /* ------------------------------------ SECCION DE NAV Y CANCION SONANDO ---------------------------------- */
 
 .sectionNav {
 
@@ -102,6 +103,8 @@
  .descripcionCancion {
 
     height: 30%;
+    overflow: auto;
+    font-size: 0.9em;
 
 }
 
@@ -140,6 +143,7 @@
     float: left;
     background-color: var(--colorCuaternario);
     border-radius: 25px;
+    margin-top: 20px;
 }
 
 .barraBusqueda::placeholder {
@@ -161,7 +165,7 @@
 
 .imagen-usuario{
     display: inline-block;
-    width: 12%;
+    width: 20%;
 }
    
 .cerrar-sesion {
@@ -173,11 +177,11 @@
    
 .imagen-usuario > a > img {
 
-       height: 40px;
-       width: 40px;
+       height: 60px;
+       width: 60px;
        border-radius: 80%;
        margin-right: 0px;
-       margin-top: 0px;
+       margin-top: 30px;
 
 }
    
