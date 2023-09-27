@@ -196,8 +196,8 @@ body {
 
 .fav {
     position: absolute;
-    top: 60px;
-    right:20px;
+    top: 40%;
+    right:10%;
     border: none;
     padding: 0;
 }
