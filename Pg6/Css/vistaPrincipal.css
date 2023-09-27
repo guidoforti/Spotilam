@@ -150,6 +150,8 @@ los estilos de la nav bar estan en el principal */
     font-size: 0.9em;
 }
 
+
+
 /* MEDIA QUERYS DE SECCION NAV SMARTPHONES*/
 
 @media screen and (max-width: 30em) {
@@ -465,6 +467,26 @@ los estilos de la nav bar estan en el principal */
     }
 }
 
+body::-webkit-scrollbar {
+    width: 10px;
+    background-color: black;
+    border-radius: 50px;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--colorSecundario);
+    border-radius: 50px;
+}
+
+.contenedorAlbums::-webkit-scrollbar {
+    width: 10px;
+    background-color: black;
+    border-radius: 50px;
+}
+
+.contenedorAlbums::-webkit-scrollbar-thumb {
+    background-color: var(--colorSecundario);
+    border-radius: 50px;
+}
 
 
 
