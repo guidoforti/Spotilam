@@ -1,83 +1,100 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Css/GeneralStyles.css" >
+    <link rel="stylesheet" href="Css/GeneralStyles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link rel="stylesheet" href="Css/registro.css">
+    <link rel="stylesheet" href="Css/registro.css">
 
     <!-- FUENTES -->
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-<!-- ICONOS -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <title>formRegistro</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <!-- ICONOS -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Spotilam</title>
 </head>
+
 <body>
 
-<main id="vistaPrincipal">
+    <main id="vistaPrincipal">
+
+        <section id="formRegistro">
+
+            <!--CREO EL FORMULARIO DE REGISTRO -->
+            <form class="form-ingreso" action="index.html" method="post">
+                <div class="campo-form">
+                    <label for="usuario">Usuario</label>
+
+                    <input class="recuadro" type="text" id="usuario" name="usuario" placeholder="Ingrese el usuario"
+                        required=true />
+                </div>   
+                <div class="campo-form">
+                    <label for="contraseña">Contraseña</label>
+
+                    <input class="recuadro" type="password" id="contraseña" name="contraseña"
+                        placeholder="Ingrese una contraseña" required=true />
+                </div>
+                
+                <div class="campo-form">
+                    <label for="confirmeContraseña">Confirme su contraseña</label>
+
+                    <input class="recuadro" type="password" id="confirmeContraseña" name="confirmeContraseña"
+                        placeholder="Ingrese la contraseña nuevamente" required=true />
+                </div>
+                
+                
+                <div class="campo-form">
+                    <label for="fechaNacimiento">Fecha de Nacimiento</label>
+
+                    <input class="recuadro" type="date" id="fechaNacimiento" name="fechaNacimiento"
+                        placeholder="Ingrese su fecha de Nacimiento" required="true" />
+                </div>
+                
+                
+                <div class="campo-form">
+                    <label for="email">Email</label>
+                    <input class="recuadro" type="email" id="email" name="email" placeholder="Ingrese su mail"
+                        required="true" />
+                </div>
+                
+                
+
+                <!-- HAGO EL LINK PARA LA VISTA DE PAGAR LUEGO LO LINKEAMOS BIEN -->
+                <a class="a-link" href="Premium.html"> Conviertase en Premium</a>
+                <br>
+                <input class="button" type="submit" value=" Registrarse" />
+
+
+            </form>
+
+
+        </section>
 
 
 
-<section id="formRegistro">
-    
+    </main>
 
-   
-    <!--CREO EL FORMULARIO DE REGISTRO --> 
-    <form class="form-ingreso" action="index.html" method="post">
-        <label for ="usuario">Usuario</label>
-        
-        <input class="recuadro" type = "text" id = "usuario" name="usuario" placeholder="Ingrese el usuario" required = true/>
-        <br>
-        <label for = "contraseña" >Contraseña</label>
-       
-        <input class="recuadro" type = "password" id = "contraseña" name="contraseña" placeholder="Ingrese una contraseña" required = true />
-        <br>
-        <label for = "confirmeContraseña" >Confirme su contraseña</label>
-        
-         <input class="recuadro" type = "password" id = "confirmeContraseña" name="confirmeContraseña" placeholder="Ingrese la contraseña nuevamente" required = true />
-         <br>
+    <footer>
 
-         <label for = "fechaNacimiento" >Fecha de Nacimiento</label>
-         
-         <input class="recuadro" type="date" id="fechaNacimiento" name="fechaNacimiento" placeholder="Ingrese su fecha de Nacimiento" required="true"/>
-         <br>
-
-         <label for="email">e-mail</label>
-         <input class="recuadro" type="email" id = "email" name="email" placeholder="Ingrese su mail" required="true"/>
-         <br>
-
-         <!-- HAGO EL LINK PARA LA VISTA DE PAGAR LUEGO LO LINKEAMOS BIEN -->
-         <a class="a-link" href="Premium.html"> Conviertase en Premium</a>
-         <br>
-         <input class="button" type="submit" value=" Registrarse"  />
-         
-        
-    </form>
-
-    
-</section>
+        <div class="footer">
 
 
-    
-</main>
-    
-<footer> 
+            <p> Ivone Corleto : 43.863.355 , Marcos Armoa : 44.362.234 , Magali Galeano : 39.927.593</p>
 
-    <div class="footer">
-    
+            <p> Juliana Duran : 40.290.932 , Guido Forti : 39.346.350 , Ignacio Alonso : 40.540.317 </p>
 
-        <p>  Ivone Corleto : 43.863.355 ,   Marcos Armoa : 44.362.234 ,    Magali Galeano : 39.927.593</p>
 
-        <p> Juliana Duran : 40.290.932  , Guido Forti : 39.346.350 , Ignacio Alonso : 40.540.317  </p>
-    
-    
-    </div>
-        
-    
+        </div>
+
+
     </footer>
 </body>
+
 </html>
