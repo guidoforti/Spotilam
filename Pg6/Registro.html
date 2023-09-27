@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Css/GeneralStyles.css" >
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="stylesheet" href="Css/registro.css">
+
     <!-- FUENTES -->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -24,33 +27,33 @@
 
    
     <!--CREO EL FORMULARIO DE REGISTRO --> 
-    <form action="FormularioIngreso.html" method="post">
-        <label for ="usuario"> Usuario : </label>
+    <form class="form-ingreso" action="index.html" method="post">
+        <label for ="usuario">Usuario</label>
         
-        <input type = "text" id = "usuario" name="usuario" placeholder="Ingrese el Usuario" required = true/>
+        <input class="recuadro" type = "text" id = "usuario" name="usuario" placeholder="Ingrese el usuario" required = true/>
         <br>
-        <label for = "contraseña" > Contraseña :</label>
+        <label for = "contraseña" >Contraseña</label>
        
-        <input type = "password" id = "contraseña" name="contraseña" placeholder="Ingrese contraseña" required = true />
+        <input class="recuadro" type = "password" id = "contraseña" name="contraseña" placeholder="Ingrese una contraseña" required = true />
         <br>
-        <label for = "confirmeContraseña" > Confirme su Contraseña :</label>
+        <label for = "confirmeContraseña" >Confirme su contraseña</label>
         
-         <input type = "password" id = "confirmeContraseña" name="confirmeContraseña" placeholder="Ingrese contraseña" required = true />
+         <input class="recuadro" type = "password" id = "confirmeContraseña" name="confirmeContraseña" placeholder="Ingrese la contraseña nuevamente" required = true />
          <br>
 
-         <label for = "fechaNacimiento" > Fecha de Nacimiento :</label>
+         <label for = "fechaNacimiento" >Fecha de Nacimiento</label>
          
-         <input type="date" id="fechaNacimiento" name="fechaNacimiento" placeholder="ingrese fecha de Nacimiento" required="true"/>
+         <input class="recuadro" type="date" id="fechaNacimiento" name="fechaNacimiento" placeholder="Ingrese su fecha de Nacimiento" required="true"/>
          <br>
 
-         <label for="email"> e-mail:</label>
-         <input type="email" id = "email" name="email" placeholder="ingrese su mail" required="true"/>
+         <label for="email">e-mail</label>
+         <input class="recuadro" type="email" id = "email" name="email" placeholder="Ingrese su mail" required="true"/>
          <br>
 
          <!-- HAGO EL LINK PARA LA VISTA DE PAGAR LUEGO LO LINKEAMOS BIEN -->
-         <a href="ACA VA EL LINK A LA VISTA DE PAGAR"> Conviertase en Premium</a>
+         <a class="a-link" href="Premium.html"> Conviertase en Premium</a>
          <br>
-         <input type="submit" value=" Registrarse"  />
+         <input class="button" type="submit" value=" Registrarse"  />
          
         
     </form>

@@ -1,0 +1,127 @@
+:root {
+    --colorPrincipal :  #1B0044;
+    --colorSecundario : #5727A3;
+    --colorTerciario : #9153F4;
+    --colorCuaternario : #D6C5F0;
+    --roboto: 'Roboto', sans-serif; /*  nos manejamos con 400 y 500 de weight*/
+    --robotoSlab: 'Roboto Slab', serif ; /*  nos manejamos con 400 y 500 de weight*/
+     
+   }
+
+html {
+    height: 100vh;
+}
+
+.usuario {
+    grid-column: 3/5;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.cerrar-sesion {
+    position: relative;
+    top: 40%;
+}
+
+h1{
+    text-align: center;
+}
+
+.imagen-usuario {
+    height: 60px;
+    width: 60px;
+    border-radius: 80%;
+    position: relative;
+    right: 140px;
+    bottom: 5px;
+}
+
+
+.nombre-usuario {
+    position: absolute;
+}
+
+.contenedorUsuarioTitulo{
+  
+    grid-row: 1;
+    display: grid;
+    height: 100px;
+    
+}
+
+
+.plan-elegido{
+
+    margin: 1%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.contenedor-form{
+  
+    margin: 3% auto;
+    
+   width: 600px;
+   background-color: #9153F4;
+   padding: 60px;
+   
+   border-radius: 20px;
+   box-shadow: 8px 8px 0px -2px #1B0044;
+   align-items: center;
+   
+
+}
+
+img{
+    height: 60px;
+    width: 60px;
+    margin-right: 2%;
+}
+.recuadro{
+    border: solid 1px #D6C5F0;
+   width: 280px;
+   border-radius: 5px;
+}
+
+.descripcion{
+    width: 70%;
+}
+.a-boton{
+    
+    width: 90px;
+     font-weight: 700;
+     border-radius: 10px;
+    margin: auto;
+    margin-top: 10px;
+  
+    text-align: center;
+   
+     padding: 15px 40px;
+     text-decoration: none;
+     color: #9153F4;
+     background-color: #D6C5F0;
+ }
+
+
+
+
+body {
+    font-family: var(--roboto);
+    /* background-color: var(--colorPrincipal); */
+    color: var(--colorCuaternario);
+    overflow: auto;
+    background-image: linear-gradient(black,var(--colorPrincipal));
+    background-repeat: no-repeat;
+    height: 100%;
+    margin: 0;
+}
+
+
+footer {
+    grid-column: 1/7;
+    grid-row: 2;
+}

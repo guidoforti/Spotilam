@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="Css/GeneralStyles.css" >
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
+    <link rel="stylesheet" href="Css/index.css">
+
     <!-- FUENTES -->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -20,22 +22,23 @@
     <section id="formRegistro">
     
         <!--CREO EL FORMULARIO DE REGISTRO --> 
-        <form action="#" method="post">
+        <form class="form-index" action="#" method="post">
 
-            <label for ="usuario"> Nombre de Usuario : </label>
+            <label for ="usuario">Usuario</label>
+            
+            <input class="recuadro" type = "text" id = "usuario" name="usuario" placeholder="Ingrese el nombre de Usuario" required = true/>
             <br>
-            <input type = "text" id = "usuario" name="usuario" placeholder="Ingrese el nombre de Usuario" required = true/>
+            <label for="contraseña" >Contraseña</label>
+           
+            <input class="recuadro" type = "password" id = "contraseña" name="contraseña" placeholder="Ingrese su contraseña" required = true />
             <br>
-            <label for="contraseña" > Ingrese la Contraseña :</label>
-           <br>
-            <input type = "password" id = "contraseña" name="contraseña" placeholder="contraseña" required = true />
-            <br>
-            <input type="submit" value="Iniciar Sesion">
+            <input class="button" type="submit" value="Iniciar Sesion">
+            <a class="button" href="FormRegistro.html" title="linkRegistro" >Registrarse</a>
         </form>
     
         
         
-        <a class="button" href="FormRegistro.html" title="linkRegistro" >Registrarse</a>
+        
     </section>
 </main>
 

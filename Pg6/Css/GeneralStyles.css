@@ -95,14 +95,16 @@ label {
 .button {
     padding: 5px;
     margin: 5px 5px;
-    border: 2px solid ;
-    border-color: var(--colorPrincipal);
-    border-radius: 7px;
+    
+    box-shadow: 4px 4px 0px -2px #5727A3;
+    
+    border-radius: 4px;
     font-family: var(--robotoSlab);
     font-weight: 500;
     text-decoration: none;
-    background-color: var(--colorCuaternario);
     
+    color: #9153F4;
+    background-color: #D6C5F0;
     
 }
 
@@ -110,7 +112,7 @@ label {
     padding: 5px;
     margin: 5px 5px;
     border: 2px solid ;
-    border-color: var(--colorPrincipal);
+    
     border-radius: 5px;
     font-family: var(--robotoSlab);
     font-weight: 500;

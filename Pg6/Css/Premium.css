@@ -1,0 +1,117 @@
+:root {
+    --colorPrincipal :  #1B0044;
+    --colorSecundario : #5727A3;
+    --colorTerciario : #9153F4;
+    --colorCuaternario : #D6C5F0;
+    --roboto: 'Roboto', sans-serif; /*  nos manejamos con 400 y 500 de weight*/
+    --robotoSlab: 'Roboto Slab', serif ; /*  nos manejamos con 400 y 500 de weight*/
+     
+   }
+
+html {
+    height: 100vh;
+}
+
+.usuario {
+    grid-column: 3/5;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.cerrar-sesion {
+    position: relative;
+    top: 40%;
+}
+
+h1{
+    text-align: center;
+}
+
+.imagen-usuario {
+    height: 60px;
+    width: 60px;
+    border-radius: 80%;
+    position: relative;
+    right: 140px;
+    bottom: 5px;
+}
+
+
+.nombre-usuario {
+    position: absolute;
+}
+
+.contenedorUsuarioTitulo{
+  
+    grid-row: 1;
+    display: grid;
+    height: 100px;
+    
+}
+
+.a-boton{
+    
+   width: 90px;
+    font-weight: 700;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+    margin: 20px;
+    padding: 15px 40px;
+    text-decoration: none;
+    color: #9153F4;
+    background-color: #D6C5F0;
+}
+
+.planesPremium{
+    margin: auto;
+    width: 80%;
+    height: 300px;
+    
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+ 
+}
+
+.plan1{
+    text-align: center;
+}
+.plan2{
+    text-align: center;
+}
+.plan3{
+    text-align: center;
+}
+
+.botonespremium{
+    text-align: center;
+
+}
+
+img{
+    height: 60px;
+    width: 60px;
+   
+}
+
+body {
+    font-family: var(--roboto);
+    /* background-color: var(--colorPrincipal); */
+    color: var(--colorCuaternario);
+    overflow: auto;
+    background-image: linear-gradient(black,var(--colorPrincipal));
+    background-repeat: no-repeat;
+    height: 100%;
+    margin: 0;
+}
+
+
+footer {
+    grid-column: 1/7;
+    grid-row: 2;
+    
+    margin-top: 5%;
+}

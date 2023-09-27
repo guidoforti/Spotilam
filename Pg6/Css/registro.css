@@ -1,0 +1,55 @@
+:root {
+    --colorPrincipal :  #1B0044;
+    --colorSecundario : #5727A3;
+    --colorTerciario : #9153F4;
+    --colorCuaternario : #D6C5F0;
+    --roboto: 'Roboto', sans-serif; /*  nos manejamos con 400 y 500 de weight*/
+    --robotoSlab: 'Roboto Slab', serif ; /*  nos manejamos con 400 y 500 de weight*/
+     
+   }
+
+html {
+    height: 100vh;
+}
+
+.a-link{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+ }
+
+ .recuadro{
+    border: solid 1px #D6C5F0;
+   width: 280px;
+   border-radius: 5px;
+}
+
+ .form-ingreso{
+    margin: 3% auto;
+    
+    width: 600px;
+    background-color: #9153F4;
+    padding: 60px;
+    
+    border-radius: 20px;
+    box-shadow: 8px 8px 0px -2px #1B0044;
+    align-items: center;
+ }
+
+
+body {
+    font-family: var(--roboto);
+    /* background-color: var(--colorPrincipal); */
+    color: var(--colorCuaternario);
+    overflow: auto;
+    background-image: linear-gradient(black,var(--colorPrincipal));
+    background-repeat: no-repeat;
+    height: 100%;
+    margin: 0;
+}
+
+footer {
+    grid-column: 1/7;
+    grid-row: 2;
+    
+}
