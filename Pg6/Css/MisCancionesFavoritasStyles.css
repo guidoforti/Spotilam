@@ -126,7 +126,6 @@ header {
 
 .descripcionCancion {
     height: 30%;
-    overflow: auto;
     font-size: 0.9em;
 }
 
