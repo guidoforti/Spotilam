@@ -239,6 +239,10 @@ los estilos de la nav bar estan en el principal */
 
 }
 
+.usuario{
+    font-family: var(--roboto);
+}
+
 .cerrar-sesion {
     text-decoration: none;
     font-family: var(--robotoSlab);

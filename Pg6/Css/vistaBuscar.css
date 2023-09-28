@@ -1,3 +1,13 @@
+:root {
+    --colorPrincipal :  #1B0044;
+    --colorSecundario : #5727A3;
+    --colorTerciario : #9153F4;
+    --colorCuaternario : #D6C5F0;
+    --roboto: 'Roboto', sans-serif; /*  nos manejamos con 400 y 500 de weight*/
+    --robotoSlab: 'Roboto Slab', serif ; /*  nos manejamos con 400 y 500 de weight*/
+     
+   }
+
 .contenedorUsuarioTitulo {
     width: 90%;
     margin: auto;
@@ -15,4 +25,8 @@
 
 .barraBusqueda::placeholder {
     padding-left: 10px;
+}
+
+.usuario{
+    font-family: var(--roboto);
 }
