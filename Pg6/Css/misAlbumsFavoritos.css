@@ -10,10 +10,7 @@
     
 }
 
-.titulo {
-    font-size: 1.8rem;
-    margin-left: 30px;
-}
+
 .favDescripcionAlbum {
     position: absolute;
     top : 5%;
@@ -23,32 +20,24 @@
 .logo-album {
     margin-left: 2%;
     padding: 15px;
-    height:auto;
-    width: 10%;
+    height: auto;
+    max-width: 12%;
 }
 
 @media screen and (max-width: 30em) {
     .logo-album {
-      padding: 10px;
-      width: 20%;
+      padding: 8px;
+      max-width: 30%;
     }
-    .titulo {
-        font-size: 1.6rem;
-        margin: 10px 0 5px 5px;
-        text-align: center;
-}
+
 }
 @media screen and (min-width: 30.1em) and (max-width: 40em){
     .logo-album {
-        padding: 10px;
-        width: 22%;
-        height: 60%;
+        padding: 5px;
+        max-width: 35%;
+        
     }
-    .titulo {
-        font-size: 1.2rem;
-        margin: 15px 0 5px 5px;
-        text-align: center;  
-}
+
     .usuarioContainer {
     padding-bottom: 20px;
     
@@ -57,10 +46,9 @@
 }
 @media screen and (min-width: 40.1em) and (max-width: 60em){
     .logo-album {
-        padding: 10px;
-        margin: 2% 0 0 2%;
-        width: 15%;
-        height: 75%;
+        padding: 5px;
+        max-width: 20%;
+        
     }
     .titulo {
         font-size: 1.5rem;
