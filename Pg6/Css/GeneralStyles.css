@@ -223,3 +223,17 @@ input[type="range"]::-webkit-slider-thumb{
     height: 100%;
     width: 100%;
 }
+
+.imagenMenu{
+    display: none;
+}
+
+@media screen and (max-width: 30em){
+    .imagenMenu{
+        display: inline;
+    }
+
+    .navbar{
+        display: none;
+    }
+}
