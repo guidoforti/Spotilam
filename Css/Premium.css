@@ -8,9 +8,7 @@
      
    }
 
-html {
-    height: 100vh;
-}
+
 
 .usuario {
     grid-column: 3/5;
