@@ -155,12 +155,12 @@ los estilos de la nav bar estan en el principal */
 /* MEDIA QUERYS DE SECCION NAV SMARTPHONES*/
 
 @media screen and (max-width: 30em) {
-    /* Estilos para smartphones */
+    /* Estilos para smartphones 
 
     .sectionNav {
 
 
-        /* background-image: linear-gradient( var(--colorPrincipal) ,rgb(0, 0, 0)); */
+        /* background-image: linear-gradient( var(--colorPrincipal) ,rgb(0, 0, 0)); 
         grid-column: 1;
         grid-row: 1;
         display: grid;
@@ -175,6 +175,25 @@ los estilos de la nav bar estan en el principal */
 
     .cancionReproduciendo {
         display: none;
+    }*/
+
+    .cancionReproduciendo {
+        display: none;
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-around;
+       
+        
+    }
+    .item {
+        padding: 2px;
+        font-size: 0.8em;
+    }
+    .seleccionado {
+        text-decoration: none;
+       background-color: #130030;
+        color: var(--colorSecundario)
     }
 }
 

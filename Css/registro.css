@@ -10,7 +10,9 @@
 
 }
 
-
+*{
+    box-sizing: border-box;
+}
 
 .a-link {
     display: flex;
@@ -78,15 +80,8 @@ body {
     font-family: var(--roboto);
     /* background-color: var(--colorPrincipal); */
     color: var(--colorCuaternario);
-    overflow: auto;
-    background-image: linear-gradient(black, var(--colorPrincipal));
-    background-repeat: no-repeat;
-    height: 100%;
     margin: 0;
+    
 }
 
-footer {
-    grid-column: 1/7;
-    grid-row: 2;
 
-}
