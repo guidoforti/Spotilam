@@ -85,7 +85,7 @@
     align-items: center;  
     padding: 40px;
     width: 100%;
-    height: auto;
+
     background-image: linear-gradient(var(--colorPrincipal) , var(--colorSecundario) , var(--colorTerciario) ) ;
     
     

@@ -10,6 +10,25 @@
 
 }
 
+body {
+    font-family: var(--roboto);
+   
+    color: var(--colorCuaternario);
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(var(--colorPrincipal), rgb(10, 10, 10));
+    display: grid;
+    grid-template-rows: 80% 20%;
+
+    
+}
+
+.vistaPrincipal {
+    grid-row: 1;
+}
+footer {
+    grid-row: 2;
+}
 *{
     box-sizing: border-box;
 }
@@ -76,12 +95,6 @@
 }
 
 
-body {
-    font-family: var(--roboto);
-    /* background-color: var(--colorPrincipal); */
-    color: var(--colorCuaternario);
-    margin: 0;
-    
-}
+
 
 
