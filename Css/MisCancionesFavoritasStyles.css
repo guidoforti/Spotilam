@@ -15,7 +15,6 @@
 }
 
 
-
 .vistaCancionesFavoritas {
     width: 100%;
     height: 100%;
@@ -23,16 +22,14 @@
     margin-right: auto;
     display: grid;
     /* grid-template-columns: 15% 20% 20% 20% 20%; */
-    grid-template-columns: 15% 82%;
-    grid-column-gap: 5px;
-    grid-template-rows: 80% 20%;
-    grid-column-gap: 10px;
-    overflow: auto;
+    grid-template-columns: 15% 84.5%;
+    grid-column-gap: 0.5%;
+    grid-template-rows: 95% 15%;
 }
 
 .favDescripcion {
     position: absolute;
-    top: 22%;
+    top: 35%;
     right: 8%;
     color: var(--colorPrincipal);
 }
@@ -42,7 +39,8 @@
 .seccionPrincipal {
     background-color: rgba(0, 0, 0, 0.4);
     /* border: 2px solid white; */
-    grid-column: 2/6;
+    width: 98%;
+    grid-column: 2/3;
     display: grid;
     grid-template-columns: 100%;
     grid-row-gap: 25px;
@@ -81,7 +79,7 @@
 }
 
 .nombre-usuario {
-    margin-right: 15px;
+    margin-right: 62%;
 
 }
 
@@ -99,11 +97,16 @@ header {
     position: relative;
 }
 
+.navbar {
+    height: 70%;
+}
+
 .link {
-    padding: 15px;
+    padding: 25px;
+    padding-left: 10px;
 }
 .albumDescripcion {
-    height: 70%;
+    height: 40%;
     width: 90%;
     padding: 5px;
     position: relative;
@@ -118,7 +121,8 @@ header {
 .imgAlbumDescripcion {
     height: auto;
     max-width: 90%;
-    margin: 10%;
+    margin-left: 10%;
+    margin-top: 35%;
     padding: 0px;
     border-radius: 15px;
     align-self: center;
@@ -146,6 +150,7 @@ header {
     text-align: center;
     vertical-align: middle;
     grid-row: 2;
+    margin: 0 2%;
 }
 
 /* SECCION DE NAV Y CANCION SONANDO */
@@ -154,11 +159,16 @@ header {
 
     /* border: 2px solid white; */
     grid-column: 1;
-    display: grid;
+    /* display: grid; */
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 15px;
+    margin-left: 3%;
 
 
+}
+
+.item {
+    padding: 10px;
 }
 
 .cancionReproduciendo {
@@ -166,14 +176,19 @@ header {
     grid-row: 2;
 }
 
+html,body {
+    min-height: 100vh;
+}
+
 body {
     font-family: var(--roboto);
     color: var(--colorCuaternario);
-    overflow: auto;
+    /* overflow: auto; */
     background-image: linear-gradient(var(--colorPrincipal), rgb(10, 10, 10));
     background-repeat: no-repeat;
-    height: 100%;
+    height: 100vh;
     margin: 0;
+    margin-top: 8px;
 }
 
 
@@ -410,6 +425,17 @@ body {
     width: 100%;
 }
 
+.footer {
+    margin-top: 2%;
+}
+
+.descripcion {
+    margin: 0;
+    margin-top: 20%;
+    padding: 0 10px;
+
+}
+
 *::-webkit-scrollbar {
     width: 10px;
     background-color: black;
@@ -421,7 +447,7 @@ body {
 }
 
 .contenedorFooter {
-    grid-column: 1/7;
+    grid-column: 1/3;
     grid-row: 2;
 }
 
@@ -440,7 +466,7 @@ body {
     }
 
     .nombre-usuario {
-        margin-right: 16%;
+        margin-right: 64%;
     }
 
 
@@ -486,12 +512,15 @@ body {
 
     body {
         font-size: 70%;
-        position: relative;
+        /* position: relative; */
     }
     
+    html {
+        width: 107%;
+    }
 
     .nombre-usuario {
-        margin-right: 20%;
+        margin-right: 66%;
     }
 
 
@@ -544,7 +573,25 @@ body {
     }
 
     .navbar {
-        display: none;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .item {
+        padding: 0;
+        margin-top: 5%;
+    }
+
+    .link {
+        padding: 0;
+        padding-left: 0;
+    }
+
+    .seleccionado {
+        text-decoration: none;
+        color:var(--colorSecundario);
+        background-color: transparent;
+        
     }
 
     .cancionReproduciendo {
@@ -556,8 +603,8 @@ body {
 
     /* FOOTER SMARTPHONE */
 
-    .footer {
+    /* .footer {
         margin-left: 5%;
-    }
+    } */
 
 }
