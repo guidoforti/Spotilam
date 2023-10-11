@@ -440,6 +440,10 @@ los estilos de la nav bar estan en el principal */
 
     }
 
+    .usuario{
+        
+        width: 100px;
+    }
 }
 
 /* MEDIA QUERYS DE SECCION NAV SMARTPHONES*/
@@ -480,6 +484,10 @@ los estilos de la nav bar estan en el principal */
         padding-left: 10px;
 
 
+    }
+    .usuario{
+        
+        width: 100px;
     }
 }
 
