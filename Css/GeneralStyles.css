@@ -156,6 +156,7 @@ label {
     height: 25%;
     transition: 1s;
     font-size: 20px;
+  
     
 }
 
@@ -163,6 +164,8 @@ label {
     text-decoration: underline;
     text-decoration-thickness: 5px;
     text-underline-offset: 5px;
+    transition: 1.5s;
+    background-color: #1B0044;
 }
 .seleccionado {
     font-size: 20px;

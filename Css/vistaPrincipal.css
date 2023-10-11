@@ -229,6 +229,7 @@ los estilos de la nav bar estan en el principal */
 .contenedorUsuarioTitulo {
 
     display: flex;
+    justify-content: space-between;
 
 
 
@@ -251,15 +252,18 @@ los estilos de la nav bar estan en el principal */
 }
 
 .usuarioContainer {
-    margin-left: auto;
+    
     display: flex;
     flex-direction: row;
+   
     margin-right: 15px;
 
 }
 
 .usuario{
     font-family: var(--roboto);
+    margin-left: 5%;
+    width: 200px;
 }
 
 .cerrar-sesion {
@@ -506,6 +510,7 @@ body::-webkit-scrollbar-thumb {
 footer {
     grid-column: 1/7;
     grid-row: 2;
+    margin-top: 20px;
 
 }
 
