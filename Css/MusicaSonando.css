@@ -1,0 +1,631 @@
+:root {
+    --colorPrincipal: #1B0044;
+    --colorSecundario: #5727A3;
+    --colorTerciario: #9153F4;
+    --colorCuaternario: #D6C5F0;
+    --roboto: 'Roboto', sans-serif;
+    /*  nos manejamos con 400 y 500 de weight*/
+    --robotoSlab: 'Roboto Slab', serif;
+    /*  nos manejamos con 400 y 500 de weight*/
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+.vistaMusicaSonando {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    /* grid-template-columns: 15% 20% 20% 20% 20%; */
+    grid-template-columns: 15% 84.5%;
+    grid-column-gap: 0.5%;
+    grid-template-rows: 95% 15%;
+}
+
+.favDescripcion {
+    position: absolute;
+    top: 35%;
+    right: 8%;
+    color: var(--colorPrincipal);
+}
+
+
+
+.seccionPrincipal {
+    background-color: rgba(0, 0, 0, 0.4);
+    /* border: 2px solid white; */
+    width: 98%;
+    grid-column: 2/3;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-row-gap: 25px;
+    border-radius: 15px;
+}
+
+.nombreApp {
+    grid-column: 1/3;
+}
+
+.usuario {
+    grid-column: 3/5;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    position: absolute;
+    bottom: 35%;
+    right: 0%;
+}
+
+.cerrar-sesion {
+    margin-right: 48px;
+    font-family: var(--robotoSlab);
+    color: var(--colorCuaternario);
+    text-decoration: none;
+}
+
+.imagen-usuario {
+    height: 60px;
+    width: 60px;
+    border-radius: 80%;
+    position: absolute;
+    right: 100%;
+    margin: 15px;
+    top: 0;
+}
+
+.nombre-usuario {
+    margin-right: 62%;
+
+}
+
+.contenedorUsuarioTitulo {
+    grid-row: 1;
+    display: grid;
+    height: 100px;
+    z-index: 1;
+
+
+}
+
+header {
+    z-index: 1;
+    position: relative;
+}
+
+.navbar {
+    height: 70%;
+}
+
+.link {
+    padding: 25px;
+    padding-left: 10px;
+}
+.albumDescripcion {
+    height: 40%;
+    width: 90%;
+    padding: 5px;
+    position: relative;
+    display: grid;
+}
+
+.albumDescripcion>a {
+    align-self: center;
+    justify-self: center;
+}
+
+.imgAlbumDescripcion {
+    height: auto;
+    max-width: 90%;
+    margin-left: 10%;
+    margin-top: 35%;
+    padding: 0px;
+    border-radius: 15px;
+    align-self: center;
+    
+}
+
+
+.descripcionCancion {
+    font-size: 0.9em;
+}
+
+
+.logo {
+
+    margin-left: 2%;
+    padding: 15px;
+    height: auto;
+    max-width: 8%;
+    margin-top: 5px;
+
+}
+
+.contenedorCanciones {
+    overflow: auto;
+    text-align: center;
+    vertical-align: middle;
+    grid-row: 2;
+    margin: 0 2%;
+}
+
+/* SECCION DE NAV Y CANCION SONANDO */
+
+.sectionNav {
+
+    /* border: 2px solid white; */
+    grid-column: 1;
+    /* display: grid; */
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    margin-left: 3%;
+
+
+}
+
+.item {
+    padding: 10px;
+}
+
+.cancionReproduciendo {
+
+    grid-row: 2;
+}
+
+html,body {
+    min-height: 100vh;
+}
+
+body {
+    font-family: var(--roboto);
+    color: var(--colorCuaternario);
+    /* overflow: auto; */
+    background-image: linear-gradient(var(--colorPrincipal), rgb(10, 10, 10));
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    margin-top: 8px;
+}
+
+
+.tabla {
+    display: grid;
+    grid-template-columns: 10% repeat(4, 22.5%);
+    width: auto;
+    height: auto;
+}
+
+.tabla * {
+    border: 1px solid rgb(100, 100, 100, 0.4);
+    margin: 0;
+    padding: 10%;
+    border-left: none;
+    border-right: none;
+}
+
+.tabla p {
+    border: none;
+}
+
+.fav {
+    position: absolute;
+    top: 40%;
+    right: 10%;
+    border: none;
+    padding: 0;
+}
+
+.posicion {
+    position: relative;
+    text-align: center;
+}
+
+.encabezado {
+    background-image: linear-gradient(var(--colorSecundario), var(--colorPrincipal));
+    text-align: center;
+}
+
+.portada {
+    height: 80%;
+    width: 80%;
+    top: 10%;
+    position: relative;
+    border: none;
+    padding: 0;
+}
+
+.imagen-cancion {
+    height: 100%;
+    width: 100%;
+    margin: 0%;
+    padding: 0;
+    position: relative;
+}
+
+.icono-play {
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    top: 25%;
+    left: 25%;
+    background-image: url(../img/icono-play.png);
+    background-size: cover;
+    padding: 0;
+    opacity: 0;
+    border: none;
+}
+
+.overlay {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Fondo semi-transparente */
+    opacity: 0;
+    /* La capa estará oculta inicialmente */
+    transition: opacity 0.3s ease;
+    /* Transición suave para la opacidad */
+}
+
+.imagen-cancion:hover .icono-play {
+    opacity: 1;
+}
+
+.imagen-cancion:hover .overlay {
+    opacity: 1;
+}
+
+.espacio {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.cancion {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.album {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.duracion {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.reproducciones {
+    grid-column: 5;
+    grid-row: 1;
+}
+
+
+.c01 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.c02 {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.c03 {
+    grid-column: 2;
+    grid-row: 4;
+}
+
+.c04 {
+    grid-column: 2;
+    grid-row: 5;
+}
+
+.a01 {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.a02 {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.a03 {
+    grid-column: 3;
+    grid-row: 4;
+}
+
+.a04 {
+    grid-column: 3;
+    grid-row: 5;
+}
+
+.d01 {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+.d02 {
+    grid-column: 4;
+    grid-row: 3;
+}
+
+.d03 {
+    grid-column: 4;
+    grid-row: 4;
+}
+
+.d04 {
+    grid-column: 4;
+    grid-row: 5;
+}
+
+.r01 {
+    grid-column: 5;
+    grid-row: 2;
+}
+
+.r02 {
+    grid-column: 5;
+    grid-row: 3;
+}
+
+.r03 {
+    grid-column: 5;
+    grid-row: 4;
+}
+
+.r04 {
+    grid-column: 5;
+    grid-row: 5;
+}
+
+.e01 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.e02 {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.e03 {
+    grid-column: 1;
+    grid-row: 4;
+}
+
+.e04 {
+    grid-column: 1;
+    grid-row: 5;
+}
+
+.reproductor {
+    grid-row: 3;
+    height: 150px;
+    text-align: center;
+    display: grid;
+    align-items: center;
+}
+
+.barraReproductora {
+    margin: 0% 20%
+}
+
+.imagenReproductor {
+    height: 100%;
+    width: 100%;
+}
+
+.footer {
+    margin-top: 2%;
+}
+
+.descripcion {
+    margin: 0;
+    margin-top: 20%;
+    padding: 0 10px;
+
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+    background-color: black;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--colorSecundario);
+    border-radius: 50px;
+}
+
+.contenedorFooter {
+    grid-column: 1/3;
+    grid-row: 2;
+}
+
+/* MEDIA QUERYS TABLET */
+
+@media screen and (min-width: 30.1em) and (max-width: 60em) {
+
+    /*  HEADER TABLET  */
+
+    body {
+        font-size: 80%;
+    }
+
+    .logo {
+        max-width: 25%;
+    }
+
+    .nombre-usuario {
+        margin-right: 64%;
+    }
+
+
+    /*CONTENEDOR DE CANCIONES TABLET */
+
+    .seccionPrincipal {
+        width: 86%;
+        margin-left: 10%;
+    }
+
+    .fav {
+        right: 1%;
+        top: 25%;
+    }
+
+
+    /*CONTENEDOR NAV TABLET  */
+
+    .sectionNav {
+        width: 150%;
+        margin-left: 10px;
+    }
+
+    .favDescripcion {
+        top: 28%
+    }
+
+
+    /*REPRODUCTOR TABLET  */
+
+    .reproductor {
+        height: 50%;
+    }
+
+}
+
+
+/* MEDIA QUERYS SMARTPHONE*/
+
+@media screen and (max-width: 30em) {
+
+    /* HEADER SMARTPHONE */
+
+    body {
+        font-size: 70%;
+        /* position: relative; */
+    }
+    
+    html {
+        width: 107%;
+    }
+
+    .nombre-usuario {
+        margin-right: 66%;
+    }
+
+
+    .logo {
+
+        max-width: 30%;
+
+    }
+
+    .imagen-usuario {
+        margin-top: 5%;
+    }
+
+    /* SECCION PRINCIPAL SMARTPHONE */
+
+    .vistaMusicaSonando {
+        display: block;
+        margin-top: 38%;
+    }
+
+    .seccionPrincipal {
+        margin-top: 15%;
+        margin-left: 1%;
+        
+    }
+
+    /* CONTENEDOR CANCIONES SMARTPHONE */
+
+    .tabla {
+        grid-template-columns: 20% repeat(4, 40.5%);
+    }
+
+    .fav {
+        right: 5%;
+        top: 25%;
+    }
+
+    /* CONTENEDOR NAV SMARTPHONE */
+
+    .sectionNav {
+
+
+        /* background-image: linear-gradient( var(--colorPrincipal) ,rgb(0, 0, 0)); */
+        grid-column: 1;
+        grid-row: 1;
+        display: grid;
+        height: 5%;
+        width: 100%;
+        position: absolute;
+        top: 5px;
+
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .item {
+        padding: 0;
+        margin-top: 5%;
+    }
+
+    .link {
+        padding: 0;
+        padding-left: 0;
+    }
+
+    .seleccionado {
+        text-decoration: none;
+        color:var(--colorSecundario);
+        background-color: transparent;
+        
+    }
+
+    .cancionReproduciendo {
+        width: 100%;
+        display: flex;
+        background-color: rgba(0, 0, 0, 0.4);
+        margin-top: 5%;
+        border-radius: 15px;
+        height: 90%;
+    }
+
+    .imgAlbumDescripcion {
+        margin-top: 8%;
+        margin-left: 20%;
+        width: 55%;
+    }
+
+    .descripcion {
+        margin-top: 8%;
+    }
+
+    .favDescripcion {
+        right: 26%;
+    }
+
+
+    /* REPRODUCTOR SMARTPHONE */
+
+    /* FOOTER SMARTPHONE */
+
+    /* .footer {
+        margin-left: 5%;
+    } */
+
+}
