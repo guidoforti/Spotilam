@@ -70,10 +70,19 @@ footer {
 
     .form-ingreso{
         width: 400px;
+        padding: 10%;
     }
 
     body {
-        font-size: 70%;
+        font-size: 100%;
+    }
+
+    .campo-form {
+        display: block;
+    }
+
+    .button {
+        font-size: 100%;
     }
 }
 

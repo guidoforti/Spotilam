@@ -141,10 +141,12 @@ footer {
     }
     .campo {
         margin: 5px;
+        display: block;
         
     }
     .recuadro {
        margin: 0.5em;
+       width: 100%;
     
     }
     h1{

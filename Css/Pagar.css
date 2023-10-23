@@ -97,18 +97,7 @@ h1 {
 
 }
 
-@media screen and (max-width: 30em) {
-    /* Estilos para smartphones */
-    .contenedor-form {
 
-        width: 100%;
-        
-        }
-
-    body {
-        font-size: 70%;
-    }
-}
 
 
 
@@ -162,6 +151,29 @@ img {
     text-decoration: none;
     color: #9153F4;
     background-color: #D6C5F0;
+}
+
+@media screen and (max-width: 30em) {
+    /* Estilos para smartphones */
+    .contenedor-form {
+
+        width: 100%;
+        padding: 10%;
+        
+        }
+
+    body {
+        font-size: 100%;
+    }
+
+    .campo {
+        display: block;
+
+    }
+
+    .recuadro {
+        width: 110%;
+    }
 }
 
 

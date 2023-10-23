@@ -186,8 +186,6 @@ body {
     /* overflow: auto; */
     background-image: linear-gradient(var(--colorPrincipal), rgb(10, 10, 10));
     background-repeat: no-repeat;
-    height: 100vh;
-    margin: 0;
     margin-top: 8px;
 }
 
@@ -512,7 +510,6 @@ body {
 
     body {
         font-size: 70%;
-        /* position: relative; */
     }
     
     html {
