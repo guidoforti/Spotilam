@@ -27,33 +27,35 @@ event.preventDefault();
 
 /* tomo los datos del formulario */
 const nombre = document.getElementById("usuario").value;
-const contrasena = document.getElementById("contraseña").value;
+let contrasena = document.getElementById("contraseña").value;
 
-const confContrasena = document.getElementById("confirmeContraseña").value;
+let confContrasena = document.getElementById("confirmeContraseña").value;
 const fechaNacimiento = new Date(document.getElementById("fechaNacimiento").value);
 const email = document.getElementById("email").value;
 
 //VALIDO QUE LA CONTRASEÑA SEA DE 8 DIGITOS Y LA DOY VUELTA
-/*if (contrasena.lenght < 8 || contrasena.lenght > 8) {
+if (contrasena.length !== 8 || confContrasena.length !== 8) {
     alert("la contraseña debe ser de 8 digitos");
     return;
 }else {
-
-    const mitad1= contrasena.slice(0, contrasena.lenght / 2);
-    const mitad2= contrasena.slice(contrasena.lenght / 2);
+    
+    const mitad1= contrasena.slice(0, contrasena.length / 2);
+    const mitad2= contrasena.slice(contrasena.length / 2);
     const contrasenaVuelta = mitad2+mitad1;
+    contrasena = contrasenaVuelta;
 
-} */
-
-// valido que las contraseñas sean iguales y doy vuelta la 2 contra
-/*if (contrasena !== confContrasena) {
-    alert("las contraseñas no coinciden, por favor intentelo nuevamente")
-    return;
-}else {
-    const mitad1Conf= confContrasena.slice(0, contrasena.lenght / 2);
-    const mitad2Conf= confContrasena.slice(contrasena.lenght / 2);
+    const mitad1Conf= confContrasena.slice(0, confContrasena.length / 2);
+    const mitad2Conf= confContrasena.slice(confContrasena.length / 2);
     const confContrasenaVuelta = mitad2Conf+mitad1Conf;
-} */
+    confContrasena = confContrasenaVuelta;
+
+} 
+
+// valido que las contraseñas sean iguales 
+ if (contrasena !== confContrasena) {
+     alert("las contraseñas no coinciden, por favor intentelo nuevamente")
+     return;
+ }
 
 // valido fecha de nacimiento
 if (isNaN(fechaNacimiento)) {
@@ -65,10 +67,10 @@ if (isNaN(fechaNacimiento)) {
 
 
 
-if (!email.includes("@")) {
-    alert("el email debe ser un mail valido");
-    return;
-}
+// if (!email.includes("@")) {
+//     alert("el email debe ser un mail valido");
+//     return;
+// }
 
 
 const usuarioNuevo = new Usuario(nombre, contrasena , confContrasena, fechaNacimiento, email);
