@@ -22,7 +22,6 @@ body {
     display: grid;
     grid-template-rows: 100% 20%;
     
-    
 }
 
 
@@ -41,6 +40,7 @@ body {
 
 footer {
     grid-row: 2;
+    
    
 }
 
@@ -60,7 +60,6 @@ footer {
 }
 
 .campo {
-    display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding: 10px;
@@ -115,7 +114,7 @@ label {
 
 .recuadro {
     border: solid 1px #D6C5F0;
-    width: 280px;
+    width: 100%;
     border-radius: 5px;
     height: 25px;
 }
