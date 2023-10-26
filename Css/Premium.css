@@ -101,11 +101,17 @@ h1{
 @media screen and (max-width: 30em) {
     /* Estilos para smartphones */
 
+    h1 {
+        position: relative;
+    }
+
     .planesPremium{
         width: 100%;
         display: grid;
         grid-template-rows: 1fr 1fr 1fr;
         grid-template-columns: 1fr;
+        position: absolute;
+        top: 10%;
     }
 
     .plan1{
