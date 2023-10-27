@@ -57,20 +57,15 @@ if (contrasena.length !== 8 || confContrasena.length !== 8) {
      return;
  }
 
-// valido fecha de nacimiento
+
 if (isNaN(fechaNacimiento)) {
     alert("porfavor, ingrese una fecha de nacimiento valida.")
     return;
 }
 
-//validamos mail
 
 
 
-// if (!email.includes("@")) {
-//     alert("el email debe ser un mail valido");
-//     return;
-// }
 
 
 const usuarioNuevo = new Usuario(nombre, contrasena , confContrasena, fechaNacimiento, email);
