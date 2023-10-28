@@ -1,7 +1,11 @@
 
 
 
-const USUARIOS = [];
+let USUARIOS = [];
+if(JSON.parse(localStorage.getItem("usuarios"))!==null) {
+    USUARIOS = JSON.parse(localStorage.getItem("usuarios"));
+}
+
 
 function Usuario (usuario , contrasenia, confContrasenia, fechaNacimiento ,email  ) {
 
@@ -67,15 +71,16 @@ if (isNaN(fechaNacimiento)) {
 
 
 
-
 const usuarioNuevo = new Usuario(nombre, contrasena , confContrasena, fechaNacimiento, email);
+
 
 USUARIOS.push(usuarioNuevo);
 
 localStorage.setItem("usuarios" , JSON.stringify(USUARIOS));
-
 formulario.reset();
+
 alert("usuario registrado con exito");
+window.location.href = "index.html";
     
 });
 
