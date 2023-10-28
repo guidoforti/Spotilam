@@ -28,7 +28,9 @@ button.addEventListener("click", function(event) {
      if ( ingreso !== true) {
         const alerta = document.querySelector(".cuadroAlertaIngreso");
         alerta.classList.add("cuadroAlertaErrorIngreso");
-        alerta.innerHTML = "<p> el usuario y/o contraseña son incorrectos </p>";
+        alerta.innerHTML = "<p> (!) El usuario y/o contraseña son incorrectos </p>";
+        const recuadro = document.getElementById("contraseña");
+        recuadro.classList.add("recuadro-rojo");
         
 
      }else {
