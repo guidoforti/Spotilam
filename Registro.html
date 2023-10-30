@@ -28,18 +28,18 @@
         <section id="formRegistro">
 
             <!--CREO EL FORMULARIO DE REGISTRO -->
-            <form class="form-ingreso" action="index.html">
+            <form id ="formularioDeRegistro" class="form-ingreso">
                 <div class="campo-form">
                     <label for="usuario">Usuario</label>
 
-                    <input class="recuadro" type="text" id="usuario" name="usuario" placeholder="Ingrese el usuario"
+                    <input  class="recuadro" type="text" id="usuario" name="usuario" placeholder="Ingrese el usuario"
                         required=true />
                 </div>
                 <div class="campo-form">
                     <label for="contraseña">Contraseña</label>
 
                     <input class="recuadro" type="password" id="contraseña" name="contraseña"
-                        placeholder="Ingrese una contraseña" required=true />
+                        placeholder="Ingrese una contraseña de 8 digitos" required=true />
                 </div>
 
                 <div class="campo-form">
@@ -69,7 +69,7 @@
                 <!-- HAGO EL LINK PARA LA VISTA DE PAGAR LUEGO LO LINKEAMOS BIEN -->
                 <a class="a-link" href="Premium.html"> Conviertase en Premium</a>
                 <br>
-                <input class="button" type="submit" value=" Registrarse" />
+                <input class="button" type="submit" value="Registrarse" />
 
 
             </form>
@@ -95,6 +95,9 @@
 
 
     </footer>
+
+    <script src="Js/Registro.js"></script>
 </body>
 
 </html>
+

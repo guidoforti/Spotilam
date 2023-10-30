@@ -43,12 +43,13 @@ footer {
     display: flex;
     justify-content: space-between;
     margin: 20px;
+    gap: 5%;
 
 }
 
 .recuadro {
     border: solid 1px #D6C5F0;
-    width: 280px;
+    width: 100%;
     height: 35px;
     border-radius: 5px;
 }
@@ -69,11 +70,20 @@ footer {
     /* Estilos para smartphones */
 
     .form-ingreso{
-        width: 400px;
+        width: 80%;
+        padding: 10%;
     }
 
     body {
-        font-size: 70%;
+        font-size: 100%;
+    }
+
+    .campo-form {
+        display: block;
+    }
+
+    .button {
+        font-size: 100%;
     }
 }
 
@@ -84,7 +94,7 @@ footer {
     /* Estilos para tablets */
 
     .form-ingreso{
-        width: 495px;
+        width: 70%;
        
     }
     body {

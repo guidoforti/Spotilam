@@ -15,7 +15,7 @@
 }
 
 
-.vistaCancionesFavoritas {
+.vistaMusicaSonando {
     width: 100%;
     height: 100%;
     margin-left: auto;
@@ -157,9 +157,7 @@ header {
 
 .sectionNav {
 
-    /* border: 2px solid white; */
     grid-column: 1;
-    /* display: grid; */
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 15px;
     margin-left: 3%;
@@ -183,7 +181,6 @@ html,body {
 body {
     font-family: var(--roboto);
     color: var(--colorCuaternario);
-    /* overflow: auto; */
     background-image: linear-gradient(var(--colorPrincipal), rgb(10, 10, 10));
     background-repeat: no-repeat;
     margin-top: 8px;
@@ -510,6 +507,7 @@ body {
 
     body {
         font-size: 70%;
+        /* position: relative; */
     }
     
     html {
@@ -533,7 +531,7 @@ body {
 
     /* SECCION PRINCIPAL SMARTPHONE */
 
-    .vistaCancionesFavoritas {
+    .vistaMusicaSonando {
         display: block;
         margin-top: 38%;
     }
