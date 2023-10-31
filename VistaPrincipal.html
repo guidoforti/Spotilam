@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,227 +9,167 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
     <!-- FUENTES -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&family=Roboto:wght@400;500&display=swap"
-        rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
     <!-- ICONOS -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
-    <link rel="stylesheet" 
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    ">
     <title>Spotilam</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- EL MAIN SE DIVIDE CON GRID EN DOS COLUMNAS -->
     <main class="contenedorVistaPrincipal">
-        <section class="sectionNav">
-            <nav>
-                <!--
+      <section class="sectionNav">
+        <nav>
+          <!--
 <img src="img/menu.svg" alt="Icono Menu" class="imagenMenu">
                 -->
-                
-                <ul class="navbar">
-                    <a class="link seleccionado" href="VistaPrincipal.html">
-                        <li class="item">Home</li>
-                    </a>
-                    <a class="link" href="vistaBuscar.html">
-                        <li class="item">Buscar</li>
-                    </a>
-                    <a class="link" href="misAlbumsFavoritos.html">
-                        <li class="item">Mis albums</li>
-                    </a>
-                    <a class="link" href="MisCancionesFavoritas.html">
-                        <li class="item">Mis favoritas</li>
-                    </a>
-                </ul>
-            </nav>
 
-            <div class="cancionReproduciendo">
-                <article class="albumDescripcion">
-                    <a href="musicaSonando.html"> <img class="imgAlbumDescripcion" src="img/nora.jpg" />
+          <ul class="navbar">
+            <a class="link seleccionado" href="VistaPrincipal.html">
+              <li class="item">Home</li>
+            </a>
+            <a class="link" href="vistaBuscar.html">
+              <li class="item">Buscar</li>
+            </a>
+            <a class="link" href="misAlbumsFavoritos.html">
+              <li class="item">Mis albums</li>
+            </a>
+            <a class="link" href="MisCancionesFavoritas.html">
+              <li class="item">Mis favoritas</li>
+            </a>
+          </ul>
+        </nav>
 
-                        <span class="material-symbols-rounded favDescripcion">
-                            star
-                        </span>
-                    </a>
+        <div class="cancionReproduciendo">
+          <article class="albumDescripcion">
+            <a href="musicaSonando.html">
+              <img class="imgAlbumDescripcion" src="img/nora.jpg" />
 
-                </article>
+              <span class="material-symbols-rounded favDescripcion"> star </span>
+            </a>
+          </article>
 
-                <article class="descripcionCancion">
-                    <p id="cancion-sonando">ARBORA - Nora En Pure</p>
-                </article>
+          <article class="descripcionCancion">
+            <p id="cancion-sonando">ARBORA - Nora En Pure</p>
+          </article>
+        </div>
+      </section>
 
-            </div>
-        </section>
+      <section class="sectionPrincipal">
+        <div class="contenedorUsuarioTitulo">
+          <img class="logo" src="img/logo2.png" alt="logo principal" />
 
-        <section class="sectionPrincipal">
-
-            <div class="contenedorUsuarioTitulo">
-
-               <img class="logo" src="img/logo2.png" alt="logo principal" />
-
-
-
-
-                <div class="usuarioContainer">
-
-
-                    <div class="imagen-usuario">
-                        <a href="perfil.html"> <img src="img/usuario.jpg" alt="avatar usuario" /></a>
-                    </div> 
-
-                    <div class="usuario">
-                        <h2 id="usuario">Grupo 6</h2>
-                        <a class="cerrar-sesion" href="index.html">Cerrar sesion</a>
-                    </div>
-
-                    
-
-                    
-
-                </div>
-
+          <div class="usuarioContainer">
+            <div class="imagen-usuario">
+              <a href="perfil.html"> <img src="img/usuario.jpg" alt="avatar usuario" /></a>
             </div>
 
-            <!-- material-symbols-rounded star -->
+            <div class="usuario">
+              <h2 id="usuario">Grupo 6</h2>
+              <a class="cerrar-sesion" href="index.html">Cerrar sesion</a>
+            </div>
+          </div>
+        </div>
 
-            <div class="contenedorAlbums">
-                <article class="album">
-                    <a href="musicaSonando.html"> <img class="imgAlbum" src="img/nora.jpg" /> </a>
-                    <span class="material-symbols-outlined fav">
-                        grade
-                    </span>
-                </article>
-                <article class="album">
-                    <a href="musicaSonando.html"> <img class="imgAlbum" src="img/bdbn.jpg" /> </a>
-                    <span class="material-symbols-outlined fav">
-                        grade
-                    </span>
-                </article>
-                <article class="album">
-                    <a href="musicaSonando.html"> <img class="imgAlbum" src="img/yeat.jpg" /> </a>
-                    <span class="material-symbols-outlined fav">
-                        grade
-                    </span>
-                </article>
-                <article class="album">
-                    <a href="musicaSonando.html"> <img class="imgAlbum" src="img/dftpnk.jpg" /> </a>
-                    <span class="material-symbols-outlined fav">
-                        grade
-                    </span>
-                </article>
-                <article class="album">
-                    <a href="musicaSonando.html"> <img class="imgAlbum" src="img/kayneWest.jpg" /> </a>
-                    <span class="material-symbols-outlined fav">
-                        grade
-                    </span>
-                </article>
-                <article class="album">
-                    <a href="musicaSonando.html"> <img class="imgAlbum" src="img/pinkfloyd.jpg" />
-                    </a> <span class="material-symbols-outlined fav">
-                        grade
-                    </span>
-                </article>
-                <article class="album">
-                    <a href="musicaSonando.html"> <img class="imgAlbum" src="img/tame impala.jpg" />
-                    </a> <span class="material-symbols-outlined fav">
-                        grade
-                    </span>
-                </article>
-                <article class="album">
-                    <a href="musicaSonando.html"> <img class="imgAlbum" src="img/quevedo.jpg" /> </a>
-                    <span class="material-symbols-outlined fav">
-                        grade
-                    </span>
-                </article>
-                <article class="album">
-                    <a href="musicaSonando.html"> <img class="imgAlbum" src="img/benbhomer.jpg" />
-                    </a>
-                    <span class="material-symbols-outlined fav">
-                        grade
-                    </span>
-                </article>
-                <article class="album">
-                    <a href="musicaSonando.html"> <img class="imgAlbum" src="img/nicky.jpg" /> </a>
-                    <span class="material-symbols-outlined fav">
-                        grade
-                    </span>
-                </article>
-                <article class="album">
-                    <a href="musicaSonando.html"> <img class="imgAlbum" src="img/nompa.jpg" /> </a>
-                    <span class="material-symbols-outlined fav">
-                        grade
-                    </span>
-                </article>
-                <article class="album">
-                    <a href="musicaSonando.html"> <img class="imgAlbum" src="img/trueno.jpg" /> </a>
-                    <span class="material-symbols-outlined fav">
-                        grade
-                    </span>
-                </article>
-                <article class="album">
-                    <a href="musicaSonando.html"> <img class="imgAlbum" src="img/TTT.jpg" /> </a>
-                    <span class="material-symbols-outlined fav">
-                        grade
-                    </span>
-                </article>
-                <article class="album">
-                    <a href="musicaSonando.html"> <img class="imgAlbum" src="img/kayne.jpg" />
-                    </a><span class="material-symbols-outlined fav">
-                        grade
-                    </span>
-                </article>
-                <article class="album">
-                    <a href="musicaSonando.html"> <img class="imgAlbum" src="img/2feet.jpg" /> </a>
+        <!-- material-symbols-rounded star -->
 
-                    <span class="material-symbols-outlined fav">
-                        grade
-                    </span>
-                </article>
+        <div class="contenedorAlbums">
+
+            
+ <!--    <article class="album" id="a1">
+            <a> <img class="imgAlbum" src="img/nora.jpg" /> </a>
+            <span class="material-symbols-outlined fav"> grade </span>
+          </article>
+          <article class="album" id="a2">
+            <a href="musicaSonando.html"> <img class="imgAlbum" src="img/bdbn.jpg" /> </a>
+            <span class="material-symbols-outlined fav"> grade </span>
+          </article>
+          <article class="album" id="a3">
+            <a href="musicaSonando.html"> <img class="imgAlbum" src="img/yeat.jpg" /> </a>
+            <span class="material-symbols-outlined fav"> grade </span>
+          </article>
+          <article class="album" id="a4">
+            <a href="musicaSonando.html"> <img class="imgAlbum" src="img/dftpnk.jpg" /> </a>
+            <span class="material-symbols-outlined fav"> grade </span>
+          </article>
+          <article class="album" id="a5">
+            <a href="musicaSonando.html"> <img class="imgAlbum" src="img/kayneWest.jpg" /> </a>
+            <span class="material-symbols-outlined fav"> grade </span>
+          </article>
+          <article class="album" id="a6">
+            <a href="musicaSonando.html"> <img class="imgAlbum" src="img/pinkfloyd.jpg" /> </a>
+            <span class="material-symbols-outlined fav"> grade </span>
+          </article>
+          <article class="album" id="a7">
+            <a href="musicaSonando.html"> <img class="imgAlbum" src="img/tame impala.jpg" /> </a>
+            <span class="material-symbols-outlined fav"> grade </span>
+          </article>
+          <article class="album" id="a8">
+            <a href="musicaSonando.html"> <img class="imgAlbum" src="img/quevedo.jpg" /> </a>
+            <span class="material-symbols-outlined fav"> grade </span>
+          </article>
+          <article class="album" id="a9">
+            <a href="musicaSonando.html"> <img class="imgAlbum" src="img/benbhomer.jpg" /> </a>
+            <span class="material-symbols-outlined fav"> grade </span>
+          </article>
+          <article class="album" id="a10">
+            <a href="musicaSonando.html"> <img class="imgAlbum" src="img/nicky.jpg" /> </a>
+            <span class="material-symbols-outlined fav"> grade </span>
+          </article>
+          <article class="album" id="a11">
+            <a href="musicaSonando.html"> <img class="imgAlbum" src="img/nompa.jpg" /> </a>
+            <span class="material-symbols-outlined fav"> grade </span>
+          </article>
+          <article class="album" id="a12">
+            <a href="musicaSonando.html"> <img class="imgAlbum" src="img/trueno.jpg" /> </a>
+            <span class="material-symbols-outlined fav"> grade </span>
+          </article>
+          <article class="album" id="a13">
+            <a href="musicaSonando.html"> <img class="imgAlbum" src="img/TTT.jpg" /> </a>
+            <span class="material-symbols-outlined fav"> grade </span>
+          </article>
+          <article class="album" id="a14">
+            <a href="musicaSonando.html"> <img class="imgAlbum" src="img/kayne.jpg" /> </a>
+            <span class="material-symbols-outlined fav"> grade </span>
+          </article>
+          <article class="album" id="a15">
+            <a href="musicaSonando.html"> <img class="imgAlbum" src="img/2feet.jpg" /> </a>
+            <span class="material-symbols-outlined fav"> grade </span>
+          </article> -->
+         
+        </div>
+
+        <div class="reproductor">
+          <div class="reproductor__botones">
+            <div class="botonesPrincipales">
+              <img src="img/skip_previous_FILL0_wght400_GRAD0_opsz24.svg" alt="BotonPrevio" class="reproductor__boton" />
+              <img src="img/play_circle_FILL0_wght400_GRAD0_opsz24.svg" alt="BotonPlay" class="reproductor__boton" />
+              <img src="img/skip_next_FILL0_wght400_GRAD0_opsz24.svg" alt="BotonAdelante" class="reproductor__boton" />
             </div>
 
-            <div class="reproductor">
-                <div class="reproductor__botones">
-                    <div class="botonesPrincipales">
-                        <img src="img/skip_previous_FILL0_wght400_GRAD0_opsz24.svg" alt="BotonPrevio"
-                            class="reproductor__boton">
-                        <img src="img/play_circle_FILL0_wght400_GRAD0_opsz24.svg" alt="BotonPlay"
-                            class="reproductor__boton">
-                        <img src="img/skip_next_FILL0_wght400_GRAD0_opsz24.svg" alt="BotonAdelante"
-                            class="reproductor__boton">
-                    </div>
+            <img src="img/volume_up_FILL0_wght400_GRAD0_opsz24.svg" alt="BotonVolumen" class="reproductor__boton--volumen" />
+          </div>
+          <input type="range" class="barraReproductora" />
 
-                    <img src="img/volume_up_FILL0_wght400_GRAD0_opsz24.svg" alt="BotonVolumen"
-                        class="reproductor__boton--volumen">
-                </div>
-                <input type="range" class="barraReproductora">
-
-                <!-- <img src="img/reproductor.PNG" class="imagenReproductor"> -->
-
-
-
-            </div>
-        </section>
+          <img src="img/reproductor.PNG" class="imagenReproductor"> 
+        </div>
+      </section>
     </main>
 
     <footer>
-        <div class="footer">
-            <p>
-                Ivone Corleto : 43.863.355 , Marcos Armoa : 44.362.234 , Magali
-                Galeano : 39.927.593
-            </p>
+      <div class="footer">
+        <p>Ivone Corleto : 43.863.355 , Marcos Armoa : 44.362.234 , Magali Galeano : 39.927.593</p>
 
-            <p>
-                Juliana Duran : 40.290.932 , Guido Forti : 39.346.350 , Ignacio Alonso
-                : 40.540.317
-            </p>
-        </div>
+        <p>Juliana Duran : 40.290.932 , Guido Forti : 39.346.350 , Ignacio Alonso : 40.540.317</p>
+      </div>
     </footer>
     <script src="Js/VistaPrincipal.js"></script>
-</body>
-
+  </body>
 </html>
