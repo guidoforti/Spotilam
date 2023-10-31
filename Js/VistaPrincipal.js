@@ -10,8 +10,8 @@ cerrarSesion.addEventListener("click", function(event){
     const cerroSesion = localStorage.setItem("ingreso", false);
 })
 
-const cancionSonando = document.getElementById("cancion-sonando").textContent;
-localStorage.setItem("Cancion Sonando", cancionSonando); 
+ //const cancionSonando = document.getElementById("cancion-sonando").textContent;
+//localStorage.setItem("Cancion Sonando", cancionSonando); 
 
 //NO FUNCIONA
 
@@ -20,7 +20,7 @@ localStorage.setItem("Cancion Sonando", cancionSonando);
 //     estrella.classList.remove("material-symbols-outlined");
 //     estrella.classList.add("material-symbols-rounded");
 //     estrella.textContent = "star";
-// })
+// }) 
 
 
 
@@ -205,7 +205,7 @@ const allAlbums = [
 //CREO DATA, que tiene la info de todos los albums, osea GUARDO EL ARRAY DE ALBUMS EN EL LOCAL
 localStorage.setItem("data", JSON.stringify(allAlbums));
 
-const albumsFavoritos = [];
+let albumsFavoritos = [];
 //CREO FAVS, QUE se pregunta si favs ya existe, si no ,seteo favs como albums favoritos Y LO SETEO EN EL LOCAL
 localStorage.setItem("favs", localStorage.getItem("favs") ? localStorage.getItem("favs") : albumsFavoritos);
 
@@ -219,28 +219,41 @@ const contenedor = document.querySelector(".contenedorAlbums");
 
 
 
-// ACA TENGO QUE CREAR LAS DOS FUNCIONES PARA AÑADIR Y SACAR DE FAVORITOPS 
-// const favorites = JSON.parse(localStorage.getItem("favs"));
 
-// funcion añadir a fav => añadir a favoritos, cambiar el classname, cambiar el eventlistener
-
-// funcion quitar de fav => quitar de favoritos, cambiar el classname, cambiar el eventlistener
+//CREO 3 FUNCIONES QUE NOS VAN A SERVIR PARA EVALUAR SI UN ALBUM ESTA EN FAVORITOS , LA PRIMERA
+// PARA AGREGAR A FAVORITOS LA SEGUNDA
+// PARA QUITAR DE FAVORITOS LA TERCERA 
 
 
+// esta funcion retorna true o false , favAlbum representa a un album de cada iteracion y compasra si el id de ese album es igual al parametro
+// que se le pasa a la funcion, si es igual, devuelve true, sino devuelve false
+function estaEnFavoritos(albumId) {
+  return albumsFavoritos.some(favAlbum => favAlbum.id === albumId);
+}
 
+// se le pasa un album y se lo pushea al array y el array se vuelve a guardar en el local
+function agregarAlbumFavoritos(album) {
+  albumsFavoritos.push(album);
+  localStorage.setItem("albumsFavoritos", JSON.stringify(albumsFavoritos));
+}
 
-
-
-
+// Utiliza el método filter para crear un nuevo array que excluya el álbum con el id especificado. 
+//Esto se logra comparando el id de cada álbum con albumId y eliminando aquellos que coinciden.
+//Luego, guarda el nuevo array de álbumes favoritos (sin el álbum que se quiso quitar) en el almacenamiento local utilizando 
+//localStorage.setItem. Esto actualiza la lista de favoritos sin el álbum específico.
+function quitarAlbumFavoritos(albumId) {
+  albumsFavoritos = albumsFavoritos.filter(favAlbum => favAlbum.id !== albumId);
+  localStorage.setItem("favs", JSON.stringify(albumsFavoritos));
+}
 
 // ACA RECORRO ESE ARRAY DE DATA CON LA FUNCION MAP, QUE ES UNA FUNCION DE LOS ARRAYLIST
 // con la cual es tipo un for each y con este "for" VOY CREANDO CADA ARTICULO DINAMICAMENTE 
 // Y LO VOY CREANDO IGUAL QUE COMO LO TENIAMOS EN EL HTML
 // ASI CADA RTICULO ES UN OBJETO.
-data.map((property) => {
+data.map((album) => {
   const article = document.createElement("article");
   article.className = "album";
-  article.id = property.id;
+  article.id = album.id;
 
   // Creas un nuevo elemento a
   const a = document.createElement("a");
@@ -248,7 +261,7 @@ data.map((property) => {
   // Creas un nuevo elemento img y le asignas la fuente desde tu objeto
   const img = document.createElement("img");
   img.className = "imgAlbum";
-  img.src = property.img;
+  img.src = album.img;
 
   // Añades el img al a
   a.appendChild(img);
@@ -266,7 +279,71 @@ data.map((property) => {
 
   // Finalmente, añades el article al contenedor
   contenedor.appendChild(article);
+
+
+  //AGREGO UN EVENTO A LA ESTRELLA QUE UTILIZA 3 FUNCIONES CREADAS ARRIBA PARA EVALUAR 
+  // PARA AGREGAR O QUITAR DEL ARRAY DE FAVORITOS A LOS ALBUMS
+  span.addEventListener("click", function(){
+  
+    if (estaEnFavoritos(album.id)){
+      quitarAlbumFavoritos(album.id);
+      span.classList.remove("material-symbols-rounded");
+    } else {
+      agregarAlbumFavoritos(album);
+      span.classList.add("material-symbols-rounded");
+    }
+    
+  })
+
+  //CREAMOS LA FUNCION PARA QEU VAYAN APARECIENDO LOS ALBUMS DE LA MUSICA SONANDO Y SU DESCRIPCION PERO, NO SABEMOS COMO HACER PARA QUE SE VAYAN REMPLAZANDO
+
+    article.addEventListener("click",function(){
+    const albumDescripcion = document.querySelector(".cancionReproduciendo")
+ 
+    const articuloAlbumEscuchando = document.createElement("article");
+    
+    articuloAlbumEscuchando.className = "albumDescripcion";
+    
+    const aDeArticuloEcuchando = document.createElement("a");
+    aDeArticuloEcuchando.href = "musicaSonando.html";
+      
+    const imgDeArticuloEscuchando = document.createElement("img");
+      imgDeArticuloEscuchando.className = "imgAlbumDescripcion";
+      imgDeArticuloEscuchando.src = album.img;
+
+
+      aDeArticuloEcuchando.appendChild(imgDeArticuloEscuchando);
+      articuloAlbumEscuchando.appendChild(aDeArticuloEcuchando);
+      albumDescripcion.appendChild(articuloAlbumEscuchando);
+    
+      const descripcionDelAlbum = document.createElement("article");
+      descripcionDelAlbum.className ="descripcionCancion";
+      const pDescripcion = document.createElement("p");
+      pDescripcion.id = "cancion-sonando";
+      pDescripcion.innerHTML = album.nombre;
+
+      descripcionDelAlbum.appendChild(pDescripcion);
+      albumDescripcion.appendChild(descripcionDelAlbum);
+   
+
+      localStorage.setItem("albumEscuchando", JSON.stringify(album));
+     
+    
+  }) 
 });
+
+
+// ACA TENGO QUE CREAR LAS DOS FUNCIONES PARA AÑADIR Y SACAR DE FAVORITOPS 
+// tenemos que crear una funcion, que tome al album , lo agregue al array de favoritos si no esta y le cambie el estilo de la estrella osea la clase y el eventlistener
+
+
+
+// const favorites = JSON.parse(localStorage.getItem("favs"));
+
+// funcion añadir a fav => añadir a favoritos, cambiar el classname, cambiar el eventlistener
+
+// funcion quitar de fav => quitar de favoritos, cambiar el classname, cambiar el eventlistener
+
 
 
 
