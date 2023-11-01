@@ -297,40 +297,43 @@ data.map((album) => {
 
   //CREAMOS LA FUNCION PARA QEU VAYAN APARECIENDO LOS ALBUMS DE LA MUSICA SONANDO Y SU DESCRIPCION PERO, NO SABEMOS COMO HACER PARA QUE SE VAYAN REMPLAZANDO
 
-    article.addEventListener("click",function(){
-    const albumDescripcion = document.querySelector(".cancionReproduciendo")
- 
+  
+
+  article.addEventListener("click", function() {
     const articuloAlbumEscuchando = document.createElement("article");
-    
     articuloAlbumEscuchando.className = "albumDescripcion";
-    
+
     const aDeArticuloEcuchando = document.createElement("a");
     aDeArticuloEcuchando.href = "musicaSonando.html";
-      
+
     const imgDeArticuloEscuchando = document.createElement("img");
-      imgDeArticuloEscuchando.className = "imgAlbumDescripcion";
-      imgDeArticuloEscuchando.src = album.img;
+    imgDeArticuloEscuchando.className = "imgAlbumDescripcion";
+    imgDeArticuloEscuchando.src = album.img;
 
 
-      aDeArticuloEcuchando.appendChild(imgDeArticuloEscuchando);
-      articuloAlbumEscuchando.appendChild(aDeArticuloEcuchando);
-      albumDescripcion.appendChild(articuloAlbumEscuchando);
-    
-      const descripcionDelAlbum = document.createElement("article");
-      descripcionDelAlbum.className ="descripcionCancion";
-      const pDescripcion = document.createElement("p");
-      pDescripcion.id = "cancion-sonando";
-      pDescripcion.innerHTML = album.nombre;
+    aDeArticuloEcuchando.appendChild(imgDeArticuloEscuchando);
+    articuloAlbumEscuchando.appendChild(aDeArticuloEcuchando);
 
-      descripcionDelAlbum.appendChild(pDescripcion);
-      albumDescripcion.appendChild(descripcionDelAlbum);
-   
+    const albumDescripcion = document.querySelector(".cancionReproduciendo")
+    while (albumDescripcion.firstChild) {
+        albumDescripcion.removeChild(albumDescripcion.lastChild);
+    }
+    albumDescripcion.appendChild(articuloAlbumEscuchando);
 
-      localStorage.setItem("albumEscuchando", JSON.stringify(album));
-     
-    
-  }) 
+    const descripcionDelAlbum = document.createElement("article");
+    descripcionDelAlbum.className = "descripcionCancion";
+    const pDescripcion = document.createElement("p");
+    pDescripcion.id = "cancion-sonando";
+    pDescripcion.innerHTML = album.nombre;
+
+    descripcionDelAlbum.appendChild(pDescripcion);
+    albumDescripcion.appendChild(descripcionDelAlbum);
+
+    localStorage.setItem("albumEscuchando", JSON.stringify(album));
+
+})
 });
+
 
 
 // ACA TENGO QUE CREAR LAS DOS FUNCIONES PARA AÑADIR Y SACAR DE FAVORITOPS 
