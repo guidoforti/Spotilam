@@ -10,30 +10,19 @@ cerrarSesion.addEventListener("click", function(event){
     const cerroSesion = localStorage.setItem("ingreso", false);
 })
 
- //const cancionSonando = document.getElementById("cancion-sonando").textContent;
-//localStorage.setItem("Cancion Sonando", cancionSonando); 
-
-//NO FUNCIONA
-
-// const estrella = document.querySelector(".fav");
-// estrella.addEventListener("click", function(event){
-//     estrella.classList.remove("material-symbols-outlined");
-//     estrella.classList.add("material-symbols-rounded");
-//     estrella.textContent = "star";
-// }) 
+ 
 
 
 
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 
 
 
-
-/* DUDAS: 
-como hacemos para seleccionar el album y poder agregarle estos atributos? esto esta bien ? o cuando nosotros declaramos album1 por el id, y despues
- le ponemos estos datos, como nombre y canciones, ya no es ese elemento de la pagiona? */
 
 const album1 = {
-  nombre: "This is nora en pure",
+  nombre:"nora en pure",
   id: "a1",
   img: "img/nora.jpg",
   canciones: [
@@ -44,7 +33,7 @@ const album1 = {
 };
 
 const album2 = {
-  nombre: "This is Bad Bunny",
+  nombre:"bad bunny",
   id: "a2",
   img: "img/bdbn.jpg",
   canciones: [
@@ -55,7 +44,7 @@ const album2 = {
 };
 
  const album3 = {
-   nombre: "This is Yeat",
+   nombre:"yeat",
   id: "a3",
    img: "img/yeat.jpg",
    canciones: [
@@ -66,7 +55,7 @@ const album2 = {
  };
 
  const album4 = {
-    nombre: "This is Daft Punk",
+    nombre:"daft punk",
    id: "a4",
     img: "img/dftpnk.jpg",
     canciones: [
@@ -77,7 +66,7 @@ const album2 = {
   };
 
   const album5 = {
-    nombre: "This is Kayne west",
+    nombre:"kayne west",
    id: "a5",
     img: "img/kayneWest.jpg",
     canciones: [
@@ -88,7 +77,7 @@ const album2 = {
   };
 
   const album6 = {
-    nombre: "This is Pink Floyd",
+    nombre:"pink floyd",
    id: "a6",
     img: "img/pinkfloyd.jpg",
     canciones: [
@@ -99,7 +88,7 @@ const album2 = {
   };
 
   const album7 = {
-    nombre: "This is Tame impala",
+    nombre:"tame impala",
    id: "a7",
     img: "img/tame impala.jpg",
     canciones: [
@@ -111,7 +100,7 @@ const album2 = {
 
 
   const album8 = {
-    nombre: "This is Quevedo",
+    nombre:"quevedo",
    id: "a8",
     img: "img/quevedo.jpg",
     canciones: [
@@ -122,7 +111,7 @@ const album2 = {
   };
 
   const album9 = {
-    nombre: "This is Ben Bhomer",
+    nombre:"ben bhomer",
    id: "a9",
     img: "img/benbhomer.jpg",
     canciones: [
@@ -133,7 +122,7 @@ const album2 = {
   };
 
   const album10 = {
-    nombre: "This is Nicky Nicole",
+    nombre:"nicky nicole",
    id: "a10",
     img: "img/nicky.jpg",
     canciones: [
@@ -144,7 +133,7 @@ const album2 = {
   };
 
   const album11 = {
-    nombre: "This is Nompa",
+    nombre:"nompa",
    id: "a11",
     img: "img/nompa.jpg",
     canciones: [
@@ -155,7 +144,7 @@ const album2 = {
   };
 
   const album12 = {
-    nombre: "This is Trueno",
+    nombre:"trueno",
    id: "a12",
     img: "img/trueno.jpg",
     canciones: [
@@ -166,7 +155,7 @@ const album2 = {
   };
 
   const album13 = {
-    nombre: "This is Tini",
+    nombre:"tini",
    id: "a13",
     img: "img/TTT.jpg",
     canciones: [
@@ -177,7 +166,7 @@ const album2 = {
   };
 
   const album14 = {
-    nombre: "This is Mac Miller",
+    nombre:"mac miller",
    id: "a14",
     img: "img/kayne.jpg",
     canciones: [
@@ -187,8 +176,8 @@ const album2 = {
     ],
   };
   const album15 = {
-    nombre: "This is Two feets",
-   id: "a15",
+    nombre:"two feets",
+    id: "a15",
     img: "img/2feet.jpg",
     canciones: [
       { id: "album2Cancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
@@ -196,6 +185,8 @@ const album2 = {
       { id: "album2Cancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
     ],
   };
+
+  
 
   //CREO EL ARRAY CON TODOS LOS ALBUMS.
 const allAlbums = [
@@ -207,7 +198,7 @@ localStorage.setItem("data", JSON.stringify(allAlbums));
 
 let albumsFavoritos = [];
 //CREO FAVS, QUE se pregunta si favs ya existe, si no ,seteo favs como albums favoritos Y LO SETEO EN EL LOCAL
-localStorage.setItem("favs", localStorage.getItem("favs") ? localStorage.getItem("favs") : albumsFavoritos);
+//localStorage.setItem("favs", localStorage.getItem("favs") ? localStorage.getItem("favs") : albumsFavoritos);
 
 ///////////////////////////////
 // CREO const data, tomando los datos del locla que subi y lo hago JSON parse , para que pase de strings , a objeto.
@@ -243,7 +234,7 @@ function agregarAlbumFavoritos(album) {
 //localStorage.setItem. Esto actualiza la lista de favoritos sin el álbum específico.
 function quitarAlbumFavoritos(albumId) {
   albumsFavoritos = albumsFavoritos.filter(favAlbum => favAlbum.id !== albumId);
-  localStorage.setItem("favs", JSON.stringify(albumsFavoritos));
+  localStorage.setItem("albumsFavoritos", JSON.stringify(albumsFavoritos));
 }
 
 // ACA RECORRO ESE ARRAY DE DATA CON LA FUNCION MAP, QUE ES UNA FUNCION DE LOS ARRAYLIST
@@ -299,7 +290,7 @@ data.map((album) => {
 
   
 
-  article.addEventListener("click", function() {
+  img.addEventListener("click", function() {
     const articuloAlbumEscuchando = document.createElement("article");
     articuloAlbumEscuchando.className = "albumDescripcion";
 
@@ -314,17 +305,21 @@ data.map((album) => {
     aDeArticuloEcuchando.appendChild(imgDeArticuloEscuchando);
     articuloAlbumEscuchando.appendChild(aDeArticuloEcuchando);
 
-    const albumDescripcion = document.querySelector(".cancionReproduciendo")
+    const albumDescripcion = document.querySelector(".cancionReproduciendo");
+    albumDescripcion.style.animation = "fadeIn 2s";
+
     while (albumDescripcion.firstChild) {
-        albumDescripcion.removeChild(albumDescripcion.lastChild);
+      
+      albumDescripcion.removeChild(albumDescripcion.lastChild);
+        
     }
     albumDescripcion.appendChild(articuloAlbumEscuchando);
-
+    
     const descripcionDelAlbum = document.createElement("article");
     descripcionDelAlbum.className = "descripcionCancion";
     const pDescripcion = document.createElement("p");
     pDescripcion.id = "cancion-sonando";
-    pDescripcion.innerHTML = album.nombre;
+    pDescripcion.innerHTML = "Estas escuchando: " + album.nombre;
 
     descripcionDelAlbum.appendChild(pDescripcion);
     albumDescripcion.appendChild(descripcionDelAlbum);
