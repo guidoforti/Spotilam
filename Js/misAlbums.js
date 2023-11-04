@@ -3,23 +3,23 @@ const usuario = document.getElementById("usuario");
 
 usuario.textContent = nombreUsuario;
 
-const cerrarSesion = document.querySelector(".cerrar-sesion");
-cerrarSesion.addEventListener("click", function (event) {
-  window.location.href = "Index.html";
-  const cerroSesion = localStorage.setItem("ingreso", false);
-});
 
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
-let albumsFavoritos = JSON.parse(localStorage.getItem("albumsFavoritos"));
+const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
+const albumsFavoritos = usuarioLogueado.albumsFavs;
 const contenedor = document.querySelector(".contenedorAlbums");
 
+
+function estaEnFavoritos(albumId) {
+  return usuarioLogueado.albumsFavs.some(favAlbum => favAlbum.id === albumId);
+}
+
 function quitarAlbumFavoritos(albumId) {
-  albumsFavoritos = albumsFavoritos.filter(
-    (favAlbum) => favAlbum.id !== albumId
-  );
-  localStorage.setItem("albumsFavoritos", JSON.stringify(albumsFavoritos));
+  usuarioLogueado.albumsFavs = usuarioLogueado.albumsFavs.filter(favAlbum => favAlbum.id !== albumId);
+  localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogueado));
+  
 }
 
 albumsFavoritos.map((album) => {
@@ -40,9 +40,14 @@ albumsFavoritos.map((album) => {
 
   // Creas un nuevo elemento span
   const span = document.createElement("span");
+  
   span.className = "material-symbols-outlined fav"; // ¿? preguntar si la id esta en favoritos para darle el estilo correspondiente y la funcion correspondiente
   span.innerHTML = "grade"; // Puedes cambiar esto si necesitas un valor dinámico
-
+  
+  //EVALUO QUE SI ESTA EN FAVORITOS QUEDE MARCADA LA ESTRELLA
+  if (estaEnFavoritos(album.id)) {
+    span.classList.add("material-symbols-rounded");
+  }
   //añadir event listener on click y validar si esta en favoritos, para darle la funcion correspondiente
 
   // Añades el a y el span al article
@@ -96,3 +101,27 @@ albumsFavoritos.map((album) => {
     localStorage.setItem("albumEscuchando", JSON.stringify(album));
   });
 });
+
+
+
+
+const cerrarSesion = document.querySelector(".cerrar-sesion");
+cerrarSesion.addEventListener("click", function(event){
+    
+   
+
+    const usuarioModificado = usuarioLogueado;
+
+    for ( i = 0; i< usuarios.length ; i++) {
+
+      if (usuarios[i].usuario === usuarioLogueado.usuario) {
+        usuarios[i].remove;
+        usuarios[i] = usuarioModificado;
+        localStorage.removeItem("usuarioLogueado");
+        break;
+      }
+    }
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+    const cerroSesion = localStorage.setItem("ingreso", false);
+    window.location.href = "Index.html";
+})

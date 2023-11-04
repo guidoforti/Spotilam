@@ -4,11 +4,6 @@ const usuario = document.getElementById("usuario");
 
 usuario.textContent = nombreUsuario;
 
-const cerrarSesion = document.querySelector(".cerrar-sesion");
-cerrarSesion.addEventListener("click", function(event){
-    window.location.href = "Index.html";
-    const cerroSesion = localStorage.setItem("ingreso", false);
-})
 
  
 
@@ -193,6 +188,33 @@ const allAlbums = [
   album1, album2, album3 , album4, album5 , album6 , album7 , album8 , album9 , album10, album11, album12, album13 , album14 , album15 
 ];
 
+const usuarios = JSON.parse(localStorage.getItem("usuarios"));
+
+//EL PROBLEMA ES QUE no valido
+
+// Verifica si ya existe un usuario logueado en el almacenamiento local
+let usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
+
+if (!usuarioLogueado) {
+  // Si no existe un usuario logueado en el almacenamiento local, busca el usuario en el array de usuarios guardados
+  const usuarios = JSON.parse(localStorage.getItem("usuarios"));
+
+  for (let u of usuarios) {
+    if (u.usuario === nombreUsuario) {
+      // Encuentra el usuario y asigna sus datos a usuarioLogueado
+      usuarioLogueado = u;
+      localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogueado));
+      break; // Termina el bucle una vez que se encuentra el usuario
+    }
+  }
+}
+
+
+  
+
+
+
+
 //CREO DATA, que tiene la info de todos los albums, osea GUARDO EL ARRAY DE ALBUMS EN EL LOCAL
 localStorage.setItem("data", JSON.stringify(allAlbums));
 
@@ -219,13 +241,15 @@ const contenedor = document.querySelector(".contenedorAlbums");
 // esta funcion retorna true o false , favAlbum representa a un album de cada iteracion y compasra si el id de ese album es igual al parametro
 // que se le pasa a la funcion, si es igual, devuelve true, sino devuelve false
 function estaEnFavoritos(albumId) {
-  return albumsFavoritos.some(favAlbum => favAlbum.id === albumId);
+  return usuarioLogueado.albumsFavs.some(favAlbum => favAlbum.id === albumId);
 }
 
 // se le pasa un album y se lo pushea al array y el array se vuelve a guardar en el local
 function agregarAlbumFavoritos(album) {
-  albumsFavoritos.push(album);
-  localStorage.setItem("albumsFavoritos", JSON.stringify(albumsFavoritos));
+  usuarioLogueado.albumsFavs.push(album);
+  
+  localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogueado));
+  
 }
 
 // Utiliza el método filter para crear un nuevo array que excluya el álbum con el id especificado. 
@@ -233,8 +257,11 @@ function agregarAlbumFavoritos(album) {
 //Luego, guarda el nuevo array de álbumes favoritos (sin el álbum que se quiso quitar) en el almacenamiento local utilizando 
 //localStorage.setItem. Esto actualiza la lista de favoritos sin el álbum específico.
 function quitarAlbumFavoritos(albumId) {
-  albumsFavoritos = albumsFavoritos.filter(favAlbum => favAlbum.id !== albumId);
-  localStorage.setItem("albumsFavoritos", JSON.stringify(albumsFavoritos));
+  usuarioLogueado.albumsFavs = usuarioLogueado.albumsFavs.filter(favAlbum => favAlbum.id !== albumId);
+  
+  localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogueado));
+  
+  
 }
 
 // ACA RECORRO ESE ARRAY DE DATA CON LA FUNCION MAP, QUE ES UNA FUNCION DE LOS ARRAYLIST
@@ -259,10 +286,16 @@ data.map((album) => {
 
   // Creas un nuevo elemento span
   const span = document.createElement("span");
-  span.className = "material-symbols-outlined fav"; // ¿? preguntar si la id esta en favoritos para darle el estilo correspondiente y la funcion correspondiente
-  span.innerHTML = "grade"; // Puedes cambiar esto si necesitas un valor dinámico
+  
+  span.innerHTML = "grade";
+  span.className = "material-symbols-outlined fav";
 
-  //añadir event listener on click y validar si esta en favoritos, para darle la funcion correspondiente
+  //EVALUO QUE SI ESTA EN FAVORITOS QUEDE MARCADA LA ESTRELLA
+  if (estaEnFavoritos(album.id)) {
+    span.classList.add("material-symbols-rounded");
+  }
+  
+
 
   // Añades el a y el span al article
   article.appendChild(a);
@@ -271,17 +304,25 @@ data.map((album) => {
   // Finalmente, añades el article al contenedor
   contenedor.appendChild(article);
 
+  
+  
 
   //AGREGO UN EVENTO A LA ESTRELLA QUE UTILIZA 3 FUNCIONES CREADAS ARRIBA PARA EVALUAR 
   // PARA AGREGAR O QUITAR DEL ARRAY DE FAVORITOS A LOS ALBUMS
   span.addEventListener("click", function(){
   
+    
+
     if (estaEnFavoritos(album.id)){
       quitarAlbumFavoritos(album.id);
       span.classList.remove("material-symbols-rounded");
+      span.classList.add("material-symbols-outlined");
+      
     } else {
       agregarAlbumFavoritos(album);
       span.classList.add("material-symbols-rounded");
+      span.classList.remove("material-symbols-outlined");
+
     }
     
   })
@@ -331,16 +372,29 @@ data.map((album) => {
 
 
 
-// ACA TENGO QUE CREAR LAS DOS FUNCIONES PARA AÑADIR Y SACAR DE FAVORITOPS 
-// tenemos que crear una funcion, que tome al album , lo agregue al array de favoritos si no esta y le cambie el estilo de la estrella osea la clase y el eventlistener
+//EN EL CERRAR SESION AGREGO QUE CUANDO SE CIERRE SESION,  SE RECORRA EL ARRAY DE USUARIOS
+// SE BORRE EL USUARIO QUE COINCIDA CON EL USUARIO LOGUEADO  Y SE LO MODIFIQUE POR LOS DATOS DEL USUARIO LOGUEADO
+// LOS DATOS DEL USUARIO LOGUEADO SON LOS MISMOS QUE DEL REGISTRO, PERO EL MISMO VA A IR GUARDANDO ALBUMS Y CANCIONES
+const cerrarSesion = document.querySelector(".cerrar-sesion");
+cerrarSesion.addEventListener("click", function(event){
+    
+   
 
+    const usuarioModificado = usuarioLogueado;
 
+    for ( i = 0; i< usuarios.length ; i++) {
 
-// const favorites = JSON.parse(localStorage.getItem("favs"));
-
-// funcion añadir a fav => añadir a favoritos, cambiar el classname, cambiar el eventlistener
-
-// funcion quitar de fav => quitar de favoritos, cambiar el classname, cambiar el eventlistener
+      if (usuarios[i].usuario === usuarioLogueado.usuario) {
+        usuarios[i].remove;
+        usuarios[i] = usuarioModificado;
+        localStorage.removeItem("usuarioLogueado");
+        break;
+      }
+    }
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+    const cerroSesion = localStorage.setItem("ingreso", false);
+    window.location.href = "Index.html";
+})
 
 
 
