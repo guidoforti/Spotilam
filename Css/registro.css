@@ -33,6 +33,10 @@ footer {
     box-sizing: border-box;
 }
 
+.footer {
+    margin-top: 15%;
+}
+
 .a-link {
     display: flex;
     margin-top: 10px;
@@ -84,6 +88,10 @@ footer {
 
     .button {
         font-size: 100%;
+    }
+
+    .footer {
+        margin-top: 47%;
     }
 }
 

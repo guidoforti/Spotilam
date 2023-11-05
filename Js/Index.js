@@ -4,7 +4,11 @@ const USUARIOS = JSON.parse(localStorage.getItem("usuarios"));
 button.addEventListener("click", function (event) {
   event.preventDefault();
   const nombreUsuario = document.getElementById("usuario").value;
-  const contraseniaIngresada = document.getElementById("contraseña").value;
+  let contraseniaIngresada = document.getElementById("contraseña").value;
+  const mitad1 = contraseniaIngresada.slice(0, contraseniaIngresada.length/2);
+  const mitad2 = contraseniaIngresada.slice(contraseniaIngresada.length/2);
+  const contraseniaVuelta = mitad2 + mitad1;
+  contraseniaIngresada = contraseniaVuelta;
 
   let ingreso = false;
 
