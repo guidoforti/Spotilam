@@ -21,9 +21,10 @@ const album1 = {
   id: "a1",
   img: "img/nora.jpg",
   canciones: [
-    { id: "album1Cancion1", nombre: "oblivion", duracion: "3:21", vistas: "9000" },
-    { id: "album1Cancion2", nombre: "oblivion", duracion: "3:21", vistas: "9000" },
-    { id: "album1Cancion3", nombre: "oblivion", duracion: "3:21", vistas: "9000" },
+    { id: "albumCancion1", nombre: "oblivion", duracion: "3:50", vistas: "11000" },
+    { id: "albumCancion2", nombre: "noraAndNora", duracion: "4:21", vistas: "5000" },
+    { id: "albumCancion3", nombre: "NoraSuena", duracion: "2:21", vistas: "3000" },
+    { id: "albumCancion4", nombre: "NoraSuenaEnSpotilam", duracion: "22:21", vistas: "4000" },
   ],
 };
 
@@ -32,9 +33,10 @@ const album2 = {
   id: "a2",
   img: "img/bdbn.jpg",
   canciones: [
-    { id: "album2Cancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-    { id: "album2Cancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-    { id: "album2Cancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+    { id: "albumCancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+    { id: "albumCancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+    { id: "albumCancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+    { id: "albumCancion4", nombre: "NoraSuenaEnSpotilam", duracion: "22:21", vistas: "4000" },
   ],
 };
 
@@ -43,10 +45,11 @@ const album2 = {
   id: "a3",
    img: "img/yeat.jpg",
    canciones: [
-     { id: "album2Cancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-     { id: "album2Cancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-     { id: "album2Cancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-   ],
+     { id: "albumCancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+     { id: "albumCancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+     { id: "albumCancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+     { id: "albumCancion4", nombre: "NoraSuenaEnSpotilam", duracion: "22:21", vistas: "4000" },
+    ],
  };
 
  const album4 = {
@@ -54,9 +57,10 @@ const album2 = {
    id: "a4",
     img: "img/dftpnk.jpg",
     canciones: [
-      { id: "album2Cancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-      { id: "album2Cancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-      { id: "album2Cancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion1", nombre: "where she goes", duracion: "3:45", vistas: "92000" },
+      { id: "albumCancion2", nombre: "mosco mule", duracion: "2:21", vistas: "19000" },
+      { id: "albumCancion3", nombre: "conejo malo", duracion: "2:41", vistas: "2000" },
+      { id: "albumCancion4", nombre: "NoraSuenaEnSpotilam", duracion: "22:21", vistas: "4000" },
     ],
   };
 
@@ -65,9 +69,10 @@ const album2 = {
    id: "a5",
     img: "img/kayneWest.jpg",
     canciones: [
-      { id: "album2Cancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-      { id: "album2Cancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-      { id: "album2Cancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion4", nombre: "NoraSuenaEnSpotilam", duracion: "22:21", vistas: "4000" },
     ],
   };
 
@@ -76,9 +81,10 @@ const album2 = {
    id: "a6",
     img: "img/pinkfloyd.jpg",
     canciones: [
-      { id: "album2Cancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-      { id: "album2Cancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-      { id: "album2Cancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion4", nombre: "NoraSuenaEnSpotilam", duracion: "22:21", vistas: "4000" },
     ],
   };
 
@@ -87,9 +93,10 @@ const album2 = {
    id: "a7",
     img: "img/tame impala.jpg",
     canciones: [
-      { id: "album2Cancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-      { id: "album2Cancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-      { id: "album2Cancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion4", nombre: "NoraSuenaEnSpotilam", duracion: "22:21", vistas: "4000" }, 
     ],
   };
 
@@ -99,9 +106,10 @@ const album2 = {
    id: "a8",
     img: "img/quevedo.jpg",
     canciones: [
-      { id: "album2Cancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-      { id: "album2Cancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-      { id: "album2Cancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion4", nombre: "NoraSuenaEnSpotilam", duracion: "22:21", vistas: "4000" }, 
     ],
   };
 
@@ -110,9 +118,10 @@ const album2 = {
    id: "a9",
     img: "img/benbhomer.jpg",
     canciones: [
-      { id: "album2Cancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-      { id: "album2Cancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-      { id: "album2Cancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion4", nombre: "NoraSuenaEnSpotilam", duracion: "22:21", vistas: "4000" },
     ],
   };
 
@@ -121,9 +130,10 @@ const album2 = {
    id: "a10",
     img: "img/nicky.jpg",
     canciones: [
-      { id: "album2Cancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-      { id: "album2Cancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-      { id: "album2Cancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion4", nombre: "NoraSuenaEnSpotilam", duracion: "22:21", vistas: "4000" }, 
     ],
   };
 
@@ -132,9 +142,10 @@ const album2 = {
    id: "a11",
     img: "img/nompa.jpg",
     canciones: [
-      { id: "album2Cancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-      { id: "album2Cancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-      { id: "album2Cancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion4", nombre: "NoraSuenaEnSpotilam", duracion: "22:21", vistas: "4000" }, 
     ],
   };
 
@@ -143,9 +154,10 @@ const album2 = {
    id: "a12",
     img: "img/trueno.jpg",
     canciones: [
-      { id: "album2Cancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-      { id: "album2Cancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-      { id: "album2Cancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion4", nombre: "NoraSuenaEnSpotilam", duracion: "22:21", vistas: "4000" }, 
     ],
   };
 
@@ -154,9 +166,10 @@ const album2 = {
    id: "a13",
     img: "img/TTT.jpg",
     canciones: [
-      { id: "album2Cancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-      { id: "album2Cancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-      { id: "album2Cancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+     { id: "albumCancion4", nombre: "NoraSuenaEnSpotilam", duracion: "22:21", vistas: "4000" }, 
     ],
   };
 
@@ -165,9 +178,10 @@ const album2 = {
    id: "a14",
     img: "img/kayne.jpg",
     canciones: [
-      { id: "album2Cancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-      { id: "album2Cancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-      { id: "album2Cancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion4", nombre: "NoraSuenaEnSpotilam", duracion: "22:21", vistas: "4000" },
     ],
   };
   const album15 = {
@@ -175,9 +189,10 @@ const album2 = {
     id: "a15",
     img: "img/2feet.jpg",
     canciones: [
-      { id: "album2Cancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-      { id: "album2Cancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
-      { id: "album2Cancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion1", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion2", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion3", nombre: "where she goes", duracion: "3:21", vistas: "9000" },
+      { id: "albumCancion4", nombre: "NoraSuenaEnSpotilam", duracion: "22:21", vistas: "4000" }, 
     ],
   };
 
@@ -341,6 +356,7 @@ data.map((album) => {
     const imgDeArticuloEscuchando = document.createElement("img");
     imgDeArticuloEscuchando.className = "imgAlbumDescripcion";
     imgDeArticuloEscuchando.src = album.img;
+
 
 
     aDeArticuloEcuchando.appendChild(imgDeArticuloEscuchando);
