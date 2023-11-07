@@ -75,11 +75,13 @@ const error4 = document.createElement('span');
 }
 
 const btnPagar = document.getElementById("btnPagar");
-
+const dialog = document.getElementById("dialogConfirmation");
+dialog.close();
 btnPagar.addEventListener("click", (e)=>{
- if(error1.value ==""&& error2.value==""&& error3.value==""&& error4.value==""){
-    
- }
+    e.preventDefault();
+    if(error1.value ==""&& error2.value==""&& error3.value==""&& error4.value==""){
+    dialog.showModal();
+    }
 });
 /*
 const formulario = document.getElementById("formularioPagar")
