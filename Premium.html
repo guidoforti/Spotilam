@@ -26,19 +26,26 @@
 
 
 
-        <header>
+        <header class="headerPremium">
             <h1>Planes Premium</h1>
         </header>
 
 
+        <div class="usuario">
+            <h2 id="usuario">Grupo 6</h2>
+            <a class="cerrar-sesion" href="index.html">Cerrar sesion</a>
+          </div>
 
     </div>
 
     <main>
         <section class="contenedorPlanes">
-            <section class="planesPremium">
+            
+                <form class="planesPremium" method="get">
                 <article class="plan1">
-                    <h2>Plan Mensual</h2>
+                
+                    <label for ="planMensual"> Plan Mensual</label>
+                    
                     <img src="img/logo2.png" alt="PlanMensual">
                     <ul>
                         <li>Musica sin anuncios</li>
@@ -46,11 +53,11 @@
                         <li>Reproduccion On-demand</li>
                         <li>Escucha tus canciones en cualquier lugar</li>
                     </ul>
-                    <input type="radio" name="planseleccionado">
+                    <input class ="inputPlanes" type="radio" name="planseleccionado" id="planMensual" data-nombre="planMensual">
                 </article>
 
                 <article class="plan2">
-                    <h2>Plan Anual</h2>
+                    <label for ="planAnual"> Plan Anual</label>
                     <img src="img/logo2.png" alt="PlanAnual">
                     <ul>
                         <li>Musica sin anuncios</li>
@@ -58,11 +65,11 @@
                         <li>Reproduccion On-demand</li>
                         <li>Super descuentos</li>
                     </ul>
-                    <input type="radio" name="planseleccionado">
+                    <input class ="inputPlanes"  type="radio" name="planseleccionado" id="planAnual" data-nombre="planAnual">
                 </article>
 
                 <article class="plan3">
-                    <h2>Plan Infinito</h2>
+                    <label for ="planInfinito"> Plan Infinito</label>
                     <img src="img/logo2.png" alt="PlanInfinito">
                     <ul>
                         <li>Musica sin anuncios para toda tu vida</li>
@@ -70,15 +77,19 @@
                         <li>Reproduccion On-demand</li>
                         <li>Super descuentos</li>
                     </ul>
-                    <input type="radio" name="planseleccionado">
+                    <input class ="inputPlanes" type="radio" name="planseleccionado" id="planInfinito" data-nombre="planInfinito">
                 </article>
-            </section>
+
+                <input id = "btnAvanzar" class="button" type="submit" value="Avanzar">
+
+            </form>
+            
 
 
             <section class="secBotonesPremium">
                 <article class="botonespremium">
                     <a class="button" href="VistaPrincipal.html">Cancelar</a>
-                    <a class="button" href="pagar.html">Avanzar</a>
+                   
                 </article>
             </section>
         </section>
@@ -98,6 +109,8 @@
 
 
     </footer>
-</body>
+
+    <script src="Js/Premium.js"></script>
+    </body>
 
 </html>

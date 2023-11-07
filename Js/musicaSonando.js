@@ -81,65 +81,70 @@ for (i = 0; i < cancionesDelAlbumActual.length ; i ++) {
 /* --------------------------------------------------------------------------------------------- */
 
 //creo lo de abajo segun la cancion
-const icono = document.querySelector(".icono-play");
+const iconos = document.querySelectorAll(".icono-play");
 
-icono.addEventListener("click", ()=> {
 
-    const cancionMostrando = document.querySelector(".imgAlbumDescripcion");
+
+
+
+
+
+
+iconos.forEach(icono => {
+
+
+  icono.addEventListener("click", ()=> {
+
+    if(icono.id === "ic1"){
+      const cancionMostrando = document.querySelector(".imgAlbumDescripcion");
     cancionMostrando.src = imgCancion1.src;
     const descripcionCancionSonando = document.querySelector(".descripcion");
     descripcionCancionSonando.textContent = "estas escuchando : " + nombreCancion.textContent;
-
-});
-
-
-const icono2 = document.querySelector(".icono-play2");
-
-icono2.addEventListener("click", ()=> {
-
-    const cancionMostrando = document.querySelector(".imgAlbumDescripcion");
-    cancionMostrando.src = imgCancion2.src;
-    const descripcionCancionSonando = document.querySelector(".descripcion");
-    descripcionCancionSonando.textContent = "estas escuchando : " + nombreCancion2.textContent;
-
-});
-
-
-const icono3 = document.querySelector(".icono-play3");
-
-icono3.addEventListener("click", ()=> {
-
-    const cancionMostrando = document.querySelector(".imgAlbumDescripcion");
+    }
+    if(icono.id === "ic2"){
+      const cancionMostrando = document.querySelector(".imgAlbumDescripcion");
+      cancionMostrando.src = imgCancion2.src;
+      const descripcionCancionSonando = document.querySelector(".descripcion");
+      descripcionCancionSonando.textContent = "estas escuchando : " + nombreCancion2.textContent;
+    }
+    
+    if (icono.id === "ic3"){
+      const cancionMostrando = document.querySelector(".imgAlbumDescripcion");
     cancionMostrando.src = imgCancion3.src;
     const descripcionCancionSonando = document.querySelector(".descripcion");
     descripcionCancionSonando.textContent = "estas escuchando : " + nombreCancion3.textContent;
 
+    }
 });
+})
+
+
+
 
 
 /* -------------------------------------------------------------------------------------------- */
 
 
-function estaEnFavoritosCancion(cancionId) {
-    return usuarioLogueado.cancionesFavs.some(favCancion => favCancion.id === cancionId);
+function estaEnFavoritosCancion(cancionId, albumId) {
+  if(usuarioLogueado.cancionesFavs) {
+    return usuarioLogueado.cancionesFavs.some(favCancion => favCancion.id === cancionId && favCancion.albumId === albumId);
+  }
+  return false;
   }
   
-  
-  function agregarCancionesFavoritos(cancion) {
-    usuarioLogueado.cancionesFavs.push(cancion);
-    
-    localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogueado));
-    
-  }
-  
-  
-  function quitarCancionesFavoritos(cancionId) {
-    usuarioLogueado.cancionesFavs = usuarioLogueado.cancionesFavs.filter(favCancion => favCancion.id !== cancionId);
-    
-    localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogueado));
-    
-    
-  }
+
+
+
+function agregarCancionesFavoritos(cancion, albumId) {
+  cancion.albumId = albumId; // Asigna el id del álbum a la canción
+  usuarioLogueado.cancionesFavs.push(cancion);
+  localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogueado));
+}
+
+function quitarCancionesFavoritos(cancionId, albumId) {
+  usuarioLogueado.cancionesFavs = usuarioLogueado.cancionesFavs.filter(favCancion => !(favCancion.id === cancionId && favCancion.albumId === albumId));
+  localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogueado));
+}
 
   // AGREGO LA FUNCION A LAS ESTRELLAS , 
   // TENGO QUE TRAER CON UN ALL QUE ME TRAE UN ARRAY DE SPANS
@@ -149,7 +154,26 @@ function estaEnFavoritosCancion(cancionId) {
   // EL ARRAY DE SPANS Y LE AGREGO A CADA UNO LA FUNCION Y EVALUO DENTRO LA CANCION.
  
 
-
+  const cerrarSesion = document.querySelector(".cerrar-sesion");
+  cerrarSesion.addEventListener("click", function(event){
+     event.preventDefault(); 
+     
+  
+      const usuarioModificado = usuarioLogueado;
+  
+      for ( i = 0; i< usuarios.length ; i++) {
+  
+        if (usuarios[i].usuario === usuarioLogueado.usuario) {
+          usuarios[i].remove;
+          usuarios[i] = usuarioModificado;
+          localStorage.removeItem("usuarioLogueado");
+          break;
+        }
+      }
+      localStorage.setItem("usuarios", JSON.stringify(usuarios));
+      const cerroSesion = localStorage.setItem("ingreso", false);
+      window.location.href = "Index.html";
+  })
 
 //HAY UN ERROR QUE LA ESTRELLA QUEDA MARCADA SI CAMBIAS DE ALBUM DESPUES
 // ADEMAS 
@@ -159,20 +183,24 @@ const spans = document.querySelectorAll(".material-symbols-outlined");
 for (let i = 0; i < cancionesDelAlbumActual.length; i++) {
   const cancion = cancionesDelAlbumActual[i];
   const span = spans[i];
-
-  if (estaEnFavoritosCancion(cancion.id)) {
+  const album = cancion.albumId;
+  /*if (!estaEnFavoritosCancion(cancion[i])) {
+    span.classList.remove("material-symbols-rounded");
+    span.classList.add("material-symbols-outlined");
+  }*/
+  if (estaEnFavoritosCancion(cancion.id, album)) {
     span.classList.add("material-symbols-rounded");
   }
 
   span.addEventListener("click", function() {
-    if (estaEnFavoritosCancion(cancion.id)) {
-      quitarCancionesFavoritos(cancion.id);
+    if (estaEnFavoritosCancion(cancion.id , album)) {
+      quitarCancionesFavoritos(cancion.id, album);
       span.classList.remove("material-symbols-rounded");
-      span.classList.add("material-symbols-outlined");
+      
     } else {
-      agregarCancionesFavoritos(cancion);
+      agregarCancionesFavoritos(cancion, album);
       span.classList.add("material-symbols-rounded");
-      span.classList.remove("material-symbols-outlined");
+      
     }
   });
 }
@@ -180,37 +208,5 @@ for (let i = 0; i < cancionesDelAlbumActual.length; i++) {
 
   
 
-  
 
 
-
-
-
-
-
-
-
-
-
-
-
-const cerrarSesion = document.querySelector(".cerrar-sesion");
-cerrarSesion.addEventListener("click", function(event){
-   event.preventDefault(); 
-   
-
-    const usuarioModificado = usuarioLogueado;
-
-    for ( i = 0; i< usuarios.length ; i++) {
-
-      if (usuarios[i].usuario === usuarioLogueado.usuario) {
-        usuarios[i].remove;
-        usuarios[i] = usuarioModificado;
-        localStorage.removeItem("usuarioLogueado");
-        break;
-      }
-    }
-    localStorage.setItem("usuarios", JSON.stringify(usuarios));
-    const cerroSesion = localStorage.setItem("ingreso", false);
-    window.location.href = "Index.html";
-})

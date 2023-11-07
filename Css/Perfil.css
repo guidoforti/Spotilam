@@ -106,7 +106,19 @@ h1 {
 }
 
 
+.alertaPositiva {
+    z-index: 10;
+    background-color: green;
+    width: 30%;
+    height: 30%;
+    border: 5px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 
+
+}
 
 
 .a-link {

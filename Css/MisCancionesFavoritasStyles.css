@@ -280,8 +280,13 @@ body {
     opacity: 1;
 }
 
+#usuario {
+    margin-right: 30%;
+
+}
+
 .espacio {
-    grid-column: 1;
+    grid-column: 1/2;
     grid-row: 1;
 }
 
@@ -305,7 +310,7 @@ body {
     grid-row: 1;
 }
 
-
+/*
 .c01 {
     grid-column: 2;
     grid-row: 2;
@@ -404,6 +409,39 @@ body {
 .e04 {
     grid-column: 1;
     grid-row: 5;
+} */
+
+.cancionesFavoritasInfo {
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: auto;
+}
+
+
+.divDeCadaCancion {
+    grid-row: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.div1{
+    position: relative;
+    text-align: center;
+}
+.imgCC {
+    height: 100px;
+    width: 100px;
+
+}
+
+.div1:hover .icono-play {
+    opacity: 1;
+}
+
+.div1:hover .overlay {
+    opacity: 1;
 }
 
 .reproductor {

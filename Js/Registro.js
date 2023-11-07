@@ -1,6 +1,11 @@
 let USUARIOS = [];
-if (JSON.parse(localStorage.getItem("usuarios")) !== null) {
-  USUARIOS = JSON.parse(localStorage.getItem("usuarios"));
+
+// Verifica si hay datos en el localStorage
+const storedUsers = localStorage.getItem("usuarios");
+
+// Si existen datos en el localStorage, úsalos; de lo contrario, mantén el arreglo vacío.
+if (storedUsers) {
+  USUARIOS = JSON.parse(storedUsers);
 }
 
 function Usuario(

@@ -12,7 +12,10 @@ const contenedor = document.querySelector(".contenedorAlbums");
 
 
 function estaEnFavoritos(albumId) {
-  return usuarioLogueado.albumsFavs.some(favAlbum => favAlbum.id === albumId);
+  if (usuarioLogueado.albumsFavs) {
+    return usuarioLogueado.albumsFavs.some(favAlbum => favAlbum.id === albumId);
+  }
+  return false;
 }
 
 function quitarAlbumFavoritos(albumId) {
@@ -183,7 +186,7 @@ span.addEventListener("click", function(){
   
 });
 
-const cerrarSesion = document.querySelector(".cerrar-sesion");
+const cerrarSesion = document.getElementById("cerrarLaSesion")
 cerrarSesion.addEventListener("click", function(event){
     
    

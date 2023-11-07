@@ -31,7 +31,7 @@
         </header>
 
         <div class="usuario">
-            <h2 class="nombre-usuario">Grupo 6</h2>
+            <h2 id ="usuario" class="nombre-usuario"></h2>
             <a href="index.html" class="cerrar-sesion"> cerrar sesion</a>
             <img src="img/usuario.jpg" class="imagen-usuario">
         </div>
@@ -40,42 +40,42 @@
 
     </div>
     <main>
+        <div class="contenedorAlerta"></div>
             <div class="contenedorPerfil">
-                <form action="VistaPrincipal.html" method="post" class="form-editarperfil">
+                <form action="" method="get" class="form-editarperfil">
 
                     <div class="campo">
-                        <label for="usuario">Usuario</label>
-                        <input class="recuadro" type="text" name="usuario" size="20" placeholder="Usuario Registrado">
+                        <label for="usuarioNuevo">Usuario</label>
+                        <input  id="usuarioNuevo" class="recuadro" type="text" name="usuario" size="20" placeholder="Usuario Registrado" required="true">
                     </div>
                     <div class="campo">
-                        <label for="contraseña">Contraseña</label>
-                        <input class="recuadro" type="password" name="contraseña" id="contraseña"
-                            placeholder="Contraseña Registrada">
+                        <label for="contraNueva">Contraseña</label>
+                        <input  id="contraNueva" class="recuadro" type="password" name="contraseña" placeholder="Contraseña Registrada" required="true">
                     </div>
                     <div class="campo">
-                        <label for="repetirContraseña"> Repetir contraseña</label>
-                        <input class="recuadro" type="password" name="repetirContraseña" id="repetirContraseña"
-                            placeholder="Confirmar nueva contraseña">
+                        <label for="contraNuevaR"> Repetir contraseña</label>
+                        <input id="contraNuevaR" class="recuadro" type="password" name="repetirContraseña" placeholder="Confirmar nueva contraseña" required="true" >
                     </div>
                     <div class="campo">
-                        <label for="fechaNacimiento"> Fecha de Nacimiento</label>
-                        <input class="recuadro" type="date" name="fechaNacimiento" id="fechaNacimiento" value="2023-09-27">
+                        <label for="fechaNueva"> Fecha de Nacimiento</label>
+                        <input  id="fechaNueva" class="recuadro" type="date" name="fechaNacimiento"  value="2023-09-27" required="true">
                     </div>
                     <div class="campo">
-                        <label for="email"> Email </label>
-                        <input class="recuadro" type="email" name="email" id="email" placeholder="Email registrado">
+                        <label for="emailNuevo"> Email </label>
+                        <input id="emailNuevo" class="recuadro" type="email" name="email"  placeholder="Email registrado" required="true">
                     </div>
                     
                     
     
-                    <a class="a-link" href="Premium.html">Premium</a>
-                    <a class="a-link" href="index.html">Eliminar Usuario</a>
-                    <article class="botones-perfil">
-                        <a class="button" href="VistaPrincipal.html">Home</a>
-                        <input class="button" type="submit" value="Guardar">
-                    </article>
+                    <input class="button" type="submit" value="Guardar">
     
                 </form>
+                <button id= "btnPremium" class="a-link">Premium</button>
+                <button id="btnEliminar" class="a-link">Eliminar Usuario</button>
+                <article class="botones-perfil">
+                    <a class="button" href="VistaPrincipal.html">Home</a>
+                    
+                </article>
             </div>
 
 
@@ -87,14 +87,16 @@
         <div class="footer">
 
 
-            <p> Ivone Corleto : 43.863.355 , Marcos Armoa : 44.362.234 , Magali Galeano : 39.927.593</p>
+            <p> Ivone Corleto : 43.863.355 , Magali Galeano : 39.927.593</p>
 
-            <p> Juliana Duran : 40.290.932 , Guido Forti : 39.346.350 , Ignacio Alonso : 40.540.317 </p>
+            <p> Guido Forti : 39.346.350 , Ignacio Alonso : 40.540.317 </p>
 
         </div>
 
 
     </footer>
+    <script src="Js/perfil.js"></script>
 </body>
+
 
 </html>
