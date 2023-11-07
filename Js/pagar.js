@@ -7,16 +7,84 @@ usuario.textContent = nombreUsuario;
 const planSeleccionado = JSON.parse(localStorage.getItem("planSeleccionado"));
 const nombrePlan = document.getElementById("plan");
 nombrePlan.textContent = planSeleccionado.tipo;
+/*estoy probando otra cosa - Maga*/
+const campoNumeroTarjeta = document.getElementById("campoNumeroTarjeta");
+const campoCvc = document.getElementById("campoCvc");
+const campoFechaVto = document.getElementById("campoFechaVto");
+const campoNombreApellido = document.getElementById("campoNombreApellido");
+const numeroTarjeta = document.getElementById("NumeroTarjeta");
+const nombreApellido = document.getElementById("nombreApellido");
+const cvc = document.getElementById("CVC");
+const inputFecha = document.getElementById("fechaDeVTO");
+const error1 = document.createElement('span');
+const error2 = document.createElement('span');
+const error3 = document.createElement('span');
+const error4 = document.createElement('span');
 
+
+    numeroTarjeta.addEventListener('blur', function(){
+        if(numeroTarjeta.value.length !== 16){
+            error1.textContent = "El numero de tarjeta debe ser de 16 digitos";
+            error1.style.color = "red";
+            campoNumeroTarjeta.appendChild(error1);
+        } else{
+            error1.textContent = "";
+        }
+    });
+
+    cvc.addEventListener('blur', function(){
+        if(cvc.value.length !== 3 || cvc.value === "000" || cvc.value === "999"){
+            error2.textContent ="El numero de CVC es invalido";
+            error2.style.color = "red";
+            campoCvc.appendChild(error2);
+        } else {
+            error2.textContent = "";
+        }
+
+    });
+  
+        inputFecha.addEventListener('blur',function(){
+            let fechaIngresada = inputFecha.value;
+            if (!isValidDate(fechaIngresada)) {
+                error3.textContent="Ingrese una fecha valida";
+                error3.style.color = "red";
+                campoFechaVto.appendChild(error3);  
+            }else {
+                error3.textContent="";
+            }
+        });
+
+        nombreApellido.addEventListener("blur", function(){
+            if(nombreApellido.value.length === 0){
+                error4.textContent = "Ingrese nombre y apellido";
+                error4.style.color = "red";
+                campoNombreApellido.appendChild(error4);
+            }else{
+                error4.textContent = "";
+            }
+        })
+
+        function isValidDate(dateString) {
+    // Utilizo una expresión regular para verificar el formato YYYY-MM-DD
+    var dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+    if (!dateRegex.test(dateString)) {
+    return false;
+    }
+    var date = new Date(dateString);
+    return !isNaN(date.getTime());
+}
+
+/*
 const formulario = document.getElementById("formularioPagar")
-formulario.addEventListener("submit", function (event) {
+formulario.addEventListener("change", function (event) {
     event.preventDefault();
 
     const numeroTarjeta = document.getElementById("NumeroTarjeta").value;
+    const error = document.createElement('span');
 
     if(numeroTarjeta.length !== 16){
-        alert("El numero de tarjeta debe ser de 16 digitos");
-        return;
+        error.textContent = "El numero de tarjeta debe ser de 16 digitos";
+        campoNumeroTarjeta.appendChild(error);
     }
 
     const cvc = document.getElementById("CVC").value;
@@ -46,21 +114,12 @@ formulario.addEventListener("submit", function (event) {
 
     
 })
-
+*/
 const cancelar = document.getElementById("btnCancelar");
 
 cancelar.addEventListener("click", function (event){
     window.location.href = "VistaPrincipal.html"
 })
-
-
-
-
-
-
-
-
-
 
 
 const cerrarSesion = document.querySelector(".cerrar-sesion");
