@@ -24,6 +24,7 @@ body {
     
 }
 
+
 .contenedorTitulo {
 
     grid-row: 1;
@@ -41,6 +42,21 @@ main {
 footer {
     grid-row: 3;
     grid-column: 1;
+    margin-top: 37%;
+}
+
+.cerrar-sesion {
+    position: relative;
+    top: 20%;
+    font-family: var(--roboto);
+}
+
+.usuario {
+    grid-column: 2;
+    margin-right: 20%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
 }
 
 
@@ -86,7 +102,7 @@ h1 {
 
     margin: 3% auto;
 
-    width: 40%;
+    width: 60%;
     background-color: #9153F4;
     padding: 60px;
 
@@ -107,7 +123,7 @@ h1 {
 
     .contenedor-form {
 
-    width: 100%;
+    width: 80%;
     
     }
     body {
@@ -118,9 +134,9 @@ h1 {
 }
 
 .campo {
-    display: flex;
     justify-content: space-around;
-    margin: 20px;
+    margin: 10%;
+    margin-bottom: 10%;
 }
 
 img {
@@ -131,7 +147,7 @@ img {
 
 .recuadro {
     border: solid 1px #D6C5F0;
-    width: 280px;
+    width: 100%;
     border-radius: 5px;
 }
 
@@ -173,6 +189,10 @@ img {
 
     .recuadro {
         width: 110%;
+    }
+
+    footer {
+        margin-top: 83%;
     }
 }
 

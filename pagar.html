@@ -23,8 +23,14 @@
 
     <div class="contenedorTitulo">
         <header>
-            <h1>Elegiste el Plan Infinito</h1>
+            <h1 id="plan">Elegiste el Plan Infinito</h1>
         </header>
+
+        <div class="usuario">
+            <h2 id="usuario">Grupo 6</h2>
+            <a class="cerrar-sesion" href="index.html">Cerrar sesion</a>
+          </div> 
+
     </div>
 
     <main>
@@ -36,30 +42,30 @@
             </article>
 
             <article class="formContainer">
-                <form class="contenedor-form" action="" method="post">
+                <form id="formularioPagar"class="contenedor-form" action="" method="post">
                     <div class="campo">
                         <label for="NumeroTarjeta">Tarjeta</label>
-                        <input class="recuadro" type="number" name="NumeroTarjeta" id="NumeroTarjeta"
+                        <input id="NumeroTarjeta" class="recuadro" type="number" name="NumeroTarjeta" 
                             placeholder="Ingrese los digitos de su tarjeta" size="16">
                     </div>
                     <div class="campo">
                         <label for="CVC">CVC</label>
-                        <input class="recuadro" type="number" name="cvc" id="cvc"
+                        <input id="CVC" class="recuadro" type="number" name="CVC" 
                             placeholder="Ingrese el codigo de seguridad" size="3">
                     </div>
                     <div class="campo">
                         <label for="fechaDeVTO">VTO</label>
-                        <input class="recuadro" type="date" name="fechaDeVTO" id="fechaDeVTO">
+                        <input id="fechaDeVTO" class="recuadro" type="date" name="fechaDeVTO" >
                     </div>
                     <div class="campo">
                         <label for="nombreApellido">Nombre y Apellido</label>
-                        <input class="recuadro" type="text" name="nombreApellido" id="nombreApellido" size="20"
+                        <input id="nombreApellido" class="recuadro" type="text" name="nombreApellido"  size="20"
                             placeholder="Ingrese nombre y apellido">
                     </div>
                     
                     
-                    <a class="button" href="VistaPrincipal.html">Cancelar</a>
-                    <a class="button" href="VistaPrincipal.html">Pagar</a>
+                    <a id="btnCancelar" class="button" href="VistaPrincipal.html">Cancelar</a>
+                    <input class="button" type="submit" href="VistaPrincipal.html" value="Pagar">
 
                 </form>
             </article>
@@ -84,6 +90,7 @@
 
 
     </footer>
+    <script src="Js/pagar.js"></script>
 </body>
 
 </html>
