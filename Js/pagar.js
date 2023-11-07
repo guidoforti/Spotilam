@@ -74,6 +74,13 @@ const error4 = document.createElement('span');
     return !isNaN(date.getTime());
 }
 
+const btnPagar = document.getElementById("btnPagar");
+
+btnPagar.addEventListener("click", (e)=>{
+ if(error1.value ==""&& error2.value==""&& error3.value==""&& error4.value==""){
+    
+ }
+});
 /*
 const formulario = document.getElementById("formularioPagar")
 formulario.addEventListener("change", function (event) {
