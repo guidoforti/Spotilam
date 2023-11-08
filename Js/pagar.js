@@ -1,12 +1,30 @@
 const nombreUsuario = localStorage.getItem("nombreUsuario");
+const botonCerrarSesion = document.getElementById("botonCerrarSesion");
 const usuario = document.getElementById("usuario");
+const ingreso = localStorage.getItem("ingreso");
 
-
-usuario.textContent = nombreUsuario;
+if (ingreso !== "false") {
+    usuario.textContent = nombreUsuario;
+    botonCerrarSesion.textContent = "Cerrar sesión";
+}
 
 const planSeleccionado = JSON.parse(localStorage.getItem("planSeleccionado"));
 const nombrePlan = document.getElementById("plan");
+const descripcionPlan = document.getElementById("descripcionPlan");
 nombrePlan.textContent = planSeleccionado.tipo;
+
+ switch(planSeleccionado.tipo) {
+    case "Plan Mensual":
+        descripcionPlan.textContent = "Musica sin anuncios. Paga por mes. Reproduccion On-demand. Escucha tus canciones en cualquier lugar.";
+        break;
+    case "Plan Anual":
+        descripcionPlan.textContent = "Musica sin anuncios. Paga por año. Reproduccion On-demand. Super descuentos.";
+        break;
+    case "Plan Infinito": 
+        descripcionPlan.textContent = "Musica sin anuncios para toda tu vida. Paga una sola vez. Reproduccion On-demand. Super descuentos.";
+        break;
+}
+
 /*estoy probando otra cosa - Maga*/
 const campoNumeroTarjeta = document.getElementById("campoNumeroTarjeta");
 const campoCvc = document.getElementById("campoCvc");
@@ -16,137 +34,126 @@ const numeroTarjeta = document.getElementById("NumeroTarjeta");
 const nombreApellido = document.getElementById("nombreApellido");
 const cvc = document.getElementById("CVC");
 const inputFecha = document.getElementById("fechaDeVTO");
-const error1 = document.createElement('span');
-const error2 = document.createElement('span');
-const error3 = document.createElement('span');
-const error4 = document.createElement('span');
+const errNumeroTarjeta = document.createElement('span');
+const errCVC = document.createElement('span');
+const errFecha = document.createElement('span');
+const errNombreYApellido = document.createElement('span');
 
 
-    numeroTarjeta.addEventListener('blur', function(){
-        if(numeroTarjeta.value.length !== 16){
-            error1.textContent = "El numero de tarjeta debe ser de 16 digitos";
-            error1.style.color = "red";
-            campoNumeroTarjeta.appendChild(error1);
-        } else{
-            error1.textContent = "";
-        }
-    });
-
-    cvc.addEventListener('blur', function(){
-        if(cvc.value.length !== 3 || cvc.value === "000" || cvc.value === "999"){
-            error2.textContent ="El numero de CVC es invalido";
-            error2.style.color = "red";
-            campoCvc.appendChild(error2);
-        } else {
-            error2.textContent = "";
-        }
-
-    });
-  
-        inputFecha.addEventListener('blur',function(){
-            let fechaIngresada = inputFecha.value;
-            if (!isValidDate(fechaIngresada)) {
-                error3.textContent="Ingrese una fecha valida";
-                error3.style.color = "red";
-                campoFechaVto.appendChild(error3);  
-            }else {
-                error3.textContent="";
-            }
-        });
-
-        nombreApellido.addEventListener("blur", function(){
-            if(nombreApellido.value.length === 0){
-                error4.textContent = "Ingrese nombre y apellido";
-                error4.style.color = "red";
-                campoNombreApellido.appendChild(error4);
-            }else{
-                error4.textContent = "";
-            }
-        })
-
-        function isValidDate(dateString) {
-    // Utilizo una expresión regular para verificar el formato YYYY-MM-DD
-    var dateRegex = /^\d{4}-\d{2}-\d{2}$/;
-    if (!dateRegex.test(dateString)) {
-    return false;
+numeroTarjeta.addEventListener('blur', function () {
+    
+    if (numeroTarjeta.value.length !== 16) {
+        errNumeroTarjeta.textContent = "El numero de tarjeta debe ser de 16 digitos";
+        errNumeroTarjeta.style.color = "red";
+        campoNumeroTarjeta.appendChild(errNumeroTarjeta);
+    } else {
+        errNumeroTarjeta.textContent = "";
     }
-    var date = new Date(dateString);
-    return !isNaN(date.getTime());
+});
+
+cvc.addEventListener('blur', function () {
+    if (cvc.value.length !== 3 || cvc.value === "000" || cvc.value === "999") {
+        errCVC.textContent = "El numero de CVC es invalido";
+        errCVC.style.color = "red";
+        campoCvc.appendChild(errCVC);
+    } else {
+        errCVC.textContent = "";
+    }
+
+});
+
+inputFecha.addEventListener('blur', function () {
+    let fechaIngresada = inputFecha.value;
+    if (!isValidDate(fechaIngresada)) {
+        errFecha.textContent = "Ingrese una fecha valida. Asegúrese de que la tarjeta no esté vencida.";
+        errFecha.style.color = "red";
+        campoFechaVto.appendChild(errFecha);
+    } else {
+        errFecha.textContent = "";
+    }
+});
+
+nombreApellido.addEventListener("blur", function () {
+    if (nombreApellido.value.length === 0) {
+        errNombreYApellido.textContent = "Ingrese nombre y apellido";
+        errNombreYApellido.style.color = "red";
+        campoNombreApellido.appendChild(errNombreYApellido);
+    } else {
+        errNombreYApellido.textContent = "";
+    }
+});
+
+function isValidDate(dateString) {
+    // Utilizo una expresión regular para verificar el formato YYYY-MM-DD
+    // const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+    // if (!dateRegex.test(dateString)) {
+    //     return false;
+    // }
+    
+    
+    //Reviso que la fecha sea posterior a hoy
+    const fechaIngresada = new Date(dateString);
+    const fechaActual = new Date();
+    if (fechaIngresada < fechaActual) {
+        return false;
+    }
+    
+    return true;
 }
 
 const btnPagar = document.getElementById("btnPagar");
 const dialog = document.getElementById("dialogConfirmation");
-dialog.close();
-btnPagar.addEventListener("click", (e)=>{
+dialog.open = false;
+btnPagar.addEventListener("click", (e) => {
     e.preventDefault();
-    if(error1.value ==""&& error2.value==""&& error3.value==""&& error4.value==""){
-    dialog.showModal();
+    if(numeroTarjeta.value.length !== 0 && cvc.value.length !== 0 && inputFecha.value.length !== 0 && nombreApellido.value.length !== 0) {
+        if (errNumeroTarjeta.textContent == "" && errCVC.textContent == "" && errFecha.textContent == "" && errNombreYApellido.textContent == "") {
+            dialog.classList.add("dialog");
+            dialog.showModal();
+        }
     }
 });
-/*
-const formulario = document.getElementById("formularioPagar")
-formulario.addEventListener("change", function (event) {
-    event.preventDefault();
 
-    const numeroTarjeta = document.getElementById("NumeroTarjeta").value;
-    const error = document.createElement('span');
-
-    if(numeroTarjeta.length !== 16){
-        error.textContent = "El numero de tarjeta debe ser de 16 digitos";
-        campoNumeroTarjeta.appendChild(error);
+const aceptar = document.getElementById("aceptar");
+aceptar.addEventListener("click", function(event) {
+    if(ingreso === "true") {
+        window.location.href = "VistaPrincipal.html"
     }
-
-    const cvc = document.getElementById("CVC").value;
-
-    if(cvc.length !== 3 || cvc === "000" || cvc === "999"){
-        alert("El numero de CVC es invalido")
-        return;
+    else {
+        window.location.href = "index.html"
     }
-
-    const fechaDeVTO = new Date(
-        document.getElementById("fechaDeVTO").value
-      );
-    if (isNaN(fechaDeVTO)) {
-        alert("porfavor, ingrese una fecha de nacimiento valida.");
-        return;
-      }
-
-    const nombreApellido = document.getElementById("nombreApellido").value;
-
-    if(nombreApellido.length === 0){
-        alert("Ingrese nombre y apellido");
-        return;
-    }
-
-    window.location.href = "VistaPrincipal.html"
-
-
-    
 })
-*/
+
+// const formulario = document.getElementById("formularioPagar")
+// formulario.addEventListener("submit", function (event) {
+//     event.preventDefault();
+//     console.log("hola");
+// })
+
 const cancelar = document.getElementById("btnCancelar");
 
-cancelar.addEventListener("click", function (event){
+cancelar.addEventListener("click", function (event) {
     window.location.href = "VistaPrincipal.html"
 })
 
 
 const cerrarSesion = document.querySelector(".cerrar-sesion");
-cerrarSesion.addEventListener("click", function(event){
-    
-   
+cerrarSesion.addEventListener("click", function (event) {
+
+
 
     const usuarioModificado = usuarioLogueado;
 
-    for ( i = 0; i< usuarios.length ; i++) {
+    for (i = 0; i < usuarios.length; i++) {
 
-      if (usuarios[i].usuario === usuarioLogueado.usuario) {
-        usuarios[i].remove;
-        usuarios[i] = usuarioModificado;
-        localStorage.removeItem("usuarioLogueado");
-        localStorage.removeItem("albumsFavoritos");
-        break;
-      }
+        if (usuarios[i].usuario === usuarioLogueado.usuario) {
+            usuarios[i].remove;
+            usuarios[i] = usuarioModificado;
+            localStorage.removeItem("usuarioLogueado");
+            localStorage.removeItem("nombreUsuario");
+            localStorage.removeItem("albumsFavoritos");
+            break;
+        }
     }
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
     const cerroSesion = localStorage.setItem("ingreso", false);

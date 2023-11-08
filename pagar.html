@@ -26,9 +26,9 @@
             <h1 id="plan">Elegiste el Plan Infinito</h1>
         </header>
 
-        <div class="usuario">
-            <h2 id="usuario">Grupo 6</h2>
-            <a class="cerrar-sesion" href="index.html">Cerrar sesion</a>
+        <div class="usuario" id="contenedorUsuario">
+            <h2 id="usuario"></h2>
+            <a class="cerrar-sesion" href="index.html" id="botonCerrarSesion"></a>
           </div> 
 
     </div>
@@ -37,7 +37,7 @@
         <section>
             <article class="plan-elegido">
                 <img src="img/logo2.png" alt="planElegido">
-                <p class="descripcion">Descripción y detalles del plan elegido, infinito incluye muchas canciones sin
+                <p class="descripcion" id="descripcionPlan">Descripción y detalles del plan elegido, infinito incluye muchas canciones sin
                     publicidad para toda tu vida, para toda tu familia a $1000 dolares en un solo pago</p>
             </article>
 
@@ -70,9 +70,9 @@
                 </form>
             </article>
 
-            <dialog class="dialog" id="dialogConfirmation">
+            <dialog id="dialogConfirmation">
                 <p>Pago exitoso</p>
-                <button class="button">Aceptar</button>
+                <button class="button" id="aceptar">Aceptar</button>
             </dialog>
         </section>
 
