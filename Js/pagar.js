@@ -8,6 +8,8 @@ if (ingreso !== "false") {
     botonCerrarSesion.textContent = "Cerrar sesión";
 }
 
+
+
 const planSeleccionado = JSON.parse(localStorage.getItem("planSeleccionado"));
 const nombrePlan = document.getElementById("plan");
 const descripcionPlan = document.getElementById("descripcionPlan");

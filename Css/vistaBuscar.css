@@ -23,6 +23,10 @@
 
 }
 
+.borrarimg {
+    display: none;
+}
+
 .barraBusqueda::placeholder {
     padding-left: 10px;
 }

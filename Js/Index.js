@@ -1,6 +1,8 @@
 const button = document.getElementById("button-inicio");
 const USUARIOS = JSON.parse(localStorage.getItem("usuarios"));
 
+
+
 button.addEventListener("click", function (event) {
   event.preventDefault();
   const nombreUsuario = document.getElementById("usuario").value;

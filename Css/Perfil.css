@@ -89,6 +89,7 @@ h1 {
     border-radius: 20px;
     box-shadow: 8px 8px 0px -2px #1B0044;
     align-items: center;
+    padding-bottom: 10% ;
 }
 .campo {
     display: flex;
@@ -105,17 +106,44 @@ h1 {
 
 }
 
+.btnHome {
+    position: absolute;
+    left: 56%;
+    top: 65%;
+}
+
+.btnGuardar {
+    position: absolute;
+    left: 49%;
+    top: 65%;
+}
+
+#btnPremium {
+    position: absolute;
+    left: 37%;
+    top: 65%;
+}
+
+#btnEliminar {
+    position: absolute;
+    left: 37%;
+    top: 70%;
+}
+
 
 .alertaPositiva {
     z-index: 10;
     background-color: green;
-    width: 30%;
-    height: 30%;
+    width: 25%;
+    height: 25%;
     border: 5px solid black;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    position: absolute;
+    left: 38%;
+    top: 31%;
 
 
 }
@@ -187,6 +215,34 @@ footer {
         font-size: 1.2em;
         margin: 5px;
     }
+
+    .btnHome {
+        position: absolute;
+        left: 67%;
+        top: 77%;
+    }
+    
+    .btnGuardar {
+        position: absolute;
+        left: 47%;
+        top: 77%;
+    }
+    
+    #btnPremium {
+        position: absolute;
+        left: 20%;
+        top: 77%;
+    }
+    
+    #btnEliminar {
+        position: absolute;
+        left: 20%;
+        top: 82%;
+    }
+
+    .form-editarperfil{
+        padding-bottom: 23%;
+    }
 }
 @media screen and (min-width: 30.1em) and (max-width: 60em){
     .form-editarperfil{
@@ -227,6 +283,36 @@ footer {
         font-size: 1.2em;
         margin: 5px;
     }
+
+    .btnHome {
+        position: absolute;
+        left: 69%;
+        top: 65%;
+    }
+    
+    .btnGuardar {
+        position: absolute;
+        left: 55%;
+        top: 65%;
+    }
+    
+    #btnPremium {
+        position: absolute;
+        left: 25%;
+        top: 63%;
+    }
+    
+    #btnEliminar {
+        position: absolute;
+        left: 25%;
+        top: 68%;
+    }
+
+    .form-editarperfil {
+        padding-bottom: 16%;
+    }
+
+    
 }
 @media screen and (min-width: 60em) and (max-width: 113em){
     .form-editarperfil{

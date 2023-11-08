@@ -10,6 +10,9 @@
     
 }
 
+.borrarimg {
+    display: none;
+}
 .contenedorUsuarioTituloAlbum{
    
 display: flex;

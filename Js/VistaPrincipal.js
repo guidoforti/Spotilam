@@ -2,11 +2,19 @@ const nombreUsuario = localStorage.getItem("nombreUsuario");
 const usuario = document.getElementById("usuario");
 
 
-usuario.textContent = nombreUsuario;
 
+ const botonCerrarSesion = document.getElementById("botonCerrarSesion");
+const ingreso = localStorage.getItem("ingreso");
 
- 
+if (ingreso !== "false") {
+    usuario.textContent = nombreUsuario;
+    botonCerrarSesion.textContent = "Cerrar sesión";
+}
 
+if(ingreso === "false"){
+  const iperfil = document.getElementById("iperfil");
+  iperfil.className = "borrarimg";
+}
 
 
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
@@ -384,6 +392,7 @@ data.map((album) => {
     albumDescripcion.appendChild(descripcionDelAlbum);
 
     localStorage.setItem("albumEscuchando", JSON.stringify(album));
+
 
 })
 });

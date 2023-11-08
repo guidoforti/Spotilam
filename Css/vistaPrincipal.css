@@ -297,6 +297,10 @@ los estilos de la nav bar estan en el principal */
     margin-top: 15px;
 }
 
+.borrarimg {
+    display: none;
+}
+
 .nombre-usuario {
     color: var(--colorCuaternario);
     font-family: var(--robotoSlab);

@@ -1,8 +1,14 @@
 const nombreUsuario = localStorage.getItem("nombreUsuario");
 const usuario = document.getElementById("usuario");
 
+const botonCerrarSesion = document.getElementById("botonCerrarSesion");
+const ingreso = localStorage.getItem("ingreso");
 
-usuario.textContent = nombreUsuario;
+if (ingreso !== "false") {
+    usuario.textContent = nombreUsuario;
+    botonCerrarSesion.textContent = "Cerrar sesión";
+}
+
 
 
 const formPlanes = document.querySelector(".planesPremium");
@@ -23,7 +29,7 @@ let planSeleccionado = {
     });
   });
   
-  usuario.textContent = nombreUsuario;
+  
   
   formPlanes.addEventListener("submit", (event) => {
     event.preventDefault();

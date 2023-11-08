@@ -59,7 +59,10 @@ footer {
     flex-direction: column;
 }
 
-
+#plan {
+    position: absolute;
+    left: 44%;
+}
 
 
 
@@ -91,6 +94,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 15%;
 
 }
 .formContainer {

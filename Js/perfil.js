@@ -6,6 +6,7 @@ usuario.textContent = nombreUsuario;
 
 
 
+
 let usuarios = JSON.parse(localStorage.getItem("usuarios"));
 
 
@@ -40,10 +41,52 @@ forumlarioDeActualizacion.addEventListener("submit", (event)=> {
     event.preventDefault();
 
     const usuarioN = document.getElementById("usuarioNuevo").value;
-    const contraN = document.getElementById("contraNueva").value;
-    const contraNR = document.getElementById("contraNuevaR").value;
+    let contraN = document.getElementById("contraNueva").value;
+    let contraNR = document.getElementById("contraNuevaR").value;
     const fechaN = document.getElementById("fechaNueva").value;
     const emailN = document.getElementById("emailNuevo").value;
+
+    if (contraN.length !== 8 || contraNR.length !== 8) {
+        alert("la contraseña debe ser de 8 digitos");
+        return;
+      } else {
+        const mitad1 = contraN.slice(0, contraN.length / 2);
+        const mitad2 = contraN.slice(contraN.length / 2);
+        const contrasenaVuelta = mitad2 + mitad1;
+        contraN = contrasenaVuelta;
+    
+        const mitad1Conf = contraNR.slice(0, contraNR.length / 2);
+        const mitad2Conf = contraNR.slice(contraNR.length / 2);
+        const confContrasenaVuelta = mitad2Conf + mitad1Conf;
+        contraNR = confContrasenaVuelta;
+      }
+
+    if (contraN !== contraNR) {
+        alert("las contraseñas no coinciden, por favor intentelo nuevamente");
+        return;
+    }
+
+    function isValidDate(dateString) {
+        const fechaIngresada = new Date(dateString);
+        const fechaActual = new Date();
+        if (fechaIngresada > fechaActual) {
+            return false;
+        }
+        
+        return true;
+     }
+
+     if (!isValidDate(fechaN)) {
+        alert("porfavor, ingrese una fecha de nacimiento valida.");
+        return;
+      }
+
+      for(let i = 0; i < usuarios.length; i++){
+        if(usuarios[i].usuario !== usuarioLogueado.usuario && usuarios[i].usuario === usuarioN){
+          alert("El usuario ingresado ya existe")
+          return;
+        }
+      }
 
     for ( let i = 0 ; i < usuarios.length ; i++) {
 

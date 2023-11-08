@@ -1,5 +1,6 @@
 let USUARIOS = [];
 
+
 // Verifica si hay datos en el localStorage
 const storedUsers = localStorage.getItem("usuarios");
 
@@ -44,9 +45,20 @@ formulario.addEventListener("submit", function (event) {
   let contrasena = document.getElementById("contraseña").value;
 
   let confContrasena = document.getElementById("confirmeContraseña").value;
+
   const fechaNacimiento = new Date(
     document.getElementById("fechaNacimiento").value
   );
+
+  function isValidDate(dateString) {
+    const fechaIngresada = new Date(dateString);
+    const fechaActual = new Date();
+    if (fechaIngresada > fechaActual) {
+        return false;
+    }
+    
+    return true;
+  }
   const email = document.getElementById("email").value;
   
   //VALIDO QUE LA CONTRASEÑA SEA DE 8 DIGITOS Y LA DOY VUELTA
@@ -71,10 +83,16 @@ formulario.addEventListener("submit", function (event) {
     return;
   }
 
-  if (isNaN(fechaNacimiento)) {
-    alert("porfavor, ingrese una fecha de nacimiento valida.");
-    return;
+  
+
+  for(let i = 0; i < USUARIOS.length; i++){
+    if(USUARIOS[i].usuario === nombre){
+      alert("El usuario ingresado ya existe")
+      return;
+    }
   }
+
+
 
   const usuarioNuevo = new Usuario(
     nombre,
