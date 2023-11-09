@@ -77,15 +77,26 @@ h1{
     position: absolute;
 }
 
-#btnAvanzar {
-    position: absolute;
-    left: 38%;
-    top: 72%;
-    width: 5%;
-    height: 4%;
+
+.botonespremium {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
-
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100%;
+    width: 30%;
+    height: 50%;
+    border: none;
+    padding: 5px;
+}
 
 .a-boton{
     
@@ -127,7 +138,7 @@ label {
     .planesPremium{
         width: 100%;
         display: grid;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr;
         position: absolute;
         top: 10%;
@@ -183,13 +194,16 @@ label {
         position: relative;
     }
 
-    .secBotonesPremium {
-        position: absolute;
-        left: 40%;
-        bottom: 21%;
-    }
 
+    label {
+        position: static;
+    }
  
+    .botonespremium { 
+        grid-column: 1;
+        grid-row: 4;
+        height: 200%;
+    }
 }
 
 
@@ -206,6 +220,9 @@ label {
         font-size: 80%;
     }
 
+    .button {
+        width: 40%;
+    }
 
 }
 
@@ -217,11 +234,6 @@ label {
 }
 .plan3{
     text-align: center;
-}
-
-.secBotonesPremium{
-    text-align: center;
-    margin-top: 10%;
 }
 
 

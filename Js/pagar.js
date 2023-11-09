@@ -1,6 +1,8 @@
 const nombreUsuario = localStorage.getItem("nombreUsuario");
 const botonCerrarSesion = document.getElementById("botonCerrarSesion");
 const usuario = document.getElementById("usuario");
+const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
+
 const ingreso = localStorage.getItem("ingreso");
 
 if (ingreso !== "false") {
@@ -112,6 +114,9 @@ btnPagar.addEventListener("click", (e) => {
         if (errNumeroTarjeta.textContent == "" && errCVC.textContent == "" && errFecha.textContent == "" && errNombreYApellido.textContent == "") {
             dialog.classList.add("dialog");
             dialog.showModal();
+            usuarioLogueado.tienePremium = "true";
+            localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogueado));
+            console.log(usuarioLogueado);
         }
     }
 });

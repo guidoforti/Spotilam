@@ -1,16 +1,22 @@
 const nombreUsuario = localStorage.getItem("nombreUsuario");
 const usuario = document.getElementById("usuario");
-
-
 usuario.textContent = nombreUsuario;
 
 
 
-
 let usuarios = JSON.parse(localStorage.getItem("usuarios"));
-
-
 const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
+const botonPremium = document.getElementById("btnPremium");
+
+if(usuarioLogueado.tienePremium === "true") {
+  botonPremium.style.display = "none";
+}
+
+botonPremium.addEventListener("click", ()=> {
+  window.location.href = "Premium.html"
+})
+
+
 
 
 
@@ -139,11 +145,7 @@ forumlarioDeActualizacion.addEventListener("submit", (event)=> {
 })
 
 
-const botonPremium = document.getElementById("btnPremium");
 
-botonPremium.addEventListener("click", ()=> {
-    window.location.href = "Premium.html"
-})
 
 
 
