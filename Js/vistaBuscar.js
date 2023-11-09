@@ -28,19 +28,26 @@ function estaEnFavoritos(albumId) {
   }
   return false;
 }
-
-function quitarAlbumFavoritos(albumId) {
-  usuarioLogueado.albumsFavs = usuarioLogueado.albumsFavs.filter(favAlbum => favAlbum.id !== albumId);
-  localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogueado));
-  
-}
-
+// se le pasa un album y se lo pushea al array y el array se vuelve a guardar en el local
 function agregarAlbumFavoritos(album) {
   usuarioLogueado.albumsFavs.push(album);
   
   localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogueado));
   
 }
+
+// Utiliza el método filter para crear un nuevo array que excluya el álbum con el id especificado. 
+//Esto se logra comparando el id de cada álbum con albumId y eliminando aquellos que coinciden.
+//Luego, guarda el nuevo array de álbumes favoritos (sin el álbum que se quiso quitar) en el almacenamiento local utilizando 
+//localStorage.setItem. Esto actualiza la lista de favoritos sin el álbum específico.
+function quitarAlbumFavoritos(albumId) {
+  usuarioLogueado.albumsFavs = usuarioLogueado.albumsFavs.filter(favAlbum => favAlbum.id !== albumId);
+  
+  localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogueado));
+  
+  
+}
+
 
 
 
@@ -81,12 +88,24 @@ data.map((album) => {
   contenedor.appendChild(article);
 
   //AGREGO LA FUNCION ALAS ESTRELLAS
-  span.addEventListener("click", function () {
-    quitarAlbumFavoritos(album.id);
-    span.classList.remove("material-symbols-rounded");
+  
+  span.addEventListener("click", function(){
+  
     
-  });
 
+    if (estaEnFavoritos(album.id)){
+      quitarAlbumFavoritos(album.id);
+      span.classList.remove("material-symbols-rounded");
+      span.classList.add("material-symbols-outlined");
+      
+    } else {
+      agregarAlbumFavoritos(album);
+      span.classList.add("material-symbols-rounded");
+      span.classList.remove("material-symbols-outlined");
+
+    }
+    
+  })
 
   //AGREGO LA FUNCION PARA QUE SE VAYA AGREGANDO AL COSTADO EL ALBUM ESCUCHANDO
   img.addEventListener("click", function () {
@@ -169,36 +188,42 @@ barraDeBusqueda.addEventListener("keyup", () => {
     span.innerHTML = "grade"; // Puedes cambiar esto si necesitas un valor dinámico
 
     //añadir event listener on click y validar si esta en favoritos, para darle la funcion correspondiente
-
+    if (estaEnFavoritos(albums.id)) {
+      span.classList.add("material-symbols-rounded");
+    }
+    
     // Añades el a y el span al article
     article.appendChild(a);
     article.appendChild(span);
+    span.addEventListener("click", function(){
+  
+    
 
+      if (estaEnFavoritos(albums.id)){
+        quitarAlbumFavoritos(albums.id);
+        span.classList.remove("material-symbols-rounded");
+        span.classList.add("material-symbols-outlined");
+        
+      } else {
+        agregarAlbumFavoritos(albums);
+        span.classList.add("material-symbols-rounded");
+        span.classList.remove("material-symbols-outlined");
+  
+      }
+      
+    })
+  
     // Finalmente, añades el article al contenedor
     contenedor.appendChild(article);
   });
 });
 
-span.addEventListener("click", function(){
+
   
-    
 
-  if (estaEnFavoritos(album.id)){
-    quitarAlbumFavoritos(album.id);
-    span.classList.remove("material-symbols-rounded");
-    span.classList.add("material-symbols-outlined");
-    
-  } else {
-    agregarAlbumFavoritos(album);
-    span.classList.add("material-symbols-rounded");
-    span.classList.remove("material-symbols-outlined");
 
-  }
-  
-});
 
-const cerrarSesion = document.getElementById("cerrarLaSesion")
-cerrarSesion.addEventListener("click", function(event){
+botonCerrarSesion.addEventListener("click", function(event){
     
    
 
