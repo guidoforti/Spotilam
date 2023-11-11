@@ -21,20 +21,23 @@ const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
 
 const contenedor = document.querySelector(".contenedorAlbums");
 
-
-function estaEnFavoritos(albumId) {
-  if (usuarioLogueado.albumsFavs) {
-    return usuarioLogueado.albumsFavs.some(favAlbum => favAlbum.id === albumId);
+if (ingreso === "true") {
+  function estaEnFavoritos(albumId) {
+    if (usuarioLogueado.albumsFavs) {
+      return usuarioLogueado.albumsFavs.some(
+        (favAlbum) => favAlbum.id === albumId
+      );
+    }
+    return false;
   }
-  return false;
+  // se le pasa un album y se lo pushea al array y el array se vuelve a guardar en el local
+  function agregarAlbumFavoritos(album) {
+    usuarioLogueado.albumsFavs.push(album);
+
+    localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogueado));
+  }
 }
-// se le pasa un album y se lo pushea al array y el array se vuelve a guardar en el local
-function agregarAlbumFavoritos(album) {
-  usuarioLogueado.albumsFavs.push(album);
-  
-  localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogueado));
-  
-}
+
 
 // Utiliza el método filter para crear un nuevo array que excluya el álbum con el id especificado. 
 //Esto se logra comparando el id de cada álbum con albumId y eliminando aquellos que coinciden.
@@ -75,7 +78,7 @@ data.map((album) => {
   span.innerHTML = "grade"; // Puedes cambiar esto si necesitas un valor dinámico
   
   //EVALUO QUE SI ESTA EN FAVORITOS QUEDE MARCADA LA ESTRELLA
-  if (estaEnFavoritos(album.id)) {
+  if (ingreso === "true" && estaEnFavoritos(album.id)) {
     span.classList.add("material-symbols-rounded");
   }
   //añadir event listener on click y validar si esta en favoritos, para darle la funcion correspondiente
@@ -88,24 +91,20 @@ data.map((album) => {
   contenedor.appendChild(article);
 
   //AGREGO LA FUNCION ALAS ESTRELLAS
+  if (ingreso === "true") {
+    span.addEventListener("click", function () {
+      if (estaEnFavoritos(album.id)) {
+        quitarAlbumFavoritos(album.id);
+        span.classList.remove("material-symbols-rounded");
+        span.classList.add("material-symbols-outlined");
+      } else {
+        agregarAlbumFavoritos(album);
+        span.classList.add("material-symbols-rounded");
+        span.classList.remove("material-symbols-outlined");
+      }
+    });
+  }
   
-  span.addEventListener("click", function(){
-  
-    
-
-    if (estaEnFavoritos(album.id)){
-      quitarAlbumFavoritos(album.id);
-      span.classList.remove("material-symbols-rounded");
-      span.classList.add("material-symbols-outlined");
-      
-    } else {
-      agregarAlbumFavoritos(album);
-      span.classList.add("material-symbols-rounded");
-      span.classList.remove("material-symbols-outlined");
-
-    }
-    
-  })
 
   //AGREGO LA FUNCION PARA QUE SE VAYA AGREGANDO AL COSTADO EL ALBUM ESCUCHANDO
   img.addEventListener("click", function () {

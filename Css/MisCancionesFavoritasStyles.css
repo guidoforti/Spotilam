@@ -17,14 +17,19 @@
 
 .vistaCancionesFavoritas {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     margin-left: auto;
     margin-right: auto;
+    overflow: auto;
     display: grid;
     /* grid-template-columns: 15% 20% 20% 20% 20%; */
     grid-template-columns: 15% 84.5%;
     grid-column-gap: 0.5%;
     grid-template-rows: 95% 15%;
+}
+
+html {
+    overflow: hidden;
 }
 
 .favDescripcion {
@@ -225,7 +230,7 @@ body {
 
 .encabezado {
     background-image: linear-gradient(var(--colorSecundario), var(--colorPrincipal));
-    text-align: center;
+    text-align: right;
 }
 
 .portada {

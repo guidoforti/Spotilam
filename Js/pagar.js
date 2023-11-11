@@ -88,13 +88,6 @@ nombreApellido.addEventListener("blur", function () {
 });
 
 function isValidDate(dateString) {
-    // Utilizo una expresión regular para verificar el formato YYYY-MM-DD
-    // const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
-    // if (!dateRegex.test(dateString)) {
-    //     return false;
-    // }
-    
-    
     //Reviso que la fecha sea posterior a hoy
     const fechaIngresada = new Date(dateString);
     const fechaActual = new Date();

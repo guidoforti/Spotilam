@@ -221,21 +221,20 @@ let usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
 if (!usuarioLogueado) {
   // Si no existe un usuario logueado en el almacenamiento local, busca el usuario en el array de usuarios guardados
   const usuarios = JSON.parse(localStorage.getItem("usuarios"));
-
-  for (let u of usuarios) {
-    if (u.usuario === nombreUsuario) {
-      // Encuentra el usuario y asigna sus datos a usuarioLogueado
-      usuarioLogueado = u;
-      localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogueado));
-      break; // Termina el bucle una vez que se encuentra el usuario
+  if (usuarios !== null) {
+    for (let u of usuarios) {
+      if (u.usuario === nombreUsuario) {
+        // Encuentra el usuario y asigna sus datos a usuarioLogueado
+        usuarioLogueado = u;
+        localStorage.setItem(
+          "usuarioLogueado",
+          JSON.stringify(usuarioLogueado)
+        );
+        break; // Termina el bucle una vez que se encuentra el usuario
+      }
     }
   }
 }
-
-
-  
-
-
 
 
 //CREO DATA, que tiene la info de todos los albums, osea GUARDO EL ARRAY DE ALBUMS EN EL LOCAL
@@ -259,36 +258,36 @@ const contenedor = document.querySelector(".contenedorAlbums");
 //CREO 3 FUNCIONES QUE NOS VAN A SERVIR PARA EVALUAR SI UN ALBUM ESTA EN FAVORITOS , LA PRIMERA
 // PARA AGREGAR A FAVORITOS LA SEGUNDA
 // PARA QUITAR DE FAVORITOS LA TERCERA 
-
+if(ingreso === "true") { //Reviso que haya ingresado un usuario, de lo contrario todo esto daría error
 
 // esta funcion retorna true o false , favAlbum representa a un album de cada iteracion y compasra si el id de ese album es igual al parametro
 // que se le pasa a la funcion, si es igual, devuelve true, sino devuelve false
-function estaEnFavoritos(albumId) {
-  if (usuarioLogueado.albumsFavs) {
-    return usuarioLogueado.albumsFavs.some(favAlbum => favAlbum.id === albumId);
+  function estaEnFavoritos(albumId) {
+    if (usuarioLogueado.albumsFavs) {
+      return usuarioLogueado.albumsFavs.some(favAlbum => favAlbum.id === albumId);
+    }
+    return false;
   }
-  return false;
-}
-// se le pasa un album y se lo pushea al array y el array se vuelve a guardar en el local
-function agregarAlbumFavoritos(album) {
-  usuarioLogueado.albumsFavs.push(album);
-  
-  localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogueado));
-  
-}
+  // se le pasa un album y se lo pushea al array y el array se vuelve a guardar en el local
+  function agregarAlbumFavoritos(album) {
+    usuarioLogueado.albumsFavs.push(album);
+    
+    localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogueado));
+    
+  }
 
-// Utiliza el método filter para crear un nuevo array que excluya el álbum con el id especificado. 
-//Esto se logra comparando el id de cada álbum con albumId y eliminando aquellos que coinciden.
-//Luego, guarda el nuevo array de álbumes favoritos (sin el álbum que se quiso quitar) en el almacenamiento local utilizando 
-//localStorage.setItem. Esto actualiza la lista de favoritos sin el álbum específico.
-function quitarAlbumFavoritos(albumId) {
-  usuarioLogueado.albumsFavs = usuarioLogueado.albumsFavs.filter(favAlbum => favAlbum.id !== albumId);
-  
-  localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogueado));
-  
-  
+  // Utiliza el método filter para crear un nuevo array que excluya el álbum con el id especificado. 
+  //Esto se logra comparando el id de cada álbum con albumId y eliminando aquellos que coinciden.
+  //Luego, guarda el nuevo array de álbumes favoritos (sin el álbum que se quiso quitar) en el almacenamiento local utilizando 
+  //localStorage.setItem. Esto actualiza la lista de favoritos sin el álbum específico.
+  function quitarAlbumFavoritos(albumId) {
+    usuarioLogueado.albumsFavs = usuarioLogueado.albumsFavs.filter(favAlbum => favAlbum.id !== albumId);
+    
+    localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogueado));
+    
+    
+  }
 }
-
 // ACA RECORRO ESE ARRAY DE DATA CON LA FUNCION MAP, QUE ES UNA FUNCION DE LOS ARRAYLIST
 // con la cual es tipo un for each y con este "for" VOY CREANDO CADA ARTICULO DINAMICAMENTE 
 // Y LO VOY CREANDO IGUAL QUE COMO LO TENIAMOS EN EL HTML
@@ -316,7 +315,7 @@ data.map((album) => {
   span.className = "material-symbols-outlined fav";
 
   //EVALUO QUE SI ESTA EN FAVORITOS QUEDE MARCADA LA ESTRELLA
-  if (estaEnFavoritos(album.id)) {
+  if (ingreso === "true" && estaEnFavoritos(album.id)) {
     span.classList.add("material-symbols-rounded");
   }
   
@@ -331,26 +330,22 @@ data.map((album) => {
 
   
   
-
+  if (ingreso === "true") {
+    span.addEventListener("click", function () {
+      if (estaEnFavoritos(album.id)) {
+        quitarAlbumFavoritos(album.id);
+        span.classList.remove("material-symbols-rounded");
+        span.classList.add("material-symbols-outlined");
+      } else {
+        agregarAlbumFavoritos(album);
+        span.classList.add("material-symbols-rounded");
+        span.classList.remove("material-symbols-outlined");
+      }
+    });
+  }
   //AGREGO UN EVENTO A LA ESTRELLA QUE UTILIZA 3 FUNCIONES CREADAS ARRIBA PARA EVALUAR 
   // PARA AGREGAR O QUITAR DEL ARRAY DE FAVORITOS A LOS ALBUMS
-  span.addEventListener("click", function(){
   
-    
-
-    if (estaEnFavoritos(album.id)){
-      quitarAlbumFavoritos(album.id);
-      span.classList.remove("material-symbols-rounded");
-      span.classList.add("material-symbols-outlined");
-      
-    } else {
-      agregarAlbumFavoritos(album);
-      span.classList.add("material-symbols-rounded");
-      span.classList.remove("material-symbols-outlined");
-
-    }
-    
-  })
 
   //CREAMOS LA FUNCION PARA QEU VAYAN APARECIENDO LOS ALBUMS DE LA MUSICA SONANDO Y SU DESCRIPCION PERO, NO SABEMOS COMO HACER PARA QUE SE VAYAN REMPLAZANDO
 

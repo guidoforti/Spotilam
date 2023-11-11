@@ -1,7 +1,7 @@
 const button = document.getElementById("button-inicio");
 const USUARIOS = JSON.parse(localStorage.getItem("usuarios"));
 
-
+localStorage.setItem("ingreso", "false");
 
 button.addEventListener("click", function (event) {
   event.preventDefault();
@@ -13,17 +13,18 @@ button.addEventListener("click", function (event) {
   contraseniaIngresada = contraseniaVuelta;
 
   let ingreso = false;
-
-  USUARIOS.forEach((Usuario) => {
-    if (
-      Usuario.usuario === nombreUsuario &&
-      Usuario.contrasenia === contraseniaIngresada
-    ) {
-      ingreso = true;
-      return;
-    } 
-  });
-
+  if (USUARIOS !== null) {
+    USUARIOS.forEach((Usuario) => {
+      if (
+        Usuario.usuario === nombreUsuario &&
+        Usuario.contrasenia === contraseniaIngresada
+      ) {
+        ingreso = true;
+        return;
+      }
+    });
+  }
+  
   if (ingreso !== true) {
     const alerta = document.querySelector(".cuadroAlertaIngreso");
     alerta.classList.add("cuadroAlertaErrorIngreso");

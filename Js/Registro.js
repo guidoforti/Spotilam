@@ -14,10 +14,7 @@ function Usuario(
   contrasenia,
   confContrasenia,
   fechaNacimiento,
-  email,
-  tienePremium,
-  albumsFavs,
-  cancionesFavs
+  email
 ) {
   this.usuario = usuario;
   this.contrasenia = contrasenia;
@@ -25,7 +22,7 @@ function Usuario(
   this.fechaNacimiento = fechaNacimiento;
   this.email = email;
   this.tienePremium = false;
-  this. albumsFavs = [];
+  this.albumsFavs = [];
   this.cancionesFavs = [];
 }
 
@@ -43,12 +40,8 @@ formulario.addEventListener("submit", function (event) {
   /* tomo los datos del formulario */
   const nombre = document.getElementById("usuario").value;
   let contrasena = document.getElementById("contraseña").value;
-
   let confContrasena = document.getElementById("confirmeContraseña").value;
-
-  const fechaNacimiento = new Date(
-    document.getElementById("fechaNacimiento").value
-  );
+  const fechaNacimiento = document.getElementById("fechaNacimiento").value;
 
   function isValidDate(dateString) {
     const fechaIngresada = new Date(dateString);
@@ -59,6 +52,12 @@ formulario.addEventListener("submit", function (event) {
     
     return true;
   }
+
+  if (!isValidDate(fechaNacimiento)) {
+    alert("porfavor, ingrese una fecha de nacimiento valida.");
+    return;
+  }
+
   const email = document.getElementById("email").value;
   
   //VALIDO QUE LA CONTRASEÑA SEA DE 8 DIGITOS Y LA DOY VUELTA
@@ -83,8 +82,8 @@ formulario.addEventListener("submit", function (event) {
     return;
   }
 
-  
 
+  //Valido que el usuario ingresado no exista
   for(let i = 0; i < USUARIOS.length; i++){
     if(USUARIOS[i].usuario === nombre){
       alert("El usuario ingresado ya existe")
@@ -100,7 +99,6 @@ formulario.addEventListener("submit", function (event) {
     confContrasena,
     fechaNacimiento,
     email
-    
   );
 
   USUARIOS.push(usuarioNuevo);
